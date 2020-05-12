@@ -16,6 +16,7 @@
 #移除不用软件包    
 rm -rf package/lean/luci-app-dockerman
 #添加额外软件包
+git clone https://github.com/destan19/OpenAppFilter.git package/
 git clone https://github.com/vernesong/OpenClash.git package/luci-app-openclash
 git clone https://github.com/rufengsuixing/luci-app-adguardhome.git package/luci-app-adguardhome
 git clone https://github.com/lisaac/luci-app-dockerman.git package/luci-app-dockerman
