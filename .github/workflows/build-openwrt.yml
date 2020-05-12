@@ -29,6 +29,7 @@ env:
   CONFIG_FILE: .config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
+  DOCKER_BUILD_SH: buildImage.sh
   SSH_ACTIONS: false
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
@@ -125,7 +126,14 @@ jobs:
         rm -rf packages
         echo "::set-env name=FIRMWARE::$PWD"
         echo "::set-output name=status::success"
-
+        
+    - name: Make docker image
+      if: steps.organize.outputs.status == 'success' && !cancelled()
+      run: |
+        cp openwrt/bin/targets/*/*/*.tar.gz ./openwrt-armvirt-64-default-rootfs.tar.gz
+        ./buildImage.sh
+        cp dockerimgs/docker/*.gz openwrt/bin/targets/*/*/
+        
     - name: Upload firmware directory
       uses: actions/upload-artifact@master
       if: steps.organize.outputs.status == 'success' && !cancelled()
