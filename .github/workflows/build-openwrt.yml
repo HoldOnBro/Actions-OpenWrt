@@ -128,18 +128,27 @@ jobs:
         echo "::set-output name=status::success"
         
     - name: Make docker image
+      id: makeimage
       if: steps.organize.outputs.status == 'success' && !cancelled()
       run: |
         cp openwrt/bin/targets/*/*/*.tar.gz ./openwrt-armvirt-64-default-rootfs.tar.gz
-        ./buildImage.sh
+        ./$DOCKER_BUILD_SH
         cp dockerimgs/docker/*.gz openwrt/bin/targets/*/*/
-        
+       
+    - name: WeChat notification
+      if: steps.makeimage.outputs.status == 'success' && !cancelled()
+      run: curl https://sc.ftqq.com/${{ secrets.ServerChan }}.send?text=${{ env.FILE_NAME }}成功生成Docker镜像
+      
     - name: Upload firmware directory
       uses: actions/upload-artifact@master
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
         name: OpenWrt_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
         path: ${{ env.FIRMWARE }}
+
+    - name: WeChat notification
+      if: steps.organize.outputs.status == 'success' && !cancelled()
+      run: curl https://sc.ftqq.com/${{ secrets.ServerChan }}.send?text=${{ env.FILE_NAME }}编译完成
 
     - name: Upload firmware to cowtransfer
       if: steps.organize.outputs.status == 'success' && env.UPLOAD_COWTRANSFER == 'true' && !cancelled()
@@ -154,6 +163,3 @@ jobs:
         curl -fsSL git.io/file-transfer | sh
         ./transfer wet -s -p 16 --no-progress ${FIRMWARE} 2>&1 | tee wetransfer.log
         echo "::warning file=wetransfer.com::$(cat wetransfer.log | grep https)"
-        
-    - name: WeChat notification
-      run: curl https://sc.ftqq.com/${{ secrets.ServerChan }}.send?text=${{ env.FILE_NAME }}编译完成
