@@ -6,12 +6,13 @@ if [ ! -z "$1" ];then
 fi
 
 TMPDIR=openwrt_rootfs
-OUTDIR=/opt/imgs/docker
+OUTDIR=dockerimgs/docker
 IMG_NAME=mrg/openwrt-aarch64
 
 [ -d "$TMPDIR" ] && rm -rf "$TMPDIR"
 
 mkdir -p "$TMPDIR"  && \
+mkdir -p "$OUTDIR"  && \
 gzip -dc openwrt-armvirt-64-default-rootfs.tar.gz | ( cd "$TMPDIR" && tar xf - ) && \
 cp -f patches/rc.local "$TMPDIR/etc/" && \
 cp -f patches/cpustat "$TMPDIR/usr/bin/" && chmod 755 "$TMPDIR/usr/bin/cpustat" && \
