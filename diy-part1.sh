@@ -24,9 +24,10 @@ make && sudo make install
 popd
 git clone https://github.com/rufengsuixing/luci-app-adguardhome.git package/luci-app-adguardhome
 git clone https://github.com/lisaac/luci-app-dockerman.git package/luci-app-dockerman
-svn co https://github.com/bin20088/openwrt-package/trunk/package/brook package/brook
-svn co https://github.com/bin20088/openwrt-package/trunk/package/chinadns-ng package/chinadns-ng
-svn co https://github.com/bin20088/openwrt-package/trunk/package/tcping package/tcping
+git clone https://github.com/Lienol/openwrt-package.git package/Lienol
+svn co https://github.com/Lienol/openwrt-package/tree/master/package/brook package/brook
+svn co https://github.com/Lienol/openwrt-package/tree/master/package/chinadns-ng package/chinadns-ng
+svn co https://github.com/Lienol/openwrt-package/tree/master/package/tcping package/tcping
 svn co https://github.com/bin20088/openwrt-package/trunk/lienol/luci-app-passwall package/luci-app-passwall
 git clone https://github.com/tty228/luci-app-serverchan.git package/luci-app-serverchan
 git clone https://github.com/bin20088/luci-theme-argon-mc.git package/luci-theme-argon-mc
