@@ -164,7 +164,7 @@ jobs:
       with:
         name: R${{ env.DATE }} for N1
         allowUpdates: true
-        tag: aarch64
+        tag: N1-aarch64
         commit: master
         token: ${{ secrets.RELEASES_TOKEN }}
         body: |
