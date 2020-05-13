@@ -64,7 +64,11 @@ jobs:
         curl -fsSL https://raw.githubusercontent.com/P3TERX/dotfiles/master/.bashrc >> ~/.bashrc
 
     - name: Clone source code
-      run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
+      run: |
+        git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
+        useVersionInfo=$(git show -s --date=short --format="Author: %an<br/>date: %cd<br/>commit: %s<br/>commit hash: %H")
+        echo "::set-env name=useVersionInfo::$useVersionInfo"
+        echo "::set-env name=DATE::$(date "+%Y-%m-%d %H:%M:%S")"
 
     - name: Load custom feeds
       run: |
@@ -149,7 +153,7 @@ jobs:
         
     - name: WeChat notification
       if: steps.pushimage.outputs.status == 'success' && !cancelled()
-      run: curl https://sc.ftqq.com/${{ secrets.ServerChan }}.send?text=成功推送Docker镜像for${{ env.FILE_NAME }}
+      run: curl https://sc.ftqq.com/${{ secrets.ServerChan }}.send?text=成功推送${{ env.FILE_NAME }}镜像
         
     - name: Upload firmware directory
       uses: actions/upload-artifact@master
