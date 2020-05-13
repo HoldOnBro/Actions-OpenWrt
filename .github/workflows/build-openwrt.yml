@@ -132,6 +132,7 @@ jobs:
       if: steps.organize.outputs.status == 'success' && !cancelled()
       run: |
         cp openwrt/bin/targets/*/*/*.tar.gz ./openwrt-armvirt-64-default-rootfs.tar.gz
+        chmod +x $DOCKER_BUILD_SH
         ./$DOCKER_BUILD_SH
         gzip -dc dockerimgs/docker/*.gz | docker load
         tag minirailgun/openwrt-aarch64 minirailgun/openwrt-aarch64:R${{ env.DATE }}
