@@ -18,7 +18,7 @@ on:
     paths:
       - '.config'
   schedule:
-    - cron: 0 15 * * 6
+    - cron: 59 15 * * 6
 #  watch:
 #    types: started
 
@@ -126,18 +126,29 @@ jobs:
         rm -rf packages
         echo "::set-env name=FIRMWARE::$PWD"
         echo "::set-output name=status::success"
-        
+
     - name: Make docker image
       id: makeimage
       if: steps.organize.outputs.status == 'success' && !cancelled()
       run: |
         cp openwrt/bin/targets/*/*/*.tar.gz ./openwrt-armvirt-64-default-rootfs.tar.gz
         ./$DOCKER_BUILD_SH
+        gzip -dc dockerimgs/docker/*.gz | docker load
+        tag minirailgun/openwrt-aarch64 minirailgun/openwrt-aarch64:R${{ env.DATE }}
         cp dockerimgs/docker/*.gz openwrt/bin/targets/*/*/
-       
-    - name: WeChat notification
+        
+    - name: Push to docker hub
+      id: pushimage
+      uses: elgohr/Publish-Docker-Github-Action@master
       if: steps.makeimage.outputs.status == 'success' && !cancelled()
-      run: curl https://sc.ftqq.com/${{ secrets.ServerChan }}.send?text=${{ env.FILE_NAME }}成功生成Docker镜像
+      with:
+        name: minirailgun/openwrt-aarch64:R${{ env.DATE }}
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        
+    - name: WeChat notification
+      if: steps.pushimage.outputs.status == 'success' && !cancelled()
+      run: curl https://sc.ftqq.com/${{ secrets.ServerChan }}.send?text=${{ env.FILE_NAME }}成功推送Docker镜像
       
     - name: Upload firmware directory
       uses: actions/upload-artifact@master
