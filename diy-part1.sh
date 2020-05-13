@@ -24,17 +24,14 @@ make && sudo make install
 popd
 git clone https://github.com/rufengsuixing/luci-app-adguardhome.git package/luci-app-adguardhome
 git clone https://github.com/lisaac/luci-app-dockerman.git package/luci-app-dockerman
-git clone https://github.com/Lienol/openwrt-package.git ./lienols/openwrt-package
-mv lienols/openwrt-package/lienol/luci-theme* package/
-rm -rf lienols
-git clone https://github.com/Lienol/openwrt-package/tree/master/lienol/luci-theme-argon-dark-mod package/uci-theme-argon-dark-mod
-git clone https://github.com/Lienol/openwrt-package/tree/master/lienol/luci-theme-argon-light-mod package/uci-theme-argon-light-mod
-git clone https://github.com/Lienol/openwrt-package/tree/master/lienol/luci-theme-bootstrap-mod package/luci-theme-bootstrap-mod
-svn co https://github.com/Lienol/openwrt-package/tree/master/package/brook package/brook
-svn co https://github.com/Lienol/openwrt-package/tree/master/package/chinadns-ng package/chinadns-ng
-svn co https://github.com/Lienol/openwrt-package/tree/master/package/tcping package/tcping
-svn co https://github.com/kenzok8/openwrt-packages/tree/master/luci-app-eqos package/luci-app-eqos
-svn co https://github.com/kenzok8/openwrt-packages/tree/master/luci-app-passwall package/luci-app-passwall
+svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-theme-argon-dark-mod package/luci-theme-argon-dark-mod
+svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-theme-argon-light-mod package/luci-theme-argon-light-mod
+svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-theme-bootstrap-mod package/luci-theme-bootstrap-mod
+svn co https://github.com/Lienol/openwrt-package/trunk/package/brook package/brook
+svn co https://github.com/Lienol/openwrt-package/trunk/package/chinadns-ng package/chinadns-ng
+svn co https://github.com/Lienol/openwrt-package/trunk/package/tcping package/tcping
+svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-passwall package/luci-app-passwall
+svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-eqos package/luci-app-eqos
 git clone https://github.com/tty228/luci-app-serverchan.git package/luci-app-serverchan
 git clone https://github.com/Leo-Jo-My/luci-theme-opentomcat.git package/luci-theme-opentomcat
 git clone https://github.com/openwrt-develop/luci-theme-atmaterial.git package/luci-theme-atmaterial
