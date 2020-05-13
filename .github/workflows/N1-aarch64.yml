@@ -114,6 +114,7 @@ jobs:
         grep '^CONFIG_TARGET.*DEVICE.*=y' .config | sed -r 's/.*DEVICE_(.*)=y/\1/' > DEVICE_NAME
         [ -s DEVICE_NAME ] && echo "::set-env name=DEVICE_NAME::_$(cat DEVICE_NAME)"
         echo "::set-env name=FILE_DATE::_$(date +"%Y%m%d%H%M")"
+        echo "::set-env name=DATE_YMD::$(date +'%Y-%m-%d')"
 
     - name: Upload bin directory
       uses: actions/upload-artifact@master
@@ -139,17 +140,17 @@ jobs:
         chmod +x $DOCKER_BUILD_SH
         ./$DOCKER_BUILD_SH
         gzip -dc dockerimgs/docker/*.gz | docker load
-        tag minirailgun/openwrt-aarch64 minirailgun/openwrt-aarch64:R${{ env.DATE }}
+        tag minirailgun/openwrt-aarch64 minirailgun/openwrt-aarch64:R${{ env.DATE_YMD }}
         cp dockerimgs/docker/*.gz openwrt/bin/targets/*/*/
         echo "::set-env name=FIRMWARE::$PWD"
         echo "::set-output name=status::success"
-        
+
     - name: Push to docker hub
       id: pushimage
       uses: elgohr/Publish-Docker-Github-Action@master
       if: steps.makeimage.outputs.status == 'success' && !cancelled()
       with:
-        name: minirailgun/openwrt-aarch64:R${{ env.DATE }}
+        name: minirailgun/openwrt-aarch64:R${{ env.DATE_YMD }}
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
