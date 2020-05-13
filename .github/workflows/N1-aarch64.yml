@@ -114,7 +114,7 @@ jobs:
         grep '^CONFIG_TARGET.*DEVICE.*=y' .config | sed -r 's/.*DEVICE_(.*)=y/\1/' > DEVICE_NAME
         [ -s DEVICE_NAME ] && echo "::set-env name=DEVICE_NAME::_$(cat DEVICE_NAME)"
         echo "::set-env name=FILE_DATE::_$(date +"%Y%m%d%H%M")"
-        echo "::set-env name=DATE_YMD::$(date +"%Y-%m-%d")"
+        echo "::set-env name=DATE_YMD::$(date +"%Y%m%d")"
 
     - name: Upload bin directory
       uses: actions/upload-artifact@master
