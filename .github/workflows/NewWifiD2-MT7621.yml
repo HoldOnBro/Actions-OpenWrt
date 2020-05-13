@@ -141,9 +141,9 @@ jobs:
       id: release
       uses: ncipollo/release-action@v1
       with:
-        name: R${{ env.DATE }} for NewWifiD2
+        name: R${{ env.DATE }} for NewifiD2
         allowUpdates: true
-        tag: NewWifiD2-MT7621
+        tag: NewifiD2-MT7621
         commit: master
         token: ${{ secrets.RELEASES_TOKEN }}
         body: |
