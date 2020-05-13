@@ -24,9 +24,9 @@ make && sudo make install
 popd
 git clone https://github.com/rufengsuixing/luci-app-adguardhome.git package/luci-app-adguardhome
 git clone https://github.com/lisaac/luci-app-dockerman.git package/luci-app-dockerman
-svn co https://github.com/Lienol/openwrt-package/tree/master/lienol/luci-theme-argon-dark-mod package/uci-theme-argon-dark-mod
-svn co https://github.com/Lienol/openwrt-package/tree/master/lienol/luci-theme-argon-light-mod package/uci-theme-argon-light-mod
-svn co https://github.com/Lienol/openwrt-package/tree/master/lienol/luci-theme-bootstrap-mod package/luci-theme-bootstrap-mod
+git clone https://github.com/Lienol/openwrt-package/tree/master/lienol/luci-theme-argon-dark-mod package/uci-theme-argon-dark-mod
+git clone https://github.com/Lienol/openwrt-package/tree/master/lienol/luci-theme-argon-light-mod package/uci-theme-argon-light-mod
+git clone https://github.com/Lienol/openwrt-package/tree/master/lienol/luci-theme-bootstrap-mod package/luci-theme-bootstrap-mod
 svn co https://github.com/Lienol/openwrt-package/tree/master/package/brook package/brook
 svn co https://github.com/Lienol/openwrt-package/tree/master/package/chinadns-ng package/chinadns-ng
 svn co https://github.com/Lienol/openwrt-package/tree/master/package/tcping package/tcping
