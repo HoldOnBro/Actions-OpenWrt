@@ -141,6 +141,8 @@ jobs:
         gzip -dc dockerimgs/docker/*.gz | docker load
         tag minirailgun/openwrt-aarch64 minirailgun/openwrt-aarch64:R${{ env.DATE }}
         cp dockerimgs/docker/*.gz openwrt/bin/targets/*/*/
+        echo "::set-env name=FIRMWARE::$PWD"
+        echo "::set-output name=status::success"
         
     - name: Push to docker hub
       id: pushimage
@@ -150,9 +152,8 @@ jobs:
         name: minirailgun/openwrt-aarch64:R${{ env.DATE }}
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-        
+
     - name: WeChat notification
-      if: steps.pushimage.outputs.status == 'success' && !cancelled()
       run: curl https://sc.ftqq.com/${{ secrets.ServerChan }}.send?text=成功推送${{ env.FILE_NAME }}镜像
         
     - name: Upload firmware directory
