@@ -29,7 +29,7 @@ env:
   CONFIG_FILE: N1.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
-  DOCKER_BUILD_SH: buildImage.sh
+  DOCKER_BUILD_SH: docker/buildImage.sh
   SSH_ACTIONS: false
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
@@ -62,11 +62,6 @@ jobs:
         sudo -E apt-get -qq clean
         sudo timedatectl set-timezone "$TZ"
         curl -fsSL https://raw.githubusercontent.com/P3TERX/dotfiles/master/.bashrc >> ~/.bashrc
-
-    - name: Install pigz
-      run: |
-        sudo apt-get update -y
-        sudo apt-get install -y pigz
         
     - name: Clone source code
       run: |
