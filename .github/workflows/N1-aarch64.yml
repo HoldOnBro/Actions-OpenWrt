@@ -6,11 +6,10 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: Build OpenWrt-aarch64
+name: OpenWrt-aarch64 (N1)
 
 on:
   repository_dispatch:
-    types: [N1-aarch64]
 #  release:
 #    types: published
   push:
