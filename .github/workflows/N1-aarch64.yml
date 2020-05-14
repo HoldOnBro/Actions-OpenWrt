@@ -54,6 +54,7 @@ jobs:
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
+        ls -lh /bin/sh
         sudo swapoff /swapfile
         sudo rm -rf /swapfile /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
         sudo -E apt-get -qq update
