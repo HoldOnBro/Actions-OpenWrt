@@ -6,11 +6,10 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: Build OpenWrt-MT7621
+name: OpenWrt-MT7621 (NewifiD2)
 
 on:
   repository_dispatch:
-    types: [NewifiD2-MT7621]
 #  release:
 #    types: published
   push:
