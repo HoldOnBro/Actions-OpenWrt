@@ -10,6 +10,7 @@ name: Build OpenWrt-aarch64
 
 on:
   repository_dispatch:
+    types: [N1-aarch64]
 #  release:
 #    types: published
   push:
