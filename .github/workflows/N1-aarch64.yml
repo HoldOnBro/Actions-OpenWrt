@@ -142,7 +142,7 @@ jobs:
         chmod +x $DOCKER_BUILD_SH
         ./$DOCKER_BUILD_SH
         gzip -dc dockerimgs/docker/*.gz | docker load
-        tag minirailgun/openwrt-aarch64 minirailgun/openwrt-aarch64:R${{ env.DATE_YMD }}
+        docker tag minirailgun/openwrt-aarch64 minirailgun/openwrt-aarch64:R${{ env.DATE_YMD }}
         cp dockerimgs/docker/*.gz openwrt/bin/targets/*/*/
         echo "::set-output name=status::success"
 
