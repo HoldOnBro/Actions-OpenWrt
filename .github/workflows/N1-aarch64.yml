@@ -142,7 +142,6 @@ jobs:
         chmod +x $DOCKER_BUILD_SH
         ./$DOCKER_BUILD_SH
         gzip -dc dockerimgs/docker/*.gz | docker load
-        docker tag minirailgun/openwrt-aarch64 minirailgun/openwrt-aarch64:R${{ env.DATE_YMD }}
         cp dockerimgs/docker/*.gz openwrt/bin/targets/*/*/
         echo "::set-output name=status::success"
 
@@ -151,9 +150,10 @@ jobs:
       uses: elgohr/Publish-Docker-Github-Action@master
       if: steps.makeimage.outputs.status == 'success' && !cancelled()
       with:
-        name: minirailgun/openwrt-aarch64:R${{ env.DATE_YMD }}
+        name: minirailgun/openwrt-aarch64
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
+        tags: "latest,${{ env.DATE_YMD }}"
 
     #- name: WeChat notification
     #  run: curl https://sc.ftqq.com/${{ secrets.ServerChan }}.send?text=成功推送${{ env.FILE_NAME }}镜像
