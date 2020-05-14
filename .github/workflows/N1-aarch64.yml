@@ -19,8 +19,8 @@ on:
       - 'N1.config'
   schedule:
     - cron: 59 15 * * 6
-#  watch:
-#    types: started
+  watch:
+    types: started
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
