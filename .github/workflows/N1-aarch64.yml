@@ -147,7 +147,7 @@ jobs:
 
     - name: Push to docker hub
       id: pushimage
-      uses: elgohr/Publish-Docker-Github-Action@master
+      uses: elgohr/Publish-Docker-Github-Action@2.14
       if: steps.makeimage.outputs.status == 'success' && !cancelled()
       with:
         name: minirailgun/openwrt-aarch64
