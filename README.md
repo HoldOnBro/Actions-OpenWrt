@@ -10,7 +10,7 @@ Feel free to fork.
 
 ## Usage
 
-You need to add 4 secrets to make actions work.
+You need to add 4 secrets to make Actions work.
 
 1. The **RELEASES_TOKEN**, which should be your Github **Personal Access Token** with at least the *public_repo* checked.
 2. The **DOCKER_USERNAME** is your dockerhub username.
