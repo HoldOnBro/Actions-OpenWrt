@@ -1,11 +1,3 @@
-#=================================================
-# https://github.com/P3TERX/Actions-OpenWrt
-# Description: Build OpenWrt using GitHub Actions
-# Lisence: MIT
-# Author: P3TERX
-# Blog: https://p3terx.com
-#=================================================
-
 name: NewifiD2_MT7621
 
 on:
@@ -18,7 +10,7 @@ on:
     paths:
       - 'NewifiD2.config'
   schedule:
-    - cron: 59 15 * * *
+    - cron: 0 16 * * *
   watch:
     types: started
 
