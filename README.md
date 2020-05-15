@@ -4,7 +4,7 @@ Build OpenWrt and publish docker image using GitHub Actions
 
 Thanks to P3TERX and Bin.
 
-[P3TERX的博客](https://p3terx.com/archives/build-openwrt-with-github-actions.html)
+[P3TERX大佬的中文博客(Usage Guide)](https://p3terx.com/archives/build-openwrt-with-github-actions.html)
 
 ## Acknowledgments
 
