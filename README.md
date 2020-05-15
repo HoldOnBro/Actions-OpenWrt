@@ -2,7 +2,7 @@
 
 Build OpenWrt and publish docker image using GitHub Actions
 
-99% of the work are credit to ***P3TERX***, ***bin20088*** and ***flippy***， I just integrated them.
+Credit to ***P3TERX***, ***bin20088*** and ***flippy***，I just integrated their work.
 
 ## Usage
 
