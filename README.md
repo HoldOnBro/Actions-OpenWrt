@@ -4,9 +4,9 @@ Build OpenWrt and publish docker image using GitHub Actions
 
 Credit to ***P3TERX***, ***bin20088*** and ***flippy***，I just integrated their work.
 
-The '.config' files in this repository are for Newifi_D2 and N1 coz those are the devices I use.
+The '.config' files in this repository are for Newifi_D2 and N1 coz these are the devices I use.
 
-Feel free to fork or use [my docker repository](https://hub.docker.com/r/minirailgun/openwrt-aarch64/tags) directly, the image will be updated everyday.
+Feel free to fork or just pull [my docker image](https://hub.docker.com/r/minirailgun/openwrt-aarch64/tags) to save time,  the image will be updated everyday.
 
 ## Usage
 
