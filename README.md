@@ -14,6 +14,7 @@ You need to add 4 secrets to make actions work.
 4. The **ServerChan**(Optional) , the **SCKEY** for your serverchan account.[click here for more information](http://sc.ftqq.com/3.version)
 
 The '.config' files in this repository are for Newifi_D2 and N1 coz those are the devices I use.
+
 Feel free to fork.
 
 [P3TERX大佬写的中文教程|Usage Guide in Chinese](https://p3terx.com/archives/build-openwrt-with-github-actions.html)
