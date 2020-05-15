@@ -2,7 +2,7 @@
 
 Build OpenWrt and publish docker image using GitHub Actions
 
-Credit to ***P3TERX***, ***bin20088*** and ***flippy***，I just integrated their work.
+Credit to ***P3TERX***, ***bin20088*** and ***flippy***，this is just a combination of their work.
 
 The '\*.config' files in this repository are for Newifi_D2 and N1 coz these are the devices I use.
 
