@@ -6,7 +6,7 @@ Credit to ***P3TERX***, ***bin20088*** and ***flippy***，I just integrated thei
 
 The '.config' files in this repository are for Newifi_D2 and N1 coz those are the devices I use.
 
-Feel free to fork or use [my docker repository](https://hub.docker.com/r/minirailgun/openwrt-aarch64/tags) directly.
+Feel free to fork or use [my docker repository](https://hub.docker.com/r/minirailgun/openwrt-aarch64/tags) directly, the image will be updated everyday.
 
 ## Usage
 
