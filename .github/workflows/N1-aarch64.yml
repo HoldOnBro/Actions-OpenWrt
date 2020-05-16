@@ -21,6 +21,7 @@ env:
   CONFIG_FILE: N1.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
+  MRG_ADD_SH: N1.sh
   DOCKER_BUILD_SH: buildImage.sh
   SSH_ACTIONS: false
   UPLOAD_BIN_DIR: false
@@ -83,11 +84,11 @@ jobs:
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x $DIY_P2_SH
         chmod +x smartdns.sh
-        chmod +x N1.sh
+        chmod +x $MRG_ADD_SH
         cd openwrt
         ../$DIY_P2_SH
         ../smartdns.sh
-        ../N1.sh
+        ../$MRG_ADD_SH
 
         
 
