@@ -29,7 +29,7 @@ env:
   UPLOAD_COWTRANSFER: false
   UPLOAD_WETRANSFER: false
   TZ: Asia/Shanghai
-  FILE_NAME: N1-aarch64
+  FILE_NAME: N1-ARMv8
   DEVICE_NAME: Phicomm_N1
 jobs:
   build:
