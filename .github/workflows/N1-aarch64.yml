@@ -83,9 +83,11 @@ jobs:
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x $DIY_P2_SH
         chmod +x smartdns.sh
+        chmod +x N1.sh
         cd openwrt
         ../$DIY_P2_SH
         ../smartdns.sh
+        ../N1.sh
 
         
 
