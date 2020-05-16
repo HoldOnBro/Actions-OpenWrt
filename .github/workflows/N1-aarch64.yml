@@ -30,7 +30,7 @@ env:
   UPLOAD_WETRANSFER: false
   TZ: Asia/Shanghai
   FILE_NAME: N1-aarch64
-
+  DEVICE_NAME: N1
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -162,9 +162,9 @@ jobs:
       id: release
       uses: ncipollo/release-action@v1
       with:
-        name: R${{ env.DATE }} for N1
+        name: R${{ env.DATE }} for ${{ env.DEVICE_NAME }}
         allowUpdates: true
-        tag: N1-aarch64
+        tag: ${{ env.FILE_NAME }}
         commit: master
         token: ${{ secrets.RELEASES_TOKEN }}
         body: |
