@@ -1,4 +1,4 @@
-name: NewifiD2_MT7621
+name: NewifiD2-MT7621
 
 on:
   repository_dispatch:
