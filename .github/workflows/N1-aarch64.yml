@@ -1,4 +1,4 @@
-name: N1_ARMv8
+name: N1-ARMv8
 
 on:
   repository_dispatch:
