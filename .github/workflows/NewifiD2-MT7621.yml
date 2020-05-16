@@ -10,7 +10,7 @@ on:
     paths:
       - 'NewifiD2.config'
   schedule:
-    - cron: 5 16 * * *
+    - cron: 5 21 * * *
   #watch:
   #  types: started
 
