@@ -21,6 +21,7 @@ env:
   CONFIG_FILE: NewifiD2.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
+  MRG_ADD_SH: NewifiD2.sh
   SSH_ACTIONS: false
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
@@ -81,11 +82,11 @@ jobs:
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x $DIY_P2_SH
         chmod +x smartdns.sh
-        chmod +x NewifiD2.sh
+        chmod +x $MRG_ADD_SH
         cd openwrt
         ../$DIY_P2_SH
         ../smartdns.sh
-        ../NewifiD2.sh
+        ../$MRG_ADD_SH
 
     - name: SSH connection to Actions
       uses: P3TERX/debugger-action@master
