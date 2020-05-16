@@ -30,7 +30,7 @@ env:
   UPLOAD_WETRANSFER: false
   TZ: Asia/Shanghai
   FILE_NAME: N1-aarch64
-  DEVICE_NAME: N1
+  DEVICE_NAME: Phicomm_N1
 jobs:
   build:
     runs-on: ubuntu-latest
