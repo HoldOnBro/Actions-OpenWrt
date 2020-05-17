@@ -30,7 +30,7 @@ env:
   UPLOAD_WETRANSFER: false
   TZ: Asia/Shanghai
   FILE_NAME: N1-ARMv8
-  DEVICE_NAME: Phicomm_N1
+  PRODUCT_NAME: Phicomm_N1
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -162,7 +162,7 @@ jobs:
       id: release
       uses: ncipollo/release-action@v1
       with:
-        name: R${{ env.DATE }} for ${{ env.DEVICE_NAME }}
+        name: R${{ env.DATE }} for ${{ env.PRODUCT_NAME }}
         allowUpdates: true
         tag: ${{ env.FILE_NAME }}
         commit: master
