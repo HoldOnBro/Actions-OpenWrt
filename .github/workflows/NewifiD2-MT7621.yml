@@ -29,7 +29,7 @@ env:
   UPLOAD_WETRANSFER: false
   TZ: Asia/Shanghai
   FILE_NAME: NewifiD2-MT7621
-  DEVICE_NAME: NewifiD2
+  PRODUCT_NAME: NewifiD2
 
 jobs:
   build:
@@ -140,7 +140,7 @@ jobs:
       id: release
       uses: ncipollo/release-action@v1
       with:
-        name: R${{ env.DATE }} for ${{ env.DEVICE_NAME }}
+        name: R${{ env.DATE }} for ${{ env.PRODUCT_NAME }}
         allowUpdates: true
         tag: ${{ env.FILE_NAME }}
         commit: master
