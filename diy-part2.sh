@@ -14,7 +14,7 @@
 rm -rf package/lean/luci-app-dockerman
 #添加额外软件包
 git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
-git clone https://github.com/vernesong/OpenClash.git
+git clone -b master https://github.com/vernesong/OpenClash.git
 mv OpenClash/luci-app-openclash/ package/
 pushd package/luci-app-openclash/tools/po2lmo
 make && sudo make install
