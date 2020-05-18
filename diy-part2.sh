@@ -15,18 +15,12 @@ rm -rf package/lean/luci-app-dockerman
 #添加额外软件包
 git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 # Clone OpenClash
-mkdir package/luci-app-openclash
-cd package/luci-app-openclash
-git init
-git remote add -f origin https://github.com/vernesong/OpenClash.git
-git config core.sparsecheckout true
-echo "luci-app-openclash" >> .git/info/sparse-checkout
-git pull origin master
-git branch --set-upstream-to=origin/master master
-cd ..
+git clone -b master https://github.com/vernesong/OpenClash.git
+mv OpenClash/luci-app-openclash/ package/
+rm -rf OpenClash
 
 # 编译 po2lmo (如果有po2lmo可跳过)
-pushd package/luci-app-openclash/luci-app-openclash/tools/po2lmo
+pushd package/luci-app-openclash/tools/po2lmo
 make && sudo make install
 popd
 
