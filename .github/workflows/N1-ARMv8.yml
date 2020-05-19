@@ -10,7 +10,7 @@ on:
     paths:
       - 'N1.config'
   schedule:
-    - cron: 0 21 * * *
+    - cron: 0 16 * * *
   #watch:
   #  types: started
 
