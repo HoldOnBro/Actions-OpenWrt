@@ -10,7 +10,7 @@ on:
     paths:
       - 'x86_64.config'
   schedule:
-    - cron: 15 21 * * *
+    - cron: 0 17 * * *
   #watch:
   #  types: started
 
