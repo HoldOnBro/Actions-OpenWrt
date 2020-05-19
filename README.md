@@ -24,6 +24,8 @@ You need to add 4(at least 3) secrets to make Actions work.
 
 If NetData doesn't work right,
 
+Take N1 as an example,
+
 SSH into container and run command :``chown -R root:root /usr/share/netdata/``
 
 then refresh the ``IP:19999``, it should be working properly.
