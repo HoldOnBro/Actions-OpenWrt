@@ -10,7 +10,7 @@ on:
     paths:
       - 'GDock.config'
   schedule:
-    - cron: 10 21 * * *
+    - cron: 0 16 * * *
   #watch:
   #  types: started
 
