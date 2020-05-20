@@ -35,6 +35,8 @@ You need to add 4(at least 3) secrets to make Actions work.
 
 ### IP and Password
   Default IPs for those devices can be found in bash scripts (``DEVICE_NAME.sh``) associated with them.
+  
+  Password by default is ``password``.
 
 ## Acknowledgments
 
