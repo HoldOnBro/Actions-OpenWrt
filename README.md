@@ -20,17 +20,21 @@ You need to add 4(at least 3) secrets to make Actions work.
 [P3TERX大佬写的中文教程|Usage Guide in Chinese](https://p3terx.com/archives/build-openwrt-with-github-actions.html)
 
 
-## Some hints
+## Some Hints
 
-If NetData doesn't work right,
+### NetData
+  If NetData doesn't work right,
 
-Take N1 as an example,
+  Take N1 as an example,
 
-SSH into container and run command :``chown -R root:root /usr/share/netdata/``
+  SSH into container and run command :``chown -R root:root /usr/share/netdata/``
 
-then refresh the ``IP:19999``, it should be working properly.
+  then refresh the ``IP:19999``, it should be working properly.
 
-BTW, the ``IP`` is ``192.168.123.10`` by default.
+  BTW, the ``IP`` is ``192.168.123.10`` by default.
+
+### IP and Password
+  Default IPs for those devices can be found in bash scripts (``DEVICE_NAME.sh``) associated with them.
 
 ## Acknowledgments
 
