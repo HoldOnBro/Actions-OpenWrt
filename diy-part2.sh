@@ -44,5 +44,14 @@ svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus package/luci-
 #赋予koolddns权限
 chmod 0755 package/luci-app-koolddns/root/etc/init.d/koolddns
 chmod 0755 package/luci-app-koolddns/root/usr/share/koolddns/aliddns
+
+#添加subconverter
+git clone https://github.com/tindy2013/openwrt-subconverter package/
+git clone https://github.com/tindy2013/openwrt-subconverter.git package/open-subconverter
+mv package/open-subconverter/rapidjson package/
+mv package/open-subconverter/subconverter/ package/
+rm -rf package/open-subconverter
+#添加subweb
+svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/subweb package/subweb
 ./scripts/feeds update -a
 ./scripts/feeds install -a
