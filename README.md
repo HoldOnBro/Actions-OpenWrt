@@ -31,8 +31,6 @@ You need to add 4(at least 3) secrets to make Actions work.
 
   then refresh the ``IP:19999``, it should be working properly.
 
-  BTW, the ``IP`` is ``192.168.123.10`` by default.
-
 ### IP and Password
   Default IPs for those devices can be found in bash scripts (``DEVICE_NAME.sh``) associated with them.
   
