@@ -37,6 +37,15 @@ You need to add 4(at least 3) secrets to make Actions work.
   Default IPs for those devices can be found in bash scripts (``DEVICE_NAME.sh``) associated with them.
   
   Password by default is ``password``.
+  
+### Newifi_D2
+  There are two versions' firmware for Newifi_D2, the normal version has full ssr-plus(equipped with TUN) and unblocknetease(with NodeJS) just like other guys' versions.
+  
+  The lite version, actually, I dunno if it's 'lite' or not, but it lacks TUN and NodeJS. Instead, it has transmission and samba4.
+  
+  The one and only reason for making two versions for Newifi_D2 is it has such a tiny flash memory.
+  
+  Just choose the one suits your need.
 
 ## Acknowledgments
 
