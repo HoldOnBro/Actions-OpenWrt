@@ -44,6 +44,8 @@ You need to add 4(at least 3) secrets to make Actions work.
   The one and only reason for making two versions for Newifi_D2 is it has such a tiny flash memory.
   
   Just choose the one suits your need.
+  
+  BTW, if you encounter any hardware instability problems like auto-reboot for no reason, having no access to Internet, ``TURN OFF`` the HWNAT under ``network->hwacc``. Refer to [1](https://github.com/coolsnowwolf/lede/issues/4531), [2](https://github.com/openwrt/openwrt/pull/1916) for more details. Good news is, you can now use QOS or OpenAppFilter since there's no need to struggle to decide whether to turn on the HWNAT :p, or just use the [PandoraBox firmware](http://downloads.pangubox.com:6380/).
 
 ## Acknowledgments
 
