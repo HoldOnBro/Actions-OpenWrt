@@ -51,9 +51,7 @@ You need to add 4(at least 3) secrets to make Actions work.
   
   Refer to [1](https://github.com/coolsnowwolf/lede/issues/4531), [2](https://github.com/openwrt/openwrt/pull/1916) for more details. 
   
-  Good news is, you can now use QOS or OpenAppFilter since there's no need to struggle to decide whether to turn on the HWNAT :p.
-  
-  Or use the [PandoraBox](http://downloads.pangubox.com:6380/), it has no **HWNAT** issues.
+  Or you can use the [PandoraBox](http://downloads.pangubox.com:6380/), it has no **HWNAT** issues.
 
 ## Acknowledgments
 
