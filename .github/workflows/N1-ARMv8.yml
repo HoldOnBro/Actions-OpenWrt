@@ -135,8 +135,8 @@ jobs:
       id: docker
       if: steps.organize.outputs.status == 'success' && !cancelled()
       run: |
-        cp openwrt/bin/targets/*/*/*.tar.gz docker/openwrt-armvirt-64-default-rootfs.tar.gz
-        cd docker
+        cp openwrt/bin/targets/*/*/*.tar.gz $GITHUB_WORKSPACE/docker/openwrt-armvirt-64-default-rootfs.tar.gz
+        cd $GITHUB_WORKSPACE/docker
         chmod +x $DOCKER_BUILD_SH
         ./$DOCKER_BUILD_SH
         gzip -dc dockerimgs/docker/*.gz | docker load
