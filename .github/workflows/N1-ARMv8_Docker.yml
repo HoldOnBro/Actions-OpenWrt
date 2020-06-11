@@ -1,4 +1,4 @@
-name: N1-ARMv8
+name: N1-ARMv8_Docker
 
 on:
   repository_dispatch:
