@@ -8,7 +8,7 @@ on:
     branches:
       - master
     paths:
-      - 'N1.config'
+      - 'N1D.config'
   schedule:
     - cron: 0 16 * * *
   #watch:
@@ -18,7 +18,7 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: N1.config
+  CONFIG_FILE: N1D.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   MRG_ADD_SH: N1.sh
@@ -29,7 +29,7 @@ env:
   UPLOAD_COWTRANSFER: true
   UPLOAD_WETRANSFER: false
   TZ: Asia/Shanghai
-  FILE_NAME: N1-ARMv8
+  FILE_NAME: N1-ARMv8_Docker
   PRODUCT_NAME: Phicomm_N1
 jobs:
   build:
@@ -131,20 +131,19 @@ jobs:
         echo "::set-env name=FIRMWARE::$PWD"
         echo "::set-output name=status::success"
 
-
-    #- name: Build and push docker image
-    #  id: docker
-    #  if: steps.organize.outputs.status == 'success' && !cancelled()
-    #  run: |
-    #    cp openwrt/bin/targets/*/*/*.tar.gz $GITHUB_WORKSPACE/docker/openwrt-armvirt-64-default-rootfs.tar.gz
-    #    cd $GITHUB_WORKSPACE/docker
-    #    chmod +x $DOCKER_BUILD_SH
-    #    ./$DOCKER_BUILD_SH
-    #    gzip -dc dockerimgs/docker/*.gz | docker load
-    #   docker login --username=${{ secrets.DOCKER_USERNAME }} --password=${{ secrets.DOCKER_PASSWORD }}
-    #    docker tag minirailgun/openwrt-aarch64 minirailgun/openwrt-aarch64:R${{ env.DATE_YMD }}
-    #    docker push minirailgun/openwrt-aarch64
-    #    echo "::set-output name=status::success"
+    - name: Build and push docker image
+      id: docker
+      if: steps.organize.outputs.status == 'success' && !cancelled()
+      run: |
+        cp openwrt/bin/targets/*/*/*.tar.gz $GITHUB_WORKSPACE/docker/openwrt-armvirt-64-default-rootfs.tar.gz
+        cd $GITHUB_WORKSPACE/docker
+        chmod +x $DOCKER_BUILD_SH
+        ./$DOCKER_BUILD_SH
+        gzip -dc dockerimgs/docker/*.gz | docker load
+        docker login --username=${{ secrets.DOCKER_USERNAME }} --password=${{ secrets.DOCKER_PASSWORD }}
+        docker tag minirailgun/openwrt-aarch64 minirailgun/openwrt-aarch64:R${{ env.DATE_YMD }}
+        docker push minirailgun/openwrt-aarch64
+        echo "::set-output name=status::success"
 
     #- name: WeChat notification
     #  if: steps.docker.outputs.status == 'success' && !cancelled()
