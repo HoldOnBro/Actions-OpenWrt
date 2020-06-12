@@ -23,7 +23,7 @@ You need to add 4(at least 3) secrets to make Actions work.
 ## Some Hints
 
 ### NetData
-  If NetData doesn't work right,
+  If NetData doesn't work correctly,
 
   Take N1 as an example,
 
