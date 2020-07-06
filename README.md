@@ -49,13 +49,13 @@ You need to add 4(at least 3) secrets to make Actions work.
   
   Just choose the one suits your need.
   
-  BTW, if you encounter any hardware instability problems like auto-reboot for no reason, having no access to Internet,
+~~BTW, if you encounter any hardware instability problems like auto-reboot for no reason, having no access to Internet,~~
   
-  **TURN OFF** the **HWNAT** under ``network->hwacc``. 
+  ~~**TURN OFF** the **HWNAT** under ``network->hwacc``. ~~
   
-  Refer to [1](https://github.com/coolsnowwolf/lede/issues/4531), [2](https://github.com/openwrt/openwrt/pull/1916) for more details. 
+  ~~Refer to [1](https://github.com/coolsnowwolf/lede/issues/4531), [2](https://github.com/openwrt/openwrt/pull/1916) for more details. ~~
   
-  Or you can use the [PandoraBox](http://downloads.pangubox.com:6380/), it has **NO** HWNAT issues.
+  ~~Or you can use the [PandoraBox](http://downloads.pangubox.com:6380/), it has **NO** HWNAT issues.~~
 
 ## Acknowledgments
 
