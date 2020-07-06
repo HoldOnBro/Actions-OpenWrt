@@ -39,7 +39,7 @@ You need to add 4(at least 3) secrets to make Actions work.
 ### Newifi_D2
   There are three firmwares for Newifi_D2.
   
-  1. **Basic Version**: Basic version has full ssr-plus(equipped with **TUN**) and unblocknetease(with **NodeJS**) just like other guys' versions.
+  1. **Basic Version**: Basic version has ipv6 support, full ssr-plus(equipped with **TUN**) and unblocknetease(with **NodeJS**) just like other guys' versions.
   
   2. **Normal Version**: It contains all functions **Basic Version** have and syncdial.
   
