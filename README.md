@@ -38,7 +38,9 @@ You need to add 4(at least 3) secrets to make Actions work.
   
 ### Newifi_D2
   There are three firmwares for Newifi_D2, the basic version has full ssr-plus(equipped with **TUN**) and unblocknetease(with **NodeJS**) just like other guys' versions.
+  
   That without suffix contains basic + syncdial.
+  
   The lite version is based on the no-suffix version and lacks TUN and NodeJS. Instead, it has **transmission** and **samba4**.
   
   The one and only reason for making two versions for Newifi_D2 is it has such a tiny flash memory.
