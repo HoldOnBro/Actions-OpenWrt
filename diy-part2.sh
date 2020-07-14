@@ -32,6 +32,7 @@ svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-theme-bootstr
 svn co https://github.com/Lienol/openwrt-package/trunk/package/brook package/brook
 svn co https://github.com/Lienol/openwrt-package/trunk/package/chinadns-ng package/chinadns-ng
 svn co https://github.com/Lienol/openwrt-package/trunk/package/tcping package/tcping
+svn co https://github.com/Lienol/openwrt-package/trunk/package/trojan-go package/trojan-go
 svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-app-filebrowser package/luci-app-filebrowser
 #svn co https://github.com/esirplayground/Lienol-obsolete/trunk/luci-app-passwall package/luci-app-passwall
 svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-app-passwall package/luci-app-passwall
