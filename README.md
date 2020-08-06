@@ -37,7 +37,7 @@ You need to add 4(at least 3) secrets to make Actions work.
   Password by default is ``password``.
   
 ### Newifi_D2
-  There are three firmwares for Newifi_D2.
+  There are three versions for Newifi_D2.
   
   1. **Basic Version**: Basic version has ipv6 support, full ssr-plus(equipped with **TUN**) and unblocknetease(with **NodeJS**) just like other guys' versions.
   
