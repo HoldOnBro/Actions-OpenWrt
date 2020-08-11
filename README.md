@@ -43,7 +43,7 @@ You need to add 4(at least 3) secrets to make Actions work.
   
   2. **Normal Version**: It contains all functions **Basic Version** have and syncdial.
   
-  3. **Lite Version**: Lite version is based on the **Normal Version** but lacks TUN and NodeJS, Instead, it has **transmission** and **samba4**.
+  3. **Lite Version**: Lite version is based on the **Normal Version** but lacks jd-daily-bonus, TUN and NodeJS, Instead, it has **transmission** and **samba4**.
   
   The one and only reason for making two versions for Newifi_D2 is it has such a tiny flash memory.
   
