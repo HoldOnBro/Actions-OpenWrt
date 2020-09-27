@@ -23,7 +23,7 @@ env:
   DIY_P2_SH: diy-part2.sh
   MRG_ADD_SH: N1.sh
   DOCKER_BUILD_SH: buildImage.sh
-  SSH_ACTIONS: false
+#   SSH_ACTIONS: false
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: true
@@ -90,9 +90,9 @@ jobs:
         $GITHUB_WORKSPACE/$DIY_P2_SH
         $GITHUB_WORKSPACE/$MRG_ADD_SH
 
-    - name: SSH connection to Actions
-      uses: P3TERX/debugger-action@master
-      if: env.SSH_ACTIONS == 'true' || contains(github.event.action, 'ssh')
+#     - name: SSH connection to Actions
+#       uses: P3TERX/debugger-action@master
+#       if: env.SSH_ACTIONS == 'true' || contains(github.event.action, 'ssh')
 
     - name: Download package
       id: package
