@@ -28,9 +28,6 @@ git clone https://github.com/jerrykuku/node-request.git package/node-request
 git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git package/luci-app-jd-dailybonus
 git clone https://github.com/rufengsuixing/luci-app-adguardhome.git package/luci-app-adguardhome
 git clone https://github.com/lisaac/luci-app-dockerman.git package/luci-app-dockerman
-svn co https://github.com/xiaorouji/openwrt-package/trunk/lienol/luci-theme-argon-dark-mod package/luci-theme-argon-dark-mod
-svn co https://github.com/xiaorouji/openwrt-package/trunk/lienol/luci-theme-argon-light-mod package/luci-theme-argon-light-mod
-svn co https://github.com/xiaorouji/openwrt-package/trunk/lienol/luci-theme-bootstrap-mod package/luci-theme-bootstrap-mod
 svn co https://github.com/xiaorouji/openwrt-package/trunk/package/brook package/brook
 svn co https://github.com/xiaorouji/openwrt-package/trunk/package/chinadns-ng package/chinadns-ng
 svn co https://github.com/xiaorouji/openwrt-package/trunk/package/ssocks package/ssocks
