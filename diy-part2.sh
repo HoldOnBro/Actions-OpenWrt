@@ -33,6 +33,7 @@ svn co https://github.com/xiaorouji/openwrt-package/trunk/lienol/luci-theme-argo
 svn co https://github.com/xiaorouji/openwrt-package/trunk/lienol/luci-theme-bootstrap-mod package/luci-theme-bootstrap-mod
 svn co https://github.com/xiaorouji/openwrt-package/trunk/package/brook package/brook
 svn co https://github.com/xiaorouji/openwrt-package/trunk/package/chinadns-ng package/chinadns-ng
+svn co https://github.com/xiaorouji/openwrt-package/trunk/package/ssocks package/ssocks
 svn co https://github.com/xiaorouji/openwrt-package/trunk/package/tcping package/tcping
 svn co https://github.com/xiaorouji/openwrt-package/trunk/package/trojan-go package/trojan-go
 svn co https://github.com/xiaorouji/openwrt-package/trunk/package/trojan-plus package/trojan-plus
@@ -46,6 +47,7 @@ git clone https://github.com/Leo-Jo-My/luci-theme-opentomcat.git package/luci-th
 git clone https://github.com/openwrt-develop/luci-theme-atmaterial.git package/luci-theme-atmaterial
 git clone https://github.com/xrouterservice/luci-app-koolddns.git package/luci-app-koolddns
 svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus package/luci-app-ssr-plus
+svn co https://github.com/fw876/helloworld/trunk/naiveproxy package/naiveproxy
 #赋予koolddns权限
 chmod 0755 package/luci-app-koolddns/root/etc/init.d/koolddns
 chmod 0755 package/luci-app-koolddns/root/usr/share/koolddns/aliddns
