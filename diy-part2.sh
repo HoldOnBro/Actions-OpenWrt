@@ -24,7 +24,6 @@ pushd package/luci-app-openclash/tools/po2lmo
 make && sudo make install
 popd
 
-git clone https://github.com/jerrykuku/node-request.git package/node-request
 git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git package/luci-app-jd-dailybonus
 git clone https://github.com/rufengsuixing/luci-app-adguardhome.git package/luci-app-adguardhome
 git clone https://github.com/lisaac/luci-app-dockerman.git package/luci-app-dockerman
