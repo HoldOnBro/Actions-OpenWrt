@@ -125,6 +125,7 @@ jobs:
       id: organize
       if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
       run: |
+        cp openwrt/bin/packages/x86_64/packages/open-vm*.ipk openwrt/bin/targets/*/*
         tar -zcvf AllPackages.tar.gz openwrt/bin/packages
         mv AllPackages.tar.gz openwrt/bin/targets/*/*
         cd openwrt/bin/targets/*/*
