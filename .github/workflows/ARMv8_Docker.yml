@@ -134,8 +134,9 @@ jobs:
         cd openwrt/bin/targets/*/*
         rm -rf packages
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
-#        echo "::set-env name=FIRMWARE::$PWD"
         echo "::set-output name=status::success"
+#        echo "::set-env name=FIRMWARE::$PWD"
+
 
     - name: Build and push docker image
       id: docker
