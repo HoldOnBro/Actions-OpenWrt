@@ -8,7 +8,7 @@ on:
     branches:
       - master
     paths:
-      - 'GDock.config'
+      - 'GDock/GDock.config'
   schedule:
     - cron: 0 16 * * *
   watch:
@@ -18,10 +18,10 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: GDock.config
+  CONFIG_FILE: GDock/GDock.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
-  MRG_ADD_SH: GDock.sh
+  MRG_ADD_SH: GDock/GDock.sh
   #SSH_ACTIONS: false
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true

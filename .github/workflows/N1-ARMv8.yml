@@ -8,7 +8,7 @@ on:
     branches:
       - master
     paths:
-      - 'N1.config'
+      - 'aarch64/N1.config'
   schedule:
     - cron: 0 16 * * *
   watch:
@@ -18,10 +18,10 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: N1.config
+  CONFIG_FILE: aarch64/N1.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
-  MRG_ADD_SH: N1.sh
+  MRG_ADD_SH: aarch64/N1.sh
   DOCKER_BUILD_SH: buildImage.sh
 #   SSH_ACTIONS: false
   UPLOAD_BIN_DIR: false
