@@ -1,4 +1,4 @@
-name: N1-ARMv8_Docker
+name: ARMv8_Docker
 
 on:
   repository_dispatch:
@@ -8,7 +8,7 @@ on:
     branches:
       - master
     paths:
-      - 'aarch64/N1D.config'
+      - 'aarch64/ARMv8_Docker.config'
   schedule:
     - cron: 0 16 * * *
   watch:
@@ -18,10 +18,10 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: aarch64/N1D.config
+  CONFIG_FILE: aarch64/ARMv8_Docker.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
-  MRG_ADD_SH: aarch64/N1.sh
+  MRG_ADD_SH: aarch64/ARMv8.sh
   DOCKER_BUILD_SH: buildImage.sh
 #   SSH_ACTIONS: false
   UPLOAD_BIN_DIR: false
@@ -29,8 +29,8 @@ env:
   UPLOAD_COWTRANSFER: false
   UPLOAD_WETRANSFER: false
   TZ: Asia/Shanghai
-  FILE_NAME: N1-ARMv8_Docker
-  PRODUCT_NAME: Phicomm_N1
+  FILE_NAME: ARMv8
+  PRODUCT_NAME: ARMv8_Docker
 jobs:
   build:
     runs-on: ubuntu-18.04
@@ -89,7 +89,7 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
         $GITHUB_WORKSPACE/$MRG_ADD_SH
-        sed -i 's/OpenWrt/MRG AutoBuild ${{ env.DATE }} @ OpenWrt/g' openwrt/package/lean/default-settings/files/zzz-default-settings
+        sed -i 's/OpenWrt/MRG AutoBuild ${{ env.DATE }} @ OpenWrt/g' package/lean/default-settings/files/zzz-default-settings
         
 #     - name: SSH connection to Actions
 #       uses: P3TERX/debugger-action@master
