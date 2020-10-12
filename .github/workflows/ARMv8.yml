@@ -123,11 +123,14 @@ jobs:
       if: steps.compile.outputs.status == 'success' && !cancelled()
       run: |
         cd /opt
-        sudo wget -r -np -nd -A.tar.gz -A.img.xz http://mrgpandorav4.dynv6.net:8123/h5ai/Server/
+        sudo wget https://github.com/HoldOnBro/Actions-OpenWrt/releases/download/Files4Compile/mk_openwrt_src_20201008.tar.gz
         sudo tar xvzf *.tar.gz
         sudo mkdir imgs
+        sudo wget https://github.com/HoldOnBro/Actions-OpenWrt/releases/download/Files4Compile/Armbian_20.09_Aml-s9xxx_buster_5.4.69-flippy-45+o.img.xz
         xz -d Armbian*Aml*
+        sudo wget https://github.com/HoldOnBro/Actions-OpenWrt/releases/download/Files4Compile/Armbian_20.09_Beikeyun_buster_5.4.69-flippy-45+o.img.xz
         xz -d Armbian*Beike*
+        sudo wget https://github.com/HoldOnBro/Actions-OpenWrt/releases/download/Files4Compile/Armbian_20.09_L1-Pro_buster_5.4.69-flippy-45+o.img.xz
         xz -d Armbian*L1*
         sudo mv *.img imgs
         sudo cp /workdir/openwrt/bin/targets/armvirt/64/openwrt-armvirt-64-default-rootfs.tar.gz /opt/openwrt
