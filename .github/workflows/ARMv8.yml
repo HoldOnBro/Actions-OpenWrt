@@ -123,9 +123,12 @@ jobs:
       if: steps.compile.outputs.status == 'success' && !cancelled()
       run: |
         cd /opt
-        sudo wget -r -np -nd -A.tar.gz -A.img http://mrgpandorav4.dynv6.net:8123/h5ai/Server/
+        sudo wget -r -np -nd -A.tar.gz -A.img.xz http://mrgpandorav4.dynv6.net:8123/h5ai/Server/
         sudo tar xvzf *.tar.gz
         sudo mkdir imgs
+        xz -d Armbian*Aml*
+        xz -d Armbian*Beike*
+        xz -d Armbian*L1*
         sudo mv *.img imgs
         sudo cp /workdir/openwrt/bin/targets/armvirt/64/openwrt-armvirt-64-default-rootfs.tar.gz /opt/openwrt
         cd /opt/openwrt
