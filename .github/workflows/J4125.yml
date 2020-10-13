@@ -88,10 +88,10 @@ jobs:
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x $DIY_P2_SH
         chmod +x $MRG_ADD_SH
+        mv x86_64/r8125-mod openwrt/package
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
         $GITHUB_WORKSPACE/$MRG_ADD_SH
-        mv x86_64/r8125-mod openwrt/package
         sed -i 's/OpenWrt/MRG AutoBuild ${{ env.DATE }} @ OpenWrt/g' package/lean/default-settings/files/zzz-default-settings
         
 #     - name: SSH connection to Actions
