@@ -25,7 +25,7 @@ env:
   DOCKER_BUILD_SH: buildImage.sh
 #   SSH_ACTIONS: false
   UPLOAD_BIN_DIR: false
-  UPLOAD_FIRMWARE: true
+  UPLOAD_FIRMWARE: false
   UPLOAD_COWTRANSFER: false
   UPLOAD_WETRANSFER: false
   TZ: Asia/Shanghai
@@ -144,7 +144,7 @@ jobs:
 
     - name: Organize files
       id: organize
-      if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
+      if: steps.build.outputs.status == 'success' && !cancelled()
       run: |
         sudo cp /opt/openwrt/tmp/*.img /workdir/openwrt/bin/targets/armvirt/64
         cd /workdir/
@@ -165,7 +165,7 @@ jobs:
 
     - name: Upload firmware directory
       uses: actions/upload-artifact@master
-      if: steps.organize.outputs.status == 'success' && !cancelled()
+      if: env.UPLOAD_FIRMWARE == 'true' && steps.organize.outputs.status == 'success' && !cancelled()
       with:
         name: OpenWrt_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
         path: ${{ env.FIRMWARE }}
