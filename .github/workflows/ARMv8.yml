@@ -22,6 +22,7 @@ env:
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   MRG_ADD_SH: aarch64/ARMv8.sh
+  Update_Ver_SH: aarch64/autoVersion.sh
   DOCKER_BUILD_SH: buildImage.sh
 #   SSH_ACTIONS: false
   UPLOAD_BIN_DIR: false
@@ -134,6 +135,8 @@ jobs:
         sudo mv *.img imgs
         sudo cp /workdir/openwrt/bin/targets/armvirt/64/openwrt-armvirt-64-default-rootfs.tar.gz /opt/openwrt
         cd /opt/openwrt
+        chmod +x $GITHUB_WORKSPACE/$Update_Ver_SH
+        sudo $GITHUB_WORKSPACE/$Update_Ver_SH
         sudo ./mk_s905x3_opimg.sh
         sudo ./mk_n1_opimg.sh
         sudo ./mk_beikeyun_opimg.sh
@@ -145,8 +148,8 @@ jobs:
       id: organize
       if: steps.build.outputs.status == 'success' && !cancelled()
       run: |
-        sudo cp /opt/openwrt/tmp/*.img /workdir/openwrt/bin/targets/armvirt/64
-        cd /workdir/
+        sudo cp /opt/openwrt/tmp/*.img $GITHUB_WORKSPACE/openwrt/bin/targets/armvirt/64
+        cd $GITHUB_WORKSPACE
         tar -zcvf AllPackages.tar.gz openwrt/bin/packages
         cp AllPackages.tar.gz openwrt/bin/targets/*/*
         cd openwrt/bin/targets/*/*
