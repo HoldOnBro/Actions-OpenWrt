@@ -4,7 +4,7 @@ Build OpenWrt and publish docker image using GitHub Actions
 
 Credit to ***P3TERX***, ***bin20088*** and ***flippy***，this is just a combination of their work.
 
-The '\*.config' files in this repository are for N1, Newifi_D2 and G-Dock coz these are the devices I have.
+The firmwares released are for S9xxx devices, Newifi_D2, G-Dock, amd64 and the J4125 with rtl8125 ethernet device.
 
 Feel free to [fork](https://github.com/HoldOnBro/Actions-OpenWrt/generate) or just pull [my docker image](https://hub.docker.com/r/minirailgun/openwrt-aarch64/tags) to save time, it will be updated everyday.
 
@@ -15,7 +15,7 @@ You need to add 4(at least 3) secrets to make Actions work.
 1. **RELEASES_TOKEN**, which should be your Github **Personal Access Token** with at least the *public_repo* checked.
 2. **DOCKER_USERNAME** is your dockerhub username.
 3. **DOCKER_PASSWORD**, which is actually not the password for your dockerhub account but the **Access Token** generated from dockerhub Account Settings.
-4. **ServerChan**(Optional, but remember to comment out relational code in ymls) , the **SCKEY** for your serverchan account. [click here for more information](http://sc.ftqq.com/3.version)
+4. **ServerChan**(Optional, but remember to comment out relational action in ymls) , the **SCKEY** for your serverchan account. [click here for more information](http://sc.ftqq.com/3.version)
 
 [P3TERX大佬写的中文教程|Usage Guide in Chinese](https://p3terx.com/archives/build-openwrt-with-github-actions.html)
 
