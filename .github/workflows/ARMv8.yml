@@ -141,9 +141,9 @@ jobs:
         sudo ./mk_n1_opimg.sh
         sudo ./mk_beikeyun_opimg.sh
         sudo ./mk_l1pro_opimg.sh
-        cp ./openwrt-armvirt-64-default-rootfs.tar.gz ./sfe-openwrt-armvirt-64-default-rootfs.tar.gz
+        mv ./openwrt-armvirt-64-default-rootfs.tar.gz ./sfe-openwrt-armvirt-64-default-rootfs.tar.gz
         sudo ./mk_s905x3_opimg_sfe.sh
-        cp ./sfe-openwrt-armvirt-64-default-rootfs.tar.gz ./openwrt-armvirt-64-default-rootfs.tar.gz
+        mv ./sfe-openwrt-armvirt-64-default-rootfs.tar.gz ./openwrt-armvirt-64-default-rootfs.tar.gz
         sudo ./n1-to-vplus.sh
         echo "::set-output name=status::success"
 
