@@ -129,7 +129,7 @@ jobs:
         sudo mkdir imgs
         sudo wget https://github.com/HoldOnBro/Actions-OpenWrt/releases/download/Files4Compile/Armbian_20.10_Aml-s9xxx_buster_5.8.16-flippy-46+.img.xz
         sudo xz -d Armbian*Aml*
-        sudo wget https://github.com/HoldOnBro/Actions-OpenWrt/releases/download/Files4Compile/Armbian_20.10_Aml-s9xxx_buster_5.4.72-flippy-46+o.img.xz.
+        sudo wget https://github.com/HoldOnBro/Actions-OpenWrt/releases/download/Files4Compile/Armbian_20.10_Aml-s9xxx_buster_5.4.72-flippy-46+o.img.xz
         sudo xz -d Armbian*Aml*\+o*
         sudo wget https://github.com/HoldOnBro/Actions-OpenWrt/releases/download/Files4Compile/Armbian_20.10_Beikeyun_buster_5.4.72-flippy-46+o.img.xz
         sudo xz -d Armbian*Beike*
