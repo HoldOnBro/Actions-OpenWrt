@@ -39,11 +39,11 @@ You need to add 4(at least 3) secrets to make Actions work.
 ### aarch64
   There are two types of ACC for this arch.
   
-  Those named as 'S-*' are SFE type, they are faster but not fully tested, may have some instability issues.
+  Those named as ``S-*`` are SFE type, they are faster but not fully tested, may have some instability issues.
   
-  And the other ones named as'F-*' are flowoffload type, stable but a little bit slower.
+  And the other ones named as ``F-*`` are flowoffload type, stable but a little bit slower.
   
-  Choose 'S-*' type if you feel adventurous or use the 'F-*' one for convenience.
+  Choose ``S-*`` type if you feel adventurous or use the ``F-*`` one for convenience.
 
 ### Newifi_D2
   There are three versions for Newifi_D2.
