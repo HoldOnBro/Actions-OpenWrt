@@ -1,4 +1,4 @@
-name: ARMv8
+name: ARMv8_FOL
 
 on:
   repository_dispatch:
@@ -8,7 +8,7 @@ on:
     branches:
       - master
     paths:
-      - 'aarch64/ARMv8.config'
+      - 'aarch64/ARMv8_FOL.config'
   schedule:
     - cron: 0 16 * * *
   watch:
@@ -18,7 +18,7 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: aarch64/ARMv8.config
+  CONFIG_FILE: aarch64/ARMv8_FOL.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   MRG_ADD_SH: aarch64/ARMv8.sh
@@ -31,7 +31,7 @@ env:
   UPLOAD_WETRANSFER: false
   TZ: Asia/Shanghai
   FILE_NAME: ARMv8
-  PRODUCT_NAME: ARMv8
+  PRODUCT_NAME: ARMv8_FOL
 jobs:
   build:
     runs-on: ubuntu-18.04
@@ -127,8 +127,6 @@ jobs:
         sudo wget https://github.com/HoldOnBro/Actions-OpenWrt/releases/download/Files4Compile/mk_openwrt_src_20201018.tar.gz
         sudo tar xvzf *.tar.gz
         sudo mkdir imgs
-        sudo wget https://github.com/HoldOnBro/Actions-OpenWrt/releases/download/Files4Compile/Armbian_20.10_Aml-s9xxx_buster_5.8.16-flippy-46+.img.xz
-        sudo xz -d Armbian*Aml*
         sudo wget https://github.com/HoldOnBro/Actions-OpenWrt/releases/download/Files4Compile/Armbian_20.10_Aml-s9xxx_buster_5.4.72-flippy-46+o.img.xz
         sudo xz -d Armbian*Aml*\+o*
         sudo wget https://github.com/HoldOnBro/Actions-OpenWrt/releases/download/Files4Compile/Armbian_20.10_Beikeyun_buster_5.4.72-flippy-46+o.img.xz
@@ -144,9 +142,6 @@ jobs:
         sudo ./mk_s905x3_opimg.sh
         sudo ./mk_beikeyun_opimg.sh
         sudo ./mk_l1pro_opimg.sh
-        sudo mv ./openwrt-armvirt-64-default-rootfs.tar.gz ./sfe-openwrt-armvirt-64-default-rootfs.tar.gz
-        sudo ./mk_s905x3_opimg_sfe.sh
-        sudo mv ./sfe-openwrt-armvirt-64-default-rootfs.tar.gz ./openwrt-armvirt-64-default-rootfs.tar.gz
         sudo ./n1-to-vplus.sh
         echo "::set-output name=status::success"
 
@@ -156,17 +151,17 @@ jobs:
       run: |
         sudo cp /opt/openwrt/tmp/*.img $GITHUB_WORKSPACE/openwrt/bin/targets/armvirt/64
         cd $GITHUB_WORKSPACE
-        tar -zcvf S-AllPackages.tar.gz openwrt/bin/packages
-        cp S-AllPackages.tar.gz openwrt/bin/targets/*/*
+        tar -zcvf F-AllPackages.tar.gz openwrt/bin/packages
+        cp F-AllPackages.tar.gz openwrt/bin/targets/*/*
         cd openwrt/bin/targets/*/*
         rm -rf packages sha256sums config.buildinfo feeds.buildinfo openwrt-armvirt-64-default.manifest openwrt-armvirt-64-Image openwrt-armvirt-64-rootfs-ext4.img version.buildinfo
         bzip2 *.img
-        rename Beikeyun S-Beikeyun Beikeyun*bz2
-        rename L1 S-L1 L1*bz2
-        rename N1 S-N1 N1*bz2
-        rename openwrt S-openwrt openwrt*gz
-        rename S905x3 S-S905x3 S905x3*bz2
-        rename VPlus S-VPlus VPlus*bz2
+        rename Beikeyun F-Beikeyun Beikeyun*bz2
+        rename L1 F-L1 L1*bz2
+        rename N1 F-N1 N1*bz2
+        rename openwrt F-openwrt openwrt*gz
+        rename S905x3 F-S905x3 S905x3*bz2
+        rename VPlus F-VPlus VPlus*bz2
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "::set-output name=status::success"
 
