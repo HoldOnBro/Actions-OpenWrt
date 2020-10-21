@@ -24,7 +24,7 @@ env:
   MRG_ADD_SH: x86_64/x86_64.sh
 #   SSH_ACTIONS: false
   UPLOAD_BIN_DIR: false
-  UPLOAD_FIRMWARE: true
+  UPLOAD_FIRMWARE: false
   UPLOAD_COWTRANSFER: true
   UPLOAD_WETRANSFER: false
   TZ: Asia/Shanghai
@@ -130,7 +130,7 @@ jobs:
 
     - name: Organize files
       id: organize
-      if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
+      if: steps.compile.outputs.status == 'success' && !cancelled()
       run: |
         tar -zcvf AllPackages.tar.gz openwrt/bin/packages
         mv AllPackages.tar.gz openwrt/bin/targets/*/*
@@ -142,7 +142,7 @@ jobs:
 
     - name: Upload firmware directory
       uses: actions/upload-artifact@master
-      if: steps.organize.outputs.status == 'success' && !cancelled()
+      if: env.UPLOAD_FIRMWARE == 'true' && steps.organize.outputs.status == 'success' && !cancelled()
       with:
         name: OpenWrt_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
         path: ${{ env.FIRMWARE }}
