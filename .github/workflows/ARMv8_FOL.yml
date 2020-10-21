@@ -157,12 +157,12 @@ jobs:
         cd openwrt/bin/targets/*/*
         rm -rf packages sha256sums config.buildinfo feeds.buildinfo openwrt-armvirt-64-default.manifest openwrt-armvirt-64-Image openwrt-armvirt-64-rootfs-ext4.img version.buildinfo
         bzip2 *.img
-        rename Beikeyun F-Beikeyun Beikeyun*bz2
-        rename L1 F-L1 L1*bz2
-        rename N1 F-N1 N1*bz2
-        rename openwrt F-openwrt openwrt*gz
-        rename S905x3 F-S905x3 S905x3*bz2
-        rename VPlus F-VPlus VPlus*bz2
+        rename 's/Beike/F-Beike/' Beike*bz2
+        rename 's/L1/F-L1/' L1*bz2
+        rename 's/N1/F-N1/' N1*bz2
+        rename 's/openwrt/F-openwrt/' openwrt*gz
+        rename 's/S905x3/F-S905x3/' S905x3*bz2
+        rename 's/VPlus/F-VPlus/' VPlus*bz2
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "::set-output name=status::success"
 
