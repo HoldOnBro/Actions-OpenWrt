@@ -64,7 +64,7 @@ chmod 0755 package/luci-app-koolddns/root/usr/share/koolddns/aliddns
 #git clone -b lede https://github.com/pymumu/luci-app-smartdns.git package/luci-app-smartdns
 
 #添加ksmbd
-svn co https://github.com/openwrt/luci/trunk/applications/luci-app-ksmbd package/luci-app-ksmbd
+#svn co https://github.com/openwrt/luci/trunk/applications/luci-app-ksmbd package/luci-app-ksmbd
 
 ./scripts/feeds update -a
 ./scripts/feeds install -a
