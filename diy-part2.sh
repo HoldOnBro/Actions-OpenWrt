@@ -71,3 +71,7 @@ chmod 0755 package/luci-app-koolddns/root/usr/share/koolddns/aliddns
 
 #readd cpufreq for aarch64
 sed -i 's/LUCI_DEPENDS.*/LUCI_DEPENDS:=\@\(arm\|\|aarch64\)/g' package/lean/luci-app-cpufreq/Makefile
+
+#replace coremark.sh with the new one
+rm package/lean/coremark/coremark.sh
+mv /workdir/general/coremark.sh package/lean/coremark/
