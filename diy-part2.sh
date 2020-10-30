@@ -74,4 +74,4 @@ sed -i 's/LUCI_DEPENDS.*/LUCI_DEPENDS:=\@\(arm\|\|aarch64\)/g' package/lean/luci
 
 #replace coremark.sh with the new one
 rm package/lean/coremark/coremark.sh
-mv /workdir/general/coremark.sh package/lean/coremark/
+cp /workdir/general/coremark.sh package/lean/coremark/
