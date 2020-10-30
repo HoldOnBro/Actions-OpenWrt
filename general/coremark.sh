@@ -1,11 +1,18 @@
 #!/bin/sh
 
-CURRENT_GOVERNOR=$(cat /sys/devices/system/cpu/cpufreq/policy0/scaling_governor)
+GOV="/sys/devices/system/cpu/cpufreq/policy0/scaling_governor"
+if [ -f "$GOV" ];then
+    CURRENT_GOVERNOR=$(cat $GOV)
+    GOV_FLAG=1
+else
+    GOV_FLAG=0
+fi
+
 LOG=/etc/bench.log
 echo "<div><table>" > $LOG
-trap "echo killed;echo ${CURRENT_GOVERNOR} > /sys/devices/system/cpu/cpufreq/policy0/scaling_governor 2>/dev/null;echo '</table></div>' >> $LOG;rm -f /tmp/*.score;exit" 1 2 3 9 15
+trap "echo killed;test $GOV_FLAG -eq 1 && echo ${CURRENT_GOVERNOR} > ${GOV} 2>/dev/null;echo '</table></div>' >> $LOG;rm -f /tmp/*.score;exit" 1 2 3 9 15
 
-echo "performance" > /sys/devices/system/cpu/cpufreq/policy0/scaling_governor 2>/dev/null
+test $GOV_FLAG -eq 1 && echo "performance" > ${GOV} 2>/dev/null
 
 echo "testing coremark ... "
 COREMARK=$(/bin/coremark | tail -n 1 | awk '{print $4}')
@@ -29,7 +36,7 @@ fi
 
 echo "</table></div>" >> $LOG
 
-echo "${CURRENT_GOVERNOR}" > /sys/devices/system/cpu/cpufreq/policy0/scaling_governor 2>/dev/null
+test $GOV_FLAG -eq 1 && echo "${CURRENT_GOVERNOR}" >${GOV} 2>/dev/null
 
 if [ -f "$LOG" ]; then
         sed -i '/coremark/d' /etc/crontabs/root
