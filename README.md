@@ -8,7 +8,7 @@ The firmwares released are for S9xxx devices, Newifi_D2, G-Dock, amd64 and the J
 
 Feel free to [fork](https://github.com/HoldOnBro/Actions-OpenWrt/generate) or just pull [my docker image](https://hub.docker.com/r/minirailgun/openwrt-aarch64/tags) to save time, it will be updated everyday.
 
-## Usage
+## How to use
 
 You need to add 4(at least 3) secrets to make Actions work.
 
