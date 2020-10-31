@@ -39,11 +39,11 @@ You need to add 4(at least 3) secrets to make Actions work.
 ### aarch64
   There are three versions of firmware for this arch.
   
-  The ones without prefix contain no Acc applications.
+  The ones with ``NA-`` prefix contain No Acc applications.
   
   Those named as ``S-*`` are SFE type, they are faster but not fully tested, may have some instability issues.
   
-  And the ones named as ``F-*`` are flowoffload type, stable but a little bit slower.
+  And the left ones named as ``F-*`` are flowoffload type, stable but a little bit slower.
   
   Choose ``S-*`` type if you feel adventurous or use the other ones for convenience.
 
