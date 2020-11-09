@@ -18,6 +18,8 @@ git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 # 编译 po2lmo (如果有po2lmo可跳过)
 
 git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git package/luci-app-jd-dailybonus
+git clone https://github.com/jerrykuku/lua-maxminddb.git package/lua-maxminddb
+git clone https://github.com/jerrykuku/luci-app-vssr.git package/luci-app-vssr
 git clone https://github.com/rufengsuixing/luci-app-adguardhome.git package/luci-app-adguardhome
 git clone https://github.com/lisaac/luci-app-dockerman.git package/luci-app-dockerman
 
