@@ -44,7 +44,10 @@ svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-eqos package/l
 git clone https://github.com/tty228/luci-app-serverchan.git package/luci-app-serverchan
 # cd package/luci-app-serverchan && git reset --hard 6387b3b47b03d95d3f3bcd42ff98db5bb84fd056 && git pull && cd ../..
 svn co https://github.com/brvphoenix/wrtbwmon/trunk/wrtbwmon package/wrtbwmon
-svn co https://github.com/brvphoenix/luci-app-wrtbwmon/trunk/luci-app-wrtbwmon package/luci-app-wrtbwmon
+git clone https://github.com/brvphoenix/luci-app-wrtbwmon
+cd luci-app-wrtbwmon
+git reset --hard ff7773abbf71120fc39a276393b29ba47353a7e2 && cp -r luci-app-wrtbwmon ../package/
+cd ..
 # themes
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-opentomato package/luci-theme-opentomato
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-edge package/luci-theme-edge
