@@ -85,6 +85,11 @@ git clone https://github.com/sensec/openwrt-udp2raw package/openwrt-udp2raw
 git clone https://github.com/sensec/luci-app-udp2raw package/luci-app-udp2raw
 sed -i "s/PKG_SOURCE_VERSION:=.*/PKG_SOURCE_VERSION:=f2f90a9a150be94d50af555b53657a2a4309f287/" package/openwrt-udp2raw/Makefile
 sed -i "s/PKG_VERSION:=.*/PKG_VERSION:=20200920\.0/" package/openwrt-udp2raw/Makefile
+
+#temp fix for dnsforwarder
+sed -i "s/PKG_SOURCE_URL:=.*/PKG_SOURCE_URL:=https:\/\/github\.com\/HoldOnBro\/dnsforwarder\.git/" package/lean/dnsforwarder/Makefile
+sed -i "s/PKG_SOURCE_VERSION:=.*/PKG_SOURCE_VERSION:=a71c0723e71c9c7d889540bb0e313b3d6cb54cb3/" package/lean/dnsforwarder/Makefile
+
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 
