@@ -24,6 +24,9 @@ git clone https://github.com/jerrykuku/luci-app-vssr.git package/luci-app-vssr
 git clone https://github.com/rufengsuixing/luci-app-adguardhome.git package/luci-app-adguardhome
 git clone https://github.com/lisaac/luci-app-dockerman.git package/luci-app-dockerman
 
+#git clone https://github.com/vernesong/OpenClash.git package/OpenClash
+#cp -r package/OpenClash/luci-app-openclash package/
+#rm -rf package/OpenClash
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
 pushd package/luci-app-openclash/tools/po2lmo
 make && sudo make install
