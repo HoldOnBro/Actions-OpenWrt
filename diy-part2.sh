@@ -100,6 +100,7 @@ rm package/lean/coremark/coremark.sh
 cp $GITHUB_WORKSPACE/general/coremark.sh package/lean/coremark/
 
 #temp fix for dnsforwarder
+
 sed -i "s/PKG_SOURCE_URL:=.*/PKG_SOURCE_URL:=https:\/\/github\.com\/1715173329\/dnsforwarder\.git/" package/lean/dnsforwarder/Makefile
 sed -i "s/PKG_SOURCE_VERSION:=.*/PKG_SOURCE_VERSION:=693b554e59479c2867c74f0bb5e26290b93747c5/" package/lean/dnsforwarder/Makefile
 sed -i "s/\ \ URL:=.*/\ \ URL:=https:\/\/github\.com\/1715173329\/dnsforwarder/" package/lean/dnsforwarder/Makefile
