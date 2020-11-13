@@ -86,11 +86,6 @@ git clone https://github.com/sensec/luci-app-udp2raw package/luci-app-udp2raw
 sed -i "s/PKG_SOURCE_VERSION:=.*/PKG_SOURCE_VERSION:=f2f90a9a150be94d50af555b53657a2a4309f287/" package/openwrt-udp2raw/Makefile
 sed -i "s/PKG_VERSION:=.*/PKG_VERSION:=20200920\.0/" package/openwrt-udp2raw/Makefile
 
-#temp fix for dnsforwarder
-sed -i "s/PKG_SOURCE_URL:=.*/PKG_SOURCE_URL:=https:\/\/github\.com\/HoldOnBro\/dnsforwarder\.git/" package/lean/dnsforwarder/Makefile
-sed -i "s/PKG_SOURCE_VERSION:=.*/PKG_SOURCE_VERSION:=031c51fd187b18ac12fe8612f4cf4117a45a4fca/" package/lean/dnsforwarder/Makefile
-sed -i "s/\ \ URL:=.*/\ \ URL:=https:\/\/github\.com\/HoldOnBro\/dnsforwarder/" package/lean/dnsforwarder/Makefile
-
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 
@@ -100,3 +95,8 @@ sed -i 's/LUCI_DEPENDS.*/LUCI_DEPENDS:=\@\(arm\|\|aarch64\)/g' package/lean/luci
 #replace coremark.sh with the new one
 rm package/lean/coremark/coremark.sh
 cp $GITHUB_WORKSPACE/general/coremark.sh package/lean/coremark/
+
+#temp fix for dnsforwarder
+sed -i "s/PKG_SOURCE_URL:=.*/PKG_SOURCE_URL:=https:\/\/github\.com\/HoldOnBro\/dnsforwarder\.git/" package/lean/dnsforwarder/Makefile
+sed -i "s/PKG_SOURCE_VERSION:=.*/PKG_SOURCE_VERSION:=031c51fd187b18ac12fe8612f4cf4117a45a4fca/" package/lean/dnsforwarder/Makefile
+sed -i "s/\ \ URL:=.*/\ \ URL:=https:\/\/github\.com\/HoldOnBro\/dnsforwarder/" package/lean/dnsforwarder/Makefile
