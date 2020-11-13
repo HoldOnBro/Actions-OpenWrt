@@ -88,7 +88,8 @@ sed -i "s/PKG_VERSION:=.*/PKG_VERSION:=20200920\.0/" package/openwrt-udp2raw/Mak
 
 #temp fix for dnsforwarder
 sed -i "s/PKG_SOURCE_URL:=.*/PKG_SOURCE_URL:=https:\/\/github\.com\/HoldOnBro\/dnsforwarder\.git/" package/lean/dnsforwarder/Makefile
-sed -i "s/PKG_SOURCE_VERSION:=.*/PKG_SOURCE_VERSION:=a71c0723e71c9c7d889540bb0e313b3d6cb54cb3/" package/lean/dnsforwarder/Makefile
+sed -i "s/PKG_SOURCE_VERSION:=.*/PKG_SOURCE_VERSION:=031c51fd187b18ac12fe8612f4cf4117a45a4fca/" package/lean/dnsforwarder/Makefile
+sed -i "s/\ \ URL:=.*/\ \ URL:=https:\/\/github\.com\/HoldOnBro\/dnsforwarder/" package/lean/dnsforwarder/Makefile
 
 ./scripts/feeds update -a
 ./scripts/feeds install -a
