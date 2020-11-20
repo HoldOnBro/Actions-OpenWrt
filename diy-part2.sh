@@ -54,6 +54,9 @@ cd luci-app-wrtbwmon
 git reset --hard ff7773abbf71120fc39a276393b29ba47353a7e2 && cp -r luci-app-wrtbwmon ../package/
 cd ..
 # themes
+svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/luci-theme-darkmatter package/luci-theme-darkmatter
+svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/luci-theme-Butterfly-dark package/luci-theme-Butterfly-dark
+svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/luci-theme-Butterfly package/luci-theme-Butterfly
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-opentomato package/luci-theme-opentomato
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-edge package/luci-theme-edge
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-argon_new package/luci-theme-argon_new
@@ -70,13 +73,12 @@ svn co https://github.com/fw876/helloworld/trunk/naiveproxy package/naiveproxy
 chmod 0755 package/luci-app-koolddns/root/etc/init.d/koolddns
 chmod 0755 package/luci-app-koolddns/root/usr/share/koolddns/aliddns
 
-#添加subconverter
-#git clone https://github.com/tindy2013/openwrt-subconverter.git package/open-subconverter
-#mv package/open-subconverter/rapidjson package/
-#mv package/open-subconverter/subconverter/ package/
-#rm -rf package/open-subconverter
-#添加subweb
-#svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/subweb package/subweb
+#添加subweb&subconverter
+svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/duktape package/duktape
+svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/jpcre2 package/jpcre2
+svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/rapidjson package/rapidjson
+svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/subweb package/subweb
+svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/subconverter package/subconverter
 #添加smartdns
 svn co https://github.com/project-openwrt/openwrt/trunk/package/ntlf9t/smartdns package/smartdns
 svn co https://github.com/project-openwrt/openwrt/trunk/package/ntlf9t/luci-app-smartdns package/luci-app-smartdns
