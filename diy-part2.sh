@@ -77,7 +77,7 @@ chmod 0755 package/luci-app-koolddns/root/usr/share/koolddns/aliddns
 svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/duktape package/duktape
 svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/jpcre2 package/jpcre2
 svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/rapidjson package/rapidjson
-svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/subweb package/subweb
+#svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/subweb package/subweb
 svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/subconverter package/subconverter
 #添加smartdns
 svn co https://github.com/project-openwrt/openwrt/trunk/package/ntlf9t/smartdns package/smartdns
