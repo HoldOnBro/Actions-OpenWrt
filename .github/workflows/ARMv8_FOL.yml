@@ -10,7 +10,7 @@ on:
     paths:
       - 'aarch64/ARMv8_FOL.config'
   schedule:
-    - cron: 0 16 * * *
+  #  - cron: 0 16 * * *
   watch:
     types: started
 
