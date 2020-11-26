@@ -37,15 +37,15 @@ You need to add 4(at least the first one) secrets to make Actions work.
   Password by default is ``password``.
   
 ### aarch64
-  There are three versions of firmware for this arch.
+~~There are three versions of firmware for this arch.~~
   
-  The ones with ``NA-`` prefix contain No Acc applications.
+~~The ones with ``NA-`` prefix contain No Acc applications.~~
   
   Those named as ``S-*`` are SFE type, they are faster but not fully tested, may have some instability issues.
   
-  And the left ones named as ``F-*`` are flowoffload type, stable but a little bit slower.
+~~And the left ones named as ``F-*`` are flowoffload type, stable but a little bit slower.~~
   
-  Choose ``S-*`` type if you feel adventurous or use the other ones for convenience.
+~~Choose ``S-*`` type if you feel adventurous or use the other ones for convenience.~~
 
 ### Newifi_D2
   There are three versions for Newifi_D2.
