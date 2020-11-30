@@ -68,7 +68,7 @@ jobs:
         echo "DATE1=$(date "+%Y-%m-%d")" >> $GITHUB_ENV
 #        echo "::set-env name=useVersionInfo::$useVersionInfo"
 #        echo "::set-env name=DATE::$(date "+%Y-%m-%d %H:%M:%S")"
-        
+
     - name: Build firmware
       id: build
       if: steps.compile.outputs.status == 'success' && !cancelled()
@@ -131,7 +131,7 @@ jobs:
       id: release
       uses: ncipollo/release-action@v1
       with:
-        name: R${{ env.DATE }} for ${{ env.FILE_NAME }}
+        name: R${{ env.DATE }}
         allowUpdates: true
         tag: ${{ env.FILE_NAME }}
         commit: master
