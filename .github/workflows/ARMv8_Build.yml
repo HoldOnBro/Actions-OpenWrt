@@ -71,7 +71,6 @@ jobs:
 
     - name: Build firmware
       id: build
-      if: steps.compile.outputs.status == 'success' && !cancelled()
       run: |
         cd /opt
         chmod +x $GITHUB_WORKSPACE/$Get_Imgs_SH
