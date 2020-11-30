@@ -11,8 +11,8 @@ on:
       - 'NewifiD2/NewifiD2_basic.config'
   schedule:
     - cron: 0 16 * * *
-  watch:
-    types: started
+  # watch:
+  #   types: started
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
