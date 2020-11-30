@@ -153,7 +153,7 @@ jobs:
       id: release
       uses: ncipollo/release-action@v1
       with:
-        name: R${{ env.DATE }} for ${{ env.FILE_NAME }}
+        name: R${{ env.DATE }}
         allowUpdates: true
         tag: ${{ env.FILE_NAME }}
         commit: master
