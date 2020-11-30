@@ -103,6 +103,7 @@ jobs:
       run: |
         cd /opt/openwrt/tmp/
         bzip2 *.img
+        sudo rm btld-rk3328.bin
         rename 's/Beike/S-Beike/' Beike*bz2
         rename 's/L1/S-L1/' L1*bz2
         rename 's/N1/S-N1/' N1*bz2
