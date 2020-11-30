@@ -11,8 +11,8 @@ on:
       - 'aarch64/ARMv8_SFE.config'
   schedule:
     - cron: 0 10 * * *
-  # watch:
-  #   types: started
+  watch:
+    types: started
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
@@ -124,7 +124,7 @@ jobs:
 
     - name: Organize files
       id: organize
-      if: steps.build.outputs.status == 'success' && !cancelled()
+      if: steps.compile.outputs.status == 'success' && !cancelled()
       run: |
         cd $GITHUB_WORKSPACE
         tar -zcvf S-AllPackages.tar.gz openwrt/bin/packages
