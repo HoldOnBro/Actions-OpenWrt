@@ -94,7 +94,7 @@ jobs:
         sudo ./mk_s905x3_opimg_sfe.sh
         sudo mv ./sfe-openwrt-armvirt-64-default-rootfs.tar.gz ./openwrt-armvirt-64-default-rootfs.tar.gz
         sudo ./n1-to-vplus.sh
-        cp ./S-AllPackages.tar.gz ./tmp/
+        sudo cp ./S-AllPackages.tar.gz ./tmp/
         echo "::set-output name=status::success"
 
     - name: Organize files
