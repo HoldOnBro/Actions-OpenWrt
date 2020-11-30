@@ -72,6 +72,7 @@ svn co https://github.com/fw876/helloworld/trunk/naiveproxy package/naiveproxy
 chmod 0755 package/luci-app-koolddns/root/etc/init.d/koolddns
 chmod 0755 package/luci-app-koolddns/root/usr/share/koolddns/aliddns
 
+svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/luci-app-unblockneteasemusic-mini package/luci-app-unblockneteasemusic-mini
 #添加subweb&subconverter
 svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/duktape package/duktape
 svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/jpcre2 package/jpcre2
