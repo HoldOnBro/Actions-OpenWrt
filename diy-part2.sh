@@ -66,6 +66,7 @@ git clone https://github.com/xiaoqingfengATGH/luci-theme-infinityfreedom package
 git clone https://github.com/Leo-Jo-My/luci-theme-opentomcat.git package/luci-theme-opentomcat
 git clone https://github.com/openwrt-develop/luci-theme-atmaterial.git package/luci-theme-atmaterial
 git clone https://github.com/sirpdboy/luci-theme-opentopd package/luci-theme-opentopd
+svn co https://github.com/project-openwrt/openwrt/trunk/package/lienol/luci-app-socat package/luci-app-socat
 
 git clone https://github.com/xrouterservice/luci-app-koolddns.git package/luci-app-koolddns
 svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus package/luci-app-ssr-plus
