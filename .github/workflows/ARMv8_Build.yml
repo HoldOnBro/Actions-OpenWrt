@@ -49,6 +49,7 @@ jobs:
         sudo -E apt-get -qq install $(curl -fsSL git.io/depends-ubuntu-1804)
         sudo -E apt-get -qq install rename
         sudo -E apt-get -qq install time
+        sudo -E apt-get -qq install sshpass
         sudo -E apt-get -qq autoremove --purge
         sudo -E apt-get -qq clean
         sudo timedatectl set-timezone "$TZ"
@@ -146,6 +147,18 @@ jobs:
     - name: WeChat notification
       if: steps.organize.outputs.status == 'success' && !cancelled()
       run: curl https://sc.ftqq.com/${{ secrets.ServerChan }}.send?text=${{ env.PRODUCT_NAME }}打包完成
+
+    - name: Upload package
+      id: upload_package
+      if: steps.organize.outputs.status == 'success' && !cancelled()
+      run: |
+        cd /opt/openwrt/tmp/
+        sudo ${{ secrets.UPLOAD_PACKAGE }}
+        echo "::set-output name=status::success"
+
+    - name: WeChat notification
+      if: steps.upload_package.outputs.status == 'success' && !cancelled()
+      run: curl https://sc.ftqq.com/${{ secrets.ServerChan }}.send?text=${{ env.PRODUCT_NAME }} Package已上传
 
     - name: Upload firmware to cowtransfer
       if: steps.organize.outputs.status == 'success' && env.UPLOAD_COWTRANSFER == 'true' && !cancelled()
