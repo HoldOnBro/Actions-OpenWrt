@@ -50,11 +50,9 @@ You need to add 4(at least the first one) secrets to make Actions work.
 ### Newifi_D2
   There are three versions for Newifi_D2.
   
-  1. **Basic Version**: Basic version has ipv6 support, full ssr-plus(equipped with **TUN**) and unblocknetease(with **NodeJS**) just like other guys' versions.
+  1. **Lite Version**: A light fw for NewifiD2.
   
-  2. **Normal Version**: It contains all functions **Basic Version** have and syncdial.
-  
-  3. **Lite Version**: Lite version is the smallest and lightest fw for NewifiD2.
+  2. **Normal Version**: based on **lite**, added TUN in SSRPlus and UnblockNetease(with **NodeJS**), jd-dailybonus.
   
   The one and only reason for making two versions for Newifi_D2 is it has such a tiny flash memory.
   
