@@ -48,7 +48,6 @@ You need to add 4(at least the first one) secrets to make Actions work.
 ~~Choose ``S-*`` type if you feel adventurous or use the other ones for convenience.~~
 
 ### Newifi_D2
-  There are three versions for Newifi_D2.
   
   1. **Lite Version**: A light fw for NewifiD2.
   
