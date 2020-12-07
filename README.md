@@ -53,8 +53,6 @@ You need to add 4(at least the first one) secrets to make Actions work.
   
   2. **Normal Version**: based on **lite**, added TUN in SSRPlus and UnblockNetease(with **NodeJS**), jd-dailybonus.
   
-  The one and only reason for making two versions for Newifi_D2 is it has such a tiny flash memory.
-  
   Just choose the one suits your need.
   
 ~~BTW, if you encounter any hardware instability problems like auto-reboot for no reason, having no access to Internet,~~
