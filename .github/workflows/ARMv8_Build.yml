@@ -95,6 +95,7 @@ jobs:
         sudo ./mk_beikeyun_opimg.sh
         sudo ./mk_l1pro_opimg.sh
         sudo ./mk_s905x3_opimg_sfe.sh
+        sudo ./mk_s922x_opimg.sh
         sudo ./n1-to-vplus.sh
         sudo cp ./S-AllPackages.tar.gz ./tmp/
         echo "::set-output name=status::success"
@@ -111,6 +112,7 @@ jobs:
         rename 's/N1/S-N1/' N1*bz2
         rename 's/openwrt/S-openwrt/' openwrt*gz
         rename 's/S905x3/S-S905x3/' S905x3*bz2
+        rename 's/S922x/S-S922x/' S922x*bz2
         rename 's/VPlus/S-VPlus/' VPlus*bz2
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "::set-output name=status::success"
