@@ -10,7 +10,7 @@ on:
     paths:
       - 'aarch64/ARMv8_SFE.config'
   schedule:
-    - cron: 0 10 * * *
+    - cron: 0 16 * * *
   watch:
     types: started
 
