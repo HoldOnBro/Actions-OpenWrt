@@ -2,9 +2,8 @@
 
 cd /home/xyz/Actions-OpenWrt && git pull
 cd /home/xyz/lede && git pull
-cd /home/xyz/OpenClash && git pull
-cd /home/xyz/jerrykuku/luci-app-vssr && git pull
-cd /home/xyz/jerrykuku/lua-maxminddb && git pull
+cd /home/xyz/lede/package/luci-app-vssr && git pull
+cd /home/xyz/lede/package/lua-maxminddb && git pull
 rm -rf /home/xyz/lede/package/lean/luci-app-dockerman
 cp /home/xyz/Actions-OpenWrt/*/*.config /home/xyz/lede/
 rm -rf /home/xyz/lede/package/r8125-mod
@@ -42,8 +41,6 @@ rm -rf /home/xyz/lede/package/luci-theme-opentomato
 rm -rf /home/xyz/lede/package/luci-theme-edge
 rm -rf /home/xyz/lede/package/luci-theme-argon_new
 rm -rf /home/xyz/lede/package/luci-app-openclash
-rm -rf /home/xyz/lede/package/luci-app-vssr
-rm -rf /home/xyz/lede/package/lua-maxminddb
 rm -rf /home/xyz/lede/package/brook
 rm -rf /home/xyz/lede/package/chinadns-ng
 rm -rf /home/xyz/lede/package/tcping
@@ -78,9 +75,7 @@ svn co https://github.com/rosywrt/luci-theme-rosy/trunk/luci-theme-rosy /home/xy
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-opentomato /home/xyz/lede/package/luci-theme-opentomato
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-edge /home/xyz/lede/package/luci-theme-edge
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-argon_new /home/xyz/lede/package/luci-theme-argon_new
-#svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash /home/xyz/lede/package/luci-app-openclash
-cp -r /home/xyz/OpenClash/luci-app-openclash /home/xyz/lede/package/
-cp -r /home/xyz/jerrykuku/* /home/xyz/lede/package/
+svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash /home/xyz/lede/package/luci-app-openclash
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/brook /home/xyz/lede/package/brook
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/chinadns-ng /home/xyz/lede/package/chinadns-ng
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/tcping /home/xyz/lede/package/tcping
