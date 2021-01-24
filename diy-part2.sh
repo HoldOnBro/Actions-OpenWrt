@@ -46,7 +46,7 @@ svn co https://github.com/project-openwrt/openwrt/trunk/package/lienol/luci-app-
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/luci-app-passwall package/luci-app-passwall
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/ssocks package/ssocks
 #svn co https://github.com/xiaorouji/openwrt-passwall/trunk/xray package/xray
-
+svn co https://github.com/fw876/helloworld/trunk/xray /home/xyz/lede/package/xray
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-gost package/luci-app-gost
 svn co https://github.com/kenzok8/openwrt-packages/trunk/gost package/gost
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-eqos package/luci-app-eqos
