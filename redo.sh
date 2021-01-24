@@ -87,6 +87,7 @@ svn co https://github.com/project-openwrt/openwrt/trunk/package/lienol/luci-app-
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/luci-app-passwall /home/xyz/lede/package/luci-app-passwall
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/ssocks /home/xyz/lede/package/ssocks
 #svn co https://github.com/xiaorouji/openwrt-passwall/trunk/xray /home/xyz/lede/package/xray
+svn co https://github.com/fw876/helloworld/trunk/xray /home/xyz/lede/package/xray
 svn co https://github.com/project-openwrt/openwrt/trunk/package/lienol/luci-app-socat /home/xyz/lede/package/luci-app-socat
 
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-eqos /home/xyz/lede/package/luci-app-eqos
@@ -116,3 +117,5 @@ sed -i 's/LUCI_DEPENDS.*/LUCI_DEPENDS:=\@\(arm\|\|aarch64\)/g' /home/xyz/lede/pa
 #sed -i "s/\ \ URL:=.*/\ \ URL:=https:\/\/github\.com\/1715173329\/dnsforwarder/" /home/xyz/lede/package/lean/dnsforwarder/Makefile
 /home/xyz/lede/scripts/feeds update -a
 /home/xyz/lede/scripts/feeds install -a
+
+cd /home/xyz/lede/ && make menuconfig
