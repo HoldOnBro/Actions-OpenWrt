@@ -46,6 +46,7 @@ rm -rf /home/xyz/lede/package/chinadns-ng
 rm -rf /home/xyz/lede/package/tcping
 rm -rf /home/xyz/lede/package/trojan-go
 rm -rf /home/xyz/lede/package/trojan-plus
+rm -rf /home/xyz/lede/package/v2ray
 rm -rf /home/xyz/lede/package/luci-app-filebrowser
 rm -rf /home/xyz/lede/package/filebrowser
 rm -rf /home/xyz/lede/package/luci-app-fileassistant
@@ -55,6 +56,7 @@ rm -rf /home/xyz/lede/package/luci-app-gost
 rm -rf /home/xyz/lede/package/gost
 rm -rf /home/xyz/lede/package/luci-app-ssr-plus
 rm -rf /home/xyz/lede/package/naiveproxy
+rm -rf /home/xyz/lede/package/ipt2socks-alt
 rm -rf /home/xyz/lede/package/ssocks
 rm -rf /home/xyz/lede/package/xray
 rm -rf /home/xyz/lede/package/r8125-mod
@@ -95,6 +97,7 @@ svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-gost /home/xyz
 svn co https://github.com/kenzok8/openwrt-packages/trunk/gost /home/xyz/lede/package/gost
 svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus /home/xyz/lede/package/luci-app-ssr-plus
 svn co https://github.com/fw876/helloworld/trunk/naiveproxy /home/xyz/lede/package/naiveproxy
+svn co https://github.com/fw876/helloworld/trunk/ipt2socks-alt /home/xyz/lede/package/ipt2socks-alt
 
 #svn co https://github.com/HoldOnBro/Actions-OpenWrt/trunk/x86_64/r8125-mod /home/xyz/lede/package/r8125-mod
 
