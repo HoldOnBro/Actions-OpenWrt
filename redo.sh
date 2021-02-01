@@ -62,8 +62,8 @@ rm -rf /home/xyz/lede/package/xray
 rm -rf /home/xyz/lede/package/r8125-mod
 #rm -rf /home/xyz/lede/package/subweb
 rm -rf /home/xyz/lede/package/subconverter
-rm -rf /home/xyz/lede/package/duktape
-rm -rf /home/xyz/lede/package/jpcre2
+#rm -rf /home/xyz/lede/package/duktape
+#rm -rf /home/xyz/lede/package/jpcre2
 rm -rf /home/xyz/lede/package/rapidjson
 rm -rf /home/xyz/lede/package/luci-app-unblockneteasemusic-mini
 rm -rf /home/xyz/lede/package/luci-app-socat
@@ -93,8 +93,10 @@ svn co https://github.com/fw876/helloworld/trunk/xray /home/xyz/lede/package/xra
 svn co https://github.com/project-openwrt/openwrt/trunk/package/lienol/luci-app-socat /home/xyz/lede/package/luci-app-socat
 
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-eqos /home/xyz/lede/package/luci-app-eqos
-svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-gost /home/xyz/lede/package/luci-app-gost 
-svn co https://github.com/kenzok8/openwrt-packages/trunk/gost /home/xyz/lede/package/gost
+#svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-gost /home/xyz/lede/package/luci-app-gost
+#svn co https://github.com/kenzok8/openwrt-packages/trunk/gost /home/xyz/lede/package/gost
+svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/luci-app-gost /home/xyz/lede/package/luci-app-gost
+svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/gost /home/xyz/lede/package/gost
 svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus /home/xyz/lede/package/luci-app-ssr-plus
 svn co https://github.com/fw876/helloworld/trunk/naiveproxy /home/xyz/lede/package/naiveproxy
 svn co https://github.com/fw876/helloworld/trunk/ipt2socks-alt /home/xyz/lede/package/ipt2socks-alt
@@ -104,8 +106,8 @@ svn co https://github.com/fw876/helloworld/trunk/ipt2socks-alt /home/xyz/lede/pa
 
 #svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/subweb /home/xyz/lede/package/subweb
 svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/subconverter /home/xyz/lede/package/subconverter
-svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/duktape /home/xyz/lede/package/duktape
-svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/jpcre2 /home/xyz/lede/package/jpcre2
+#svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/duktape /home/xyz/lede/package/duktape
+#svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/jpcre2 /home/xyz/lede/package/jpcre2
 svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/rapidjson /home/xyz/lede/package/rapidjson
 svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/luci-app-unblockneteasemusic-mini /home/xyz/lede/package/luci-app-unblockneteasemusic-mini
 

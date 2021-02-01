@@ -47,8 +47,10 @@ svn co https://github.com/xiaorouji/openwrt-passwall/trunk/luci-app-passwall pac
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/ssocks package/ssocks
 #svn co https://github.com/xiaorouji/openwrt-passwall/trunk/xray package/xray
 svn co https://github.com/fw876/helloworld/trunk/xray package/xray
-svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-gost package/luci-app-gost
-svn co https://github.com/kenzok8/openwrt-packages/trunk/gost package/gost
+#svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-gost package/luci-app-gost
+#svn co https://github.com/kenzok8/openwrt-packages/trunk/gost package/gost
+svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/luci-app-gost package/luci-app-gost
+svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/gost package/gost
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-eqos package/luci-app-eqos
 git clone https://github.com/tty228/luci-app-serverchan.git package/luci-app-serverchan
 # cd package/luci-app-serverchan && git reset --hard 6387b3b47b03d95d3f3bcd42ff98db5bb84fd056 && git pull && cd ../..
@@ -81,8 +83,8 @@ chmod 0755 package/luci-app-koolddns/root/usr/share/koolddns/aliddns
 
 svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/luci-app-unblockneteasemusic-mini package/luci-app-unblockneteasemusic-mini
 #添加subweb&subconverter
-svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/duktape package/duktape
-svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/jpcre2 package/jpcre2
+#svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/duktape package/duktape
+#svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/jpcre2 package/jpcre2
 svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/rapidjson package/rapidjson
 #svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/subweb package/subweb
 svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/subconverter package/subconverter
