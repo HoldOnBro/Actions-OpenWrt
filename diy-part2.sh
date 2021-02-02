@@ -27,10 +27,10 @@ git clone https://github.com/lisaac/luci-app-dockerman.git package/luci-app-dock
 git clone https://github.com/rufengsuixing/luci-app-autoipsetadder.git package/luci-app-autoipsetadder
 git clone https://github.com/mchome/openwrt-dogcom.git package/openwrt-dogcom
 
-git clone https://github.com/vernesong/OpenClash.git package/OpenClash
-cp -r package/OpenClash/luci-app-openclash package/
-rm -rf package/OpenClash
-#svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
+#git clone https://github.com/vernesong/OpenClash.git package/OpenClash
+#cp -r package/OpenClash/luci-app-openclash package/
+#rm -rf package/OpenClash
+svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
 # 编译 po2lmo (如果有po2lmo可跳过)
 pushd package/luci-app-openclash/tools/po2lmo
 make && sudo make install
