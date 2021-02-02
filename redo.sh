@@ -106,8 +106,8 @@ svn co https://github.com/fw876/helloworld/trunk/ipt2socks-alt /home/xyz/lede/pa
 
 #svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/subweb /home/xyz/lede/package/subweb
 svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/subconverter /home/xyz/lede/package/subconverter
-#svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/duktape /home/xyz/lede/package/duktape
-#svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/jpcre2 /home/xyz/lede/package/jpcre2
+svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/duktape /home/xyz/lede/package/duktape
+svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/jpcre2 /home/xyz/lede/package/jpcre2
 svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/rapidjson /home/xyz/lede/package/rapidjson
 svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/luci-app-unblockneteasemusic-mini /home/xyz/lede/package/luci-app-unblockneteasemusic-mini
 
