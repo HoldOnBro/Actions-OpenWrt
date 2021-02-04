@@ -32,6 +32,7 @@ cd /home/xyz/aclsub && git pull && yarn build
 rm -rf /home/xyz/lede/package/luci-app-smartdns
 rm -rf /home/xyz/lede/package/smartdns
 rm -rf /home/xyz/lede/package/wrtbwmon
+rm -rf /home/xyz/lede/package/luci-app-bypass
 rm -rf /home/xyz/lede/package/lean/luci-app-wrtbwmon
 rm -rf /home/xyz/lede/package/luci-theme-darkmatter
 rm -rf /home/xyz/lede/package/luci-theme-Butterfly-dark
@@ -56,20 +57,22 @@ rm -rf /home/xyz/lede/package/luci-app-gost
 rm -rf /home/xyz/lede/package/gost
 rm -rf /home/xyz/lede/package/luci-app-ssr-plus
 rm -rf /home/xyz/lede/package/naiveproxy
-rm -rf /home/xyz/lede/package/ipt2socks-alt
 rm -rf /home/xyz/lede/package/ssocks
-rm -rf /home/xyz/lede/package/xray
+rm -rf /home/xyz/lede/package/xray-core
 rm -rf /home/xyz/lede/package/r8125-mod
 #rm -rf /home/xyz/lede/package/subweb
 rm -rf /home/xyz/lede/package/subconverter
-#rm -rf /home/xyz/lede/package/duktape
-#rm -rf /home/xyz/lede/package/jpcre2
+rm -rf /home/xyz/lede/package/duktape
+rm -rf /home/xyz/lede/package/jpcre2
 rm -rf /home/xyz/lede/package/rapidjson
 rm -rf /home/xyz/lede/package/luci-app-unblockneteasemusic-mini
 rm -rf /home/xyz/lede/package/luci-app-socat
 
 svn co https://github.com/brvphoenix/wrtbwmon/trunk/wrtbwmon /home/xyz/lede/package/wrtbwmon
 #rm -rf /home/xyz/lede/package/luci-app-ksmbd
+git clone https://github.com/garypang13/luci-app-bypass /home/xyz/lede/package/luci-app-bypass
+find /home/xyz/lede/package/*/ /home/xyz/lede/feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-redir/shadowsocksr-libev-alt/g' {}
+find /home/xyz/lede/package/*/ /home/xyz/lede/feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-server/shadowsocksr-libev-server/g' {}
 svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/luci-theme-darkmatter /home/xyz/lede/package/luci-theme-darkmatter
 svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/luci-theme-Butterfly-dark /home/xyz/lede/package/luci-theme-Butterfly-dark
 svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/luci-theme-Butterfly /home/xyz/lede/package/luci-theme-Butterfly
@@ -88,8 +91,7 @@ svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/filebrows
 svn co https://github.com/project-openwrt/openwrt/trunk/package/lienol/luci-app-fileassistant /home/xyz/lede/package/luci-app-fileassistant
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/luci-app-passwall /home/xyz/lede/package/luci-app-passwall
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/ssocks /home/xyz/lede/package/ssocks
-#svn co https://github.com/xiaorouji/openwrt-passwall/trunk/xray /home/xyz/lede/package/xray
-svn co https://github.com/fw876/helloworld/trunk/xray /home/xyz/lede/package/xray
+svn co https://github.com/fw876/helloworld/trunk/xray-core /home/xyz/lede/package/xray-core
 svn co https://github.com/project-openwrt/openwrt/trunk/package/lienol/luci-app-socat /home/xyz/lede/package/luci-app-socat
 
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-eqos /home/xyz/lede/package/luci-app-eqos
@@ -99,7 +101,6 @@ svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/luci-app-
 svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/gost /home/xyz/lede/package/gost
 svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus /home/xyz/lede/package/luci-app-ssr-plus
 svn co https://github.com/fw876/helloworld/trunk/naiveproxy /home/xyz/lede/package/naiveproxy
-svn co https://github.com/fw876/helloworld/trunk/ipt2socks-alt /home/xyz/lede/package/ipt2socks-alt
 
 #svn co https://github.com/HoldOnBro/Actions-OpenWrt/trunk/x86_64/r8125-mod /home/xyz/lede/package/r8125-mod
 

@@ -26,6 +26,7 @@ git clone https://github.com/kongfl888/luci-app-adguardhome.git package/luci-app
 git clone https://github.com/lisaac/luci-app-dockerman.git package/luci-app-dockerman
 git clone https://github.com/rufengsuixing/luci-app-autoipsetadder.git package/luci-app-autoipsetadder
 git clone https://github.com/mchome/openwrt-dogcom.git package/openwrt-dogcom
+git clone https://github.com/garypang13/luci-app-bypass package/luci-app-bypass
 
 #git clone https://github.com/vernesong/OpenClash.git package/OpenClash
 #cp -r package/OpenClash/luci-app-openclash package/
@@ -45,8 +46,7 @@ svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/filebrows
 svn co https://github.com/project-openwrt/openwrt/trunk/package/lienol/luci-app-fileassistant package/luci-app-fileassistant
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/luci-app-passwall package/luci-app-passwall
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/ssocks package/ssocks
-#svn co https://github.com/xiaorouji/openwrt-passwall/trunk/xray package/xray
-svn co https://github.com/fw876/helloworld/trunk/xray package/xray
+svn co https://github.com/fw876/helloworld/trunk/xray-core /home/xyz/lede/package/xray-core
 #svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-gost package/luci-app-gost
 #svn co https://github.com/kenzok8/openwrt-packages/trunk/gost package/gost
 svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/luci-app-gost package/luci-app-gost
@@ -76,7 +76,6 @@ svn co https://github.com/project-openwrt/openwrt/trunk/package/lienol/luci-app-
 git clone https://github.com/xrouterservice/luci-app-koolddns.git package/luci-app-koolddns
 svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus package/luci-app-ssr-plus
 svn co https://github.com/fw876/helloworld/trunk/naiveproxy package/naiveproxy
-svn co https://github.com/fw876/helloworld/trunk/ipt2socks-alt package/ipt2socks-alt
 #赋予koolddns权限
 chmod 0755 package/luci-app-koolddns/root/etc/init.d/koolddns
 chmod 0755 package/luci-app-koolddns/root/usr/share/koolddns/aliddns
@@ -111,6 +110,10 @@ sed -i 's/LUCI_DEPENDS.*/LUCI_DEPENDS:=\@\(arm\|\|aarch64\)/g' package/lean/luci
 #replace coremark.sh with the new one
 rm package/lean/coremark/coremark.sh
 cp $GITHUB_WORKSPACE/general/coremark.sh package/lean/coremark/
+
+#修改bypass的makefile
+find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-redir/shadowsocksr-libev-alt/g' {}
+find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-server/shadowsocksr-libev-server/g' {}
 
 #temp fix for dnsforwarder
 #sed -i "s/PKG_SOURCE_URL:=.*/PKG_SOURCE_URL:=https:\/\/github\.com\/1715173329\/dnsforwarder\.git/" package/lean/dnsforwarder/Makefile
