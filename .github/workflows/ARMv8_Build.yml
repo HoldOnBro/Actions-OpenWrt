@@ -145,27 +145,29 @@ jobs:
           当前使用版本:【编译前的最后一次[➦主源码](https://github.com/coolsnowwolf/lede)更新记录】
           参见 Files4Build 内记录
 
-          5.10内核注意事项：
+          53版 openwrt 固件说明：
 
-          5.10内核之后，由于取消了text_offset，而所有amlogic盒子都用android版的u-boot 2015(非主线），会导致无法启动，目前的解决方案如下：
+          1. openwrt包名格式更改为：
+              openwrt_[soc]_[board]_Rxx.xx.xx_kxx.xx.xx.img  
 
-          1. 如果在u盘、sd卡、tf卡上启动，需要在引导时重载主线u-boot，具体文件名为/boot/u-boot.ext
-             如果在emmc上启动，需要在在引导时重载主线u-boot，具体文件名为/boot/u-boot.emmc
+          2. amlogic已支持 5.10内核，但是需要从 u盘或 tf卡启动，可以刷入emmc(仅数据分区），boot分区还是只能在 u盘或tf卡上面。
+              5.10内核的副作用是 905x3、922x等机型 hdmi 绿屏、启动时间较长、mac地址会发生变化等
 
-          2. 具体的方法：
-             对于s905x、s905d盒子，例如斐讯N1，需要把 /boot/u-boot-p212.bin 拷贝成 /boot/u-boot.ext及/boot/u-boot.emmc两个文件(已测试)
-             对于s912, 例如章鱼星球，需要把 /boot/u-boot-q200.bin 拷贝成 /boot/u-boot.ext及/boot/u-boot.emmc两个文件(未经测试)
-             对于s905x2, 例如x96-max，需要把 /boot/u-boot-sei510.bin 拷贝成 /boot/u-boot.ext及/boot/u-boot.emmc两个文件(未经测试)
-             对于s905x3, 例如x96-max+、h96 max x3、 hk1 box， 需要把 /boot/u-boot-u200.bin 拷贝成 /boot/u-boot.ext及/boot/u-boot.emmc两个文件(已测试)
-             对于s922x， 例如gtking、gtkingpro， 需要把 /boot/u-boot-gtkingpro.bin 拷贝成 /boot/u-boot.ext及/boot/u-boot.emmc两个文件(已测试)
+          3. amlogic盒子统一用 update-amlogic-openwrt.sh 进行升级或降级。
 
-          3. 副作用：
-             a. 可能导致hdmi无显示，或绿屏，但作为软路由或服务器而言并不影响使用
-             b. 可能导致 mac 地址随机变化，介意者请不要使用5.10及以后的内核
-             c. 启动时间比以前有所加长
-          
-          4. 905x3设备
-             5.10内核的固件，目前在H96 Max x3上测试通过， 估计对HK1 Box也适用（存疑，但经测试不能用于X96 Max+
+          4. 新增了 N1 和章鱼星球的新格式镜像（4分区，支持在线升降级），至此，amlogic的盒子全部统一了分区格式
+              副作用是：不支持从旧格式升级，也不能降级到旧格式，mmc设备名从以前的 mmcblk1变成了mmcblk2
+
+          5. 调大了个别固件的rootfs分区，因为以前的512MB快不够用了
+
+          6. amlogic盒子的刷入emmc命令统一为：
+              cd      /root
+              ./install-to-emmc.sh
+            升级降级方法统一为：
+              1. 把 update-amlogic-openwrt.sh 及 img镜像上传至  /mnt/mmcblk2p4
+              2. cd    /mnt/mmcblk2p4
+              3. chmod   755  update-amlogic-openwrt.sh
+              4. ./update-amlogic-openwrt.sh    xxxxx.img
 
         artifacts: ${{ env.FIRMWARE }}/*
     
