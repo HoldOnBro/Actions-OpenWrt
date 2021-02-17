@@ -80,24 +80,27 @@ jobs:
         sudo mkdir imgs
         sudo xz -d Armbian*Aml*\+\.img\.xz
         sudo xz -d Armbian*Aml*\+o*
-        sudo xz -d Armbian*Beike*\+\.img\.xz
-        #sudo xz -d Armbian*Beike*\+o*
-        sudo xz -d Armbian*L1*\+\.img\.xz
-        #sudo xz -d Armbian*L1*\+o*
+        #sudo xz -d Armbian*Beike*\+\.img\.xz
+        sudo xz -d Armbian*Beike*\+o*
+        #sudo xz -d Armbian*L1*\+\.img\.xz
+        sudo xz -d Armbian*L1*\+o*
         sudo mv *.img imgs
         cd /opt/openwrt
         sudo wget $(curl -s https://api.github.com/repos/HoldOnBro/Actions-OpenWrt/releases/34554768 | grep browser_download_url | cut -d '"' -f 4)
-        sudo cp ./openwrt-armvirt-64-default-rootfs.tar.gz ./sfe-openwrt-armvirt-64-default-rootfs.tar.gz
         chmod +x $GITHUB_WORKSPACE/$Update_Ver_SH
         sudo $GITHUB_WORKSPACE/$Update_Ver_SH
-        sudo ./mk_n1_opimg.sh
-        sudo ./mk_s905x3_opimg.sh
-        sudo ./mk_beikeyun_opimg.sh
-        sudo ./mk_l1pro_opimg.sh
-        sudo ./mk_s905x3_opimg_sfe.sh
-        sudo ./mk_s922x_opimg.sh
-        sudo ./mk_zyxq_opimg.sh
+        sudo ./mk_rk3328_beikeyun.sh
+        sudo ./mk_rk3328_l1pro.sh
+        sudo ./mk_s905d_n1.sh
+        sudo ./mk_s905d_n1_tf.sh
+        sudo ./mk_s905x3_multi.sh
+        sudo ./mk_s905x3_multi_tf.sh
+        sudo ./mk_s912_zyxq.sh
+        sudo ./mk_s912_zyxq_tf.sh
+        sudo ./mk_s922x_gtking.sh
+        sudo ./mk_s922x_gtking_tf.sh
         sudo ./n1-to-vplus.sh
+        sudo ./n1-to-vplus_tf.sh
         sudo cp ./S-AllPackages.tar.gz ./tmp/
         echo "::set-output name=status::success"
 
@@ -108,14 +111,8 @@ jobs:
         cd /opt/openwrt/tmp/
         bzip2 *.img
         sudo rm btld-rk3328.bin
-        rename 's/Beike/S-Beike/' Beike*bz2
-        rename 's/L1/S-L1/' L1*bz2
-        rename 's/N1/S-N1/' N1*bz2
+        rename 's/openwrt/S-openwrt/' openwrt*bz2
         rename 's/openwrt/S-openwrt/' openwrt*gz
-        rename 's/S905x3/S-S905x3/' S905x3*bz2
-        rename 's/S922x/S-S922x/' S922x*bz2
-        rename 's/VPlus/S-VPlus/' VPlus*bz2
-        rename 's/ZYXQ/S-ZYXQ/' ZYXQ*bz2
 
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "::set-output name=status::success"
