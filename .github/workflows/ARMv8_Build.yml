@@ -48,6 +48,7 @@ jobs:
         sudo -E apt-get -qq update
         sudo -E apt-get -qq install $(curl -fsSL git.io/depends-ubuntu-1804)
         sudo -E apt-get -qq install rename
+        sudo -E apt-get -qq install pigz
         sudo -E apt-get -qq install time
         sudo -E apt-get -qq install sshpass
         sudo -E apt-get -qq autoremove --purge
@@ -90,18 +91,25 @@ jobs:
         chmod +x $GITHUB_WORKSPACE/$Update_Ver_SH
         sudo $GITHUB_WORKSPACE/$Update_Ver_SH
         sudo ./mk_rk3328_beikeyun.sh
+        sudo ./mk_rk3328_beikeyun_fol.sh
         sudo ./mk_rk3328_l1pro.sh
+        sudo ./mk_rk3328_l1pro_fol.sh
         sudo ./mk_s905d_n1.sh
+        sudo ./mk_s905d_n1_fol.sh
         sudo ./mk_s905d_n1_tf.sh
         sudo ./mk_s905x3_multi.sh
+        sudo ./mk_s905x3_multi_fol.sh
         sudo ./mk_s905x3_multi_tf.sh
         sudo ./mk_s912_zyxq.sh
+        sudo ./mk_s912_zyxq_fol.sh
         sudo ./mk_s912_zyxq_tf.sh
         sudo ./mk_s922x_gtking.sh
+        sudo ./mk_s922x_gtking_fol.sh
         sudo ./mk_s922x_gtking_tf.sh
         sudo ./n1-to-vplus.sh
+        sudo ./n1-to-vplus_fol.sh
         sudo ./n1-to-vplus_tf.sh
-        sudo cp ./S-AllPackages.tar.gz ./tmp/
+        sudo cp ./*AllPackages.tar.gz ./tmp/
         echo "::set-output name=status::success"
 
     - name: Organize files
@@ -109,9 +117,8 @@ jobs:
       if: steps.build.outputs.status == 'success' && !cancelled()
       run: |
         cd /opt/openwrt/tmp/
-        bzip2 *.img
+        pigz -6 -p $(nproc) *.img
         sudo rm btld-rk3328.bin
-        rename 's/openwrt/S-openwrt/' openwrt*bz2
         rename 's/openwrt/S-openwrt/' openwrt*gz
 
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
