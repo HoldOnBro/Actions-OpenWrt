@@ -70,6 +70,8 @@ rm -rf /home/xyz/lede/package/jpcre2
 rm -rf /home/xyz/lede/package/rapidjson
 rm -rf /home/xyz/lede/package/luci-app-unblockneteasemusic-mini
 rm -rf /home/xyz/lede/package/luci-app-socat
+rm -rf /home/xyz/lede/package/ddnsto
+rm -rf /home/xyz/lede/package/luci-app-ddnsto
 
 svn co https://github.com/brvphoenix/wrtbwmon/trunk/wrtbwmon /home/xyz/lede/package/wrtbwmon
 #rm -rf /home/xyz/lede/package/luci-app-ksmbd
@@ -123,6 +125,9 @@ svn co https://github.com/project-openwrt/openwrt/trunk/package/ntlf9t/smartdns 
 chmod 0755 /home/xyz/lede/package/luci-app-koolddns/root/etc/init.d/koolddns
 chmod 0755 /home/xyz/lede/package/luci-app-koolddns/root/usr/share/koolddns/aliddns
 sed -i 's/LUCI_DEPENDS.*/LUCI_DEPENDS:=\@\(arm\|\|aarch64\)/g' /home/xyz/lede/package/lean/luci-app-cpufreq/Makefile
+
+svn co https://github.com/linkease/ddnsto-openwrt/trunk/ddnsto /home/xyz/lede/package/ddnsto
+svn co https://github.com/linkease/ddnsto-openwrt/trunk/luci-app-ddnsto /home/xyz/lede/package/luci-app-ddnsto
 #sed -i "s/PKG_SOURCE_URL:=.*/PKG_SOURCE_URL:=https:\/\/github\.com\/1715173329\/dnsforwarder\.git/" /home/xyz/lede/package/lean/dnsforwarder/Makefile
 #sed -i "s/PKG_SOURCE_VERSION:=.*/PKG_SOURCE_VERSION:=693b554e59479c2867c74f0bb5e26290b93747c5/" /home/xyz/lede/package/lean/dnsforwarder/Makefile
 #sed -i "s/\ \ URL:=.*/\ \ URL:=https:\/\/github\.com\/1715173329\/dnsforwarder/" /home/xyz/lede/package/lean/dnsforwarder/Makefile
