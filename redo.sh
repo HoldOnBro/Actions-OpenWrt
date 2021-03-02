@@ -95,7 +95,7 @@ svn co https://github.com/project-openwrt/openwrt/trunk/package/lienol/luci-app-
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/luci-app-passwall /home/xyz/lede/package/luci-app-passwall
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/ssocks /home/xyz/lede/package/ssocks
 svn co https://github.com/fw876/helloworld/trunk/xray-core /home/xyz/lede/package/xray-core
-svn co https://github.com/xiaorouji/openwrt-passwall/trunk/xray-plugin /home/xyz/lede/package/xray-plugin
+svn co https://github.com/fw876/helloworld/trunk/xray-plugin /home/xyz/lede/package/xray-plugin
 #svn co https://github.com/xiaorouji/openwrt-passwall/trunk/xray-core /home/xyz/lede/package/xray-core
 svn co https://github.com/project-openwrt/openwrt/trunk/package/lienol/luci-app-socat /home/xyz/lede/package/luci-app-socat
 
