@@ -96,7 +96,8 @@ svn co https://github.com/project-openwrt/openwrt/trunk/package/ntlf9t/smartdns 
 svn co https://github.com/project-openwrt/openwrt/trunk/package/ntlf9t/luci-app-smartdns package/luci-app-smartdns
 #git clone https://github.com/pymumu/openwrt-smartdns package/smartdns
 #git clone -b lede https://github.com/pymumu/luci-app-smartdns.git package/luci-app-smartdns
-
+svn co https://github.com/linkease/ddnsto-openwrt/trunk/ddnsto package/ddnsto
+svn co https://github.com/linkease/ddnsto-openwrt/trunk/luci-app-ddnsto package/luci-app-ddnsto
 #添加ksmbd
 #svn co https://github.com/openwrt/luci/trunk/applications/luci-app-ksmbd package/luci-app-ksmbd
 #添加udp2raw
