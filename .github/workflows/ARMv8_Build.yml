@@ -78,10 +78,12 @@ jobs:
         sudo mkdir imgs
         sudo xz -d Armbian*Aml*\+\.img\.xz
         sudo xz -d Armbian*Aml*\+o*
-        #sudo xz -d Armbian*Beike*\+\.img\.xz
+        sudo xz -d Armbian*Beike*\+\.img\.xz
         sudo xz -d Armbian*Beike*\+o*
-        #sudo xz -d Armbian*L1*\+\.img\.xz
+        sudo xz -d Armbian*L1*\+\.img\.xz
         sudo xz -d Armbian*L1*\+o*
+        sudo xz -d Armbian*VPlus*\+\.img\.xz
+        sudo xz -d Armbian*VPlus*\+o*
         sudo mv *.img imgs
         cd /opt/openwrt
         sudo wget $(curl -s https://api.github.com/repos/HoldOnBro/Actions-OpenWrt/releases/34554768 | grep browser_download_url | cut -d '"' -f 4)
@@ -89,23 +91,28 @@ jobs:
         sudo $GITHUB_WORKSPACE/$Update_Ver_SH
         sudo ./mk_rk3328_beikeyun.sh
         sudo ./mk_rk3328_beikeyun_fol.sh
+        sudo ./mk_rk3328_beikeyun_tf.sh
         sudo ./mk_rk3328_l1pro.sh
         sudo ./mk_rk3328_l1pro_fol.sh
+        sudo ./mk_rk3328_l1pro_tf.sh
         sudo ./mk_s905d_n1.sh
         sudo ./mk_s905d_n1_fol.sh
         sudo ./mk_s905d_n1_tf.sh
+        sudo ./mk_s905x2_x96max.sh
+        sudo ./mk_s905x2_x96max_fol.sh
+        sudo ./mk_s905x2_x96max_tf.sh
         sudo ./mk_s905x3_multi.sh
         sudo ./mk_s905x3_multi_fol.sh
         sudo ./mk_s905x3_multi_tf.sh
         sudo ./mk_s912_zyxq.sh
         sudo ./mk_s912_zyxq_fol.sh
         sudo ./mk_s912_zyxq_tf.sh
-        sudo ./mk_s922x_gtking.sh
-        sudo ./mk_s922x_gtking_fol.sh
-        sudo ./mk_s922x_gtking_tf.sh
-        sudo ./n1-to-vplus.sh
-        sudo ./n1-to-vplus_fol.sh
-        sudo ./n1-to-vplus_tf.sh
+        #sudo ./mk_s922x_gtking.sh
+        #sudo ./mk_s922x_gtking_fol.sh
+        #sudo ./mk_s922x_gtking_tf.sh
+        sudo ./mk_h6_vplus.sh
+        sudo ./mk_h6_vplus_fol.sh
+        sudo ./mk_h6_vplus_tf.sh
         sudo cp ./*AllPackages.tar.gz ./tmp/
         echo "::set-output name=status::success"
 
