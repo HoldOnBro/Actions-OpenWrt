@@ -98,9 +98,9 @@ jobs:
         sudo ./mk_s905d_n1.sh
         sudo ./mk_s905d_n1_fol.sh
         sudo ./mk_s905d_n1_tf.sh
-        sudo ./mk_s905x2_x96max.sh
-        sudo ./mk_s905x2_x96max_fol.sh
-        sudo ./mk_s905x2_x96max_tf.sh
+        #sudo ./mk_s905x2_x96max.sh
+        #sudo ./mk_s905x2_x96max_fol.sh
+        #sudo ./mk_s905x2_x96max_tf.sh
         sudo ./mk_s905x3_multi.sh
         sudo ./mk_s905x3_multi_fol.sh
         sudo ./mk_s905x3_multi_tf.sh
