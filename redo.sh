@@ -72,6 +72,7 @@ rm -rf /home/xyz/lede/package/luci-app-unblockneteasemusic-mini
 rm -rf /home/xyz/lede/package/luci-app-socat
 rm -rf /home/xyz/lede/package/ddnsto
 rm -rf /home/xyz/lede/package/luci-app-ddnsto
+rm -rf /home/xyz/lede/package/shadowsocks-rust
 
 svn co https://github.com/brvphoenix/wrtbwmon/trunk/wrtbwmon /home/xyz/lede/package/wrtbwmon
 #rm -rf /home/xyz/lede/package/luci-app-ksmbd
@@ -98,6 +99,7 @@ svn co https://github.com/xiaorouji/openwrt-passwall/trunk/luci-app-passwall /ho
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/ssocks /home/xyz/lede/package/ssocks
 svn co https://github.com/fw876/helloworld/trunk/xray-core /home/xyz/lede/package/xray-core
 svn co https://github.com/fw876/helloworld/trunk/xray-plugin /home/xyz/lede/package/xray-plugin
+svn co https://github.com/fw876/helloworld/trunk/shadowsocks-rust /home/xyz/lede/package/shadowsocks-rust
 #svn co https://github.com/xiaorouji/openwrt-passwall/trunk/xray-core /home/xyz/lede/package/xray-core
 svn co https://github.com/project-openwrt/openwrt/trunk/package/lienol/luci-app-socat /home/xyz/lede/package/luci-app-socat
 
