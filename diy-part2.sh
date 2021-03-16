@@ -22,9 +22,6 @@ git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 #svn co https://github.com/immortalwrt/immortalwrt/trunk/include
 #svn co https://github.com/immortalwrt/immortalwrt/trunk/scripts
 
-#修改makefile
-find package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/PKG_SOURCE_URL:=\@GHREPO/PKG_SOURCE_URL:=https:\/\/github\.com/g' {}
-
 git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git package/luci-app-jd-dailybonus
 git clone https://github.com/jerrykuku/luci-app-ttnode.git package/luci-app-ttnode
 git clone https://github.com/jerrykuku/lua-maxminddb.git package/lua-maxminddb
@@ -113,6 +110,10 @@ git clone https://github.com/sensec/openwrt-udp2raw package/openwrt-udp2raw
 git clone https://github.com/sensec/luci-app-udp2raw package/luci-app-udp2raw
 sed -i "s/PKG_SOURCE_VERSION:=.*/PKG_SOURCE_VERSION:=f2f90a9a150be94d50af555b53657a2a4309f287/" package/openwrt-udp2raw/Makefile
 sed -i "s/PKG_VERSION:=.*/PKG_VERSION:=20200920\.0/" package/openwrt-udp2raw/Makefile
+
+#修改makefile
+find package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/PKG_SOURCE_URL:=\@GHREPO/PKG_SOURCE_URL:=https:\/\/github\.com/g' {}
+find package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/PKG_SOURCE_URL:=\@GHCODELOAD/PKG_SOURCE_URL:=https:\/\/codeload\.github\.com/g' {}
 
 ./scripts/feeds update -a
 ./scripts/feeds install -a
