@@ -107,6 +107,12 @@ git clone https://github.com/sensec/luci-app-udp2raw package/luci-app-udp2raw
 sed -i "s/PKG_SOURCE_VERSION:=.*/PKG_SOURCE_VERSION:=f2f90a9a150be94d50af555b53657a2a4309f287/" package/openwrt-udp2raw/Makefile
 sed -i "s/PKG_VERSION:=.*/PKG_VERSION:=20200920\.0/" package/openwrt-udp2raw/Makefile
 
+#replace mirrors
+rm include/download.mk
+rm scripts/download.pl
+svn co https://github.com/immortalwrt/immortalwrt/trunk/include/download.mk include/download.mk
+svn co https://github.com/immortalwrt/immortalwrt/trunk/scripts/download.pl scripts/download.pl
+
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 
@@ -116,11 +122,7 @@ sed -i 's/LUCI_DEPENDS.*/LUCI_DEPENDS:=\@\(arm\|\|aarch64\)/g' package/lean/luci
 #replace coremark.sh with the new one
 rm package/lean/coremark/coremark.sh
 cp $GITHUB_WORKSPACE/general/coremark.sh package/lean/coremark/
-#replace mirrors
-rm include/download.mk
-rm scripts/download.pl
-svn co https://github.com/immortalwrt/immortalwrt/trunk/include/download.mk include/download.mk
-svn co https://github.com/immortalwrt/immortalwrt/trunk/scripts/download.pl scripts/download.pl
+
 #修改bypass的makefile
 find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-redir/shadowsocksr-libev-alt/g' {}
 find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-server/shadowsocksr-libev-server/g' {}
