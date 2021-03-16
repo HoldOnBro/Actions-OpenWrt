@@ -133,6 +133,9 @@ svn co https://github.com/linkease/ddnsto-openwrt/trunk/luci-app-ddnsto /home/xy
 #sed -i "s/PKG_SOURCE_URL:=.*/PKG_SOURCE_URL:=https:\/\/github\.com\/1715173329\/dnsforwarder\.git/" /home/xyz/lede/package/lean/dnsforwarder/Makefile
 #sed -i "s/PKG_SOURCE_VERSION:=.*/PKG_SOURCE_VERSION:=693b554e59479c2867c74f0bb5e26290b93747c5/" /home/xyz/lede/package/lean/dnsforwarder/Makefile
 #sed -i "s/\ \ URL:=.*/\ \ URL:=https:\/\/github\.com\/1715173329\/dnsforwarder/" /home/xyz/lede/package/lean/dnsforwarder/Makefile
+#修改makefile
+find package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/PKG_SOURCE_URL:=\@GHREPO/PKG_SOURCE_URL:=https:\/\/github\.com/g' {}
+find package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/PKG_SOURCE_URL:=\@GHCODELOAD/PKG_SOURCE_URL:=https:\/\/codeload\.github\.com/g' {}
 /home/xyz/lede/scripts/feeds update -a
 /home/xyz/lede/scripts/feeds install -a
 
