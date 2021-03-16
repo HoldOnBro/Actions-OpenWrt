@@ -17,10 +17,13 @@ rm -rf package/lean/luci-app-wrtbwmon
 git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 
 #replace mirrors
-rm include/download.mk
-rm scripts/download.pl
-svn co https://github.com/immortalwrt/immortalwrt/trunk/include/download.mk include/download.mk
-svn co https://github.com/immortalwrt/immortalwrt/trunk/scripts/download.pl scripts/download.pl
+#rm -rf ./include
+#rm -rf ./ scripts
+#svn co https://github.com/immortalwrt/immortalwrt/trunk/include
+#svn co https://github.com/immortalwrt/immortalwrt/trunk/scripts
+
+#修改makefile
+find package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/PKG_SOURCE_URL:=\@GHREPO/PKG_SOURCE_URL:=https:\/\/github\.com/g' {}
 
 git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git package/luci-app-jd-dailybonus
 git clone https://github.com/jerrykuku/luci-app-ttnode.git package/luci-app-ttnode
