@@ -73,6 +73,7 @@ rm -rf /home/xyz/lede/package/luci-app-socat
 rm -rf /home/xyz/lede/package/ddnsto
 rm -rf /home/xyz/lede/package/luci-app-ddnsto
 rm -rf /home/xyz/lede/package/shadowsocks-rust
+rm -rf /home/xyz/lede/package/smartdns-le
 
 svn co https://github.com/brvphoenix/wrtbwmon/trunk/wrtbwmon /home/xyz/lede/package/wrtbwmon
 #rm -rf /home/xyz/lede/package/luci-app-ksmbd
@@ -123,6 +124,7 @@ svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/luci-app-
 
 svn co https://github.com/project-openwrt/openwrt/trunk/package/ntlf9t/luci-app-smartdns /home/xyz/lede/package/luci-app-smartdns
 svn co https://github.com/project-openwrt/openwrt/trunk/package/ntlf9t/smartdns /home/xyz/lede/package/smartdns
+svn co https://github.com/garypang13/openwrt-packages/trunk/smartdns-le /home/xyz/lede/package/smartdns-le
 #svn co https://github.com/openwrt/luci/trunk/applications/luci-app-ksmbd /home/xyz/lede/package/luci-app-ksmbd
 chmod 0755 /home/xyz/lede/package/luci-app-koolddns/root/etc/init.d/koolddns
 chmod 0755 /home/xyz/lede/package/luci-app-koolddns/root/usr/share/koolddns/aliddns
