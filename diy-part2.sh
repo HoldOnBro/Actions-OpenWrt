@@ -97,7 +97,7 @@ svn co https://github.com/immortalwrt/packages/trunk/libs/rapidjson package/rapi
 #svn co https://github.com/immortalwrt/immortalwrt/trunk/package/ctcgfw/subweb package/subweb
 svn co https://github.com/immortalwrt/packages/trunk/net/subconverter package/subconverter
 #添加smartdns
-svn co https://github.com/immortalwrt/packages/trunk/net/smartdns package/smartdns
+#svn co https://github.com/immortalwrt/packages/trunk/net/smartdns package/smartdns
 svn co https://github.com/garypang13/openwrt-packages/trunk/smartdns-le package/smartdns-le
 svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-smartdns package/luci-app-smartdns
 #git clone https://github.com/pymumu/openwrt-smartdns package/smartdns
