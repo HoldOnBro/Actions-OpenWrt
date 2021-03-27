@@ -91,8 +91,9 @@ chmod 0755 package/luci-app-koolddns/root/usr/share/koolddns/aliddns
 
 svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-unblockneteasemusic-mini package/luci-app-unblockneteasemusic-mini
 #添加subweb&subconverter
-svn co https://github.com/immortalwrt/packages/trunk/libs/duktape package/duktape
+svn co https://github.com/immortalwrt/packages/trunk/libs/quickjspp package/quickjspp
 svn co https://github.com/immortalwrt/packages/trunk/libs/jpcre2 package/jpcre2
+svn co https://github.com/immortalwrt/packages/trunk/libs/libcron/ package/libcron
 svn co https://github.com/immortalwrt/packages/trunk/libs/rapidjson package/rapidjson
 #svn co https://github.com/immortalwrt/immortalwrt/trunk/package/ctcgfw/subweb package/subweb
 svn co https://github.com/immortalwrt/packages/trunk/net/subconverter package/subconverter
