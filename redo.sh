@@ -13,6 +13,8 @@ sed -i "s/PKG_SOURCE_VERSION:=.*/PKG_SOURCE_VERSION:=f2f90a9a150be94d50af555b536
 sed -i "s/PKG_VERSION:=.*/PKG_VERSION:=20200920\.0/" /home/xyz/lede/package/openwrt-udp2raw/Makefile
 cd /home/xyz/lede/package/luci-theme-opentopd && git pull
 cd /home/xyz/lede/package/luci-theme-infinityfreedom && git pull
+cd /home/xyz/lede/package/luci-theme-Butterfly-dark && git pull
+cd /home/xyz/lede/package/luci-theme-Butterfly && git pull
 cd /home/xyz/lede/package/OpenAppFilter && git pull
 cd /home/xyz/lede/package/luci-app-jd-dailybonus && git pull
 cd /home/xyz/lede/package/luci-app-ttnode && git pull
@@ -36,10 +38,9 @@ rm -rf /home/xyz/lede/package/smartdns
 rm -rf /home/xyz/lede/package/wrtbwmon
 rm -rf /home/xyz/lede/package/luci-app-bypass
 rm -rf /home/xyz/lede/package/lean/luci-app-wrtbwmon
-rm -rf /home/xyz/lede/package/luci-theme-darkmatter
-rm -rf /home/xyz/lede/package/luci-theme-Butterfly-dark
-rm -rf /home/xyz/lede/package/luci-theme-Butterfly
 rm -rf /home/xyz/lede/package/luci-theme-rosy
+rm -rf /home/xyz/lede/package/luci-theme-purple
+rm -rf /home/xyz/lede/package/luci-theme-darkmatter
 rm -rf /home/xyz/lede/package/luci-theme-opentomato
 rm -rf /home/xyz/lede/package/luci-theme-edge
 rm -rf /home/xyz/lede/package/luci-theme-argon_new
@@ -83,6 +84,8 @@ find /home/xyz/lede/package/*/ /home/xyz/lede/feeds/*/ -maxdepth 2 -path "*luci-
 find /home/xyz/lede/package/*/ /home/xyz/lede/feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-server/shadowsocksr-libev-server/g' {}
 find /home/xyz/lede/package/*/ /home/xyz/lede/feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/smartdns-le/smartdns/g' {}
 svn co https://github.com/rosywrt/luci-theme-rosy/trunk/luci-theme-rosy /home/xyz/lede/package/luci-theme-rosy
+svn co https://github.com/rosywrt/luci-theme-purple/trunk/luci-theme-purple /home/xyz/lede/package/luci-theme-purple
+svn co https://github.com/apollo-ng/luci-theme-darkmatter/trunk/luci/themes/luci-theme-darkmatter /home/xyz/lede/package/luci-theme-darkmatter
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-opentomato /home/xyz/lede/package/luci-theme-opentomato
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-edge /home/xyz/lede/package/luci-theme-edge
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-argon_new /home/xyz/lede/package/luci-theme-argon_new
@@ -119,9 +122,6 @@ svn co https://github.com/immortalwrt/packages/trunk/utils/filebrowser /home/xyz
 svn co https://github.com/immortalwrt/immortalwrt/trunk/package/lienol/luci-app-fileassistant /home/xyz/lede/package/luci-app-fileassistant
 svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-gost /home/xyz/lede/package/luci-app-gost
 svn co https://github.com/immortalwrt/packages/trunk/net/gost /home/xyz/lede/package/gost
-svn co https://github.com/immortalwrt/luci/trunk/themes/luci-theme-darkmatter /home/xyz/lede/package/luci-theme-darkmatter
-svn co https://github.com/immortalwrt/luci/trunk/themes/luci-theme-Butterfly-dark /home/xyz/lede/package/luci-theme-Butterfly-dark
-svn co https://github.com/immortalwrt/luci/trunk/themes/luci-theme-Butterfly /home/xyz/lede/package/luci-theme-Butterfly
 svn co https://github.com/immortalwrt/immortalwrt/trunk/package/lienol/luci-app-socat /home/xyz/lede/package/luci-app-socat
 svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-unblockneteasemusic-mini /home/xyz/lede/package/luci-app-unblockneteasemusic-mini
 svn co https://github.com/immortalwrt/packages/trunk/net/subconverter /home/xyz/lede/package/subconverter
@@ -139,6 +139,7 @@ svn co https://github.com/linkease/ddnsto-openwrt/trunk/luci-app-ddnsto /home/xy
 #sed -i "s/PKG_SOURCE_VERSION:=.*/PKG_SOURCE_VERSION:=693b554e59479c2867c74f0bb5e26290b93747c5/" /home/xyz/lede/package/lean/dnsforwarder/Makefile
 #sed -i "s/\ \ URL:=.*/\ \ URL:=https:\/\/github\.com\/1715173329\/dnsforwarder/" /home/xyz/lede/package/lean/dnsforwarder/Makefile
 #修改makefile
+find /home/xyz/lede/package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/include\ \.\.\/\.\.\/luci\.mk/include \$(TOPDIR)\/feeds\/luci\/luci\.mk/g' {}
 find /home/xyz/lede/package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/PKG_SOURCE_URL:=\@GHREPO/PKG_SOURCE_URL:=https:\/\/github\.com/g' {}
 find /home/xyz/lede/package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/PKG_SOURCE_URL:=\@GHCODELOAD/PKG_SOURCE_URL:=https:\/\/codeload\.github\.com/g' {}
 /home/xyz/lede/scripts/feeds update -a
