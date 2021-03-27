@@ -113,19 +113,19 @@ svn co https://github.com/fw876/helloworld/trunk/naiveproxy /home/xyz/lede/packa
 
 #svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/subweb /home/xyz/lede/package/subweb
 
-svn co https://github.com/immortalwrt/packages/trunk/libs/quickjspp /home/xyz/lede/package/quickjspp
-svn co https://github.com/immortalwrt/packages/trunk/libs/jpcre2 /home/xyz/lede/package/jpcre2
-svn co https://github.com/immortalwrt/packages/trunk/libs/libcron/ /home/xyz/lede/package/libcron
-svn co https://github.com/immortalwrt/packages/trunk/libs/rapidjson /home/xyz/lede/package/rapidjson
-svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-filebrowser /home/xyz/lede/package/luci-app-filebrowser
-svn co https://github.com/immortalwrt/packages/trunk/utils/filebrowser /home/xyz/lede/package/filebrowser
+svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/libs/quickjspp /home/xyz/lede/package/quickjspp
+svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/libs/jpcre2 /home/xyz/lede/package/jpcre2
+svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/libs/libcron/ /home/xyz/lede/package/libcron
+svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/libs/rapidjson /home/xyz/lede/package/rapidjson
+svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-filebrowser /home/xyz/lede/package/luci-app-filebrowser
+svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/utils/filebrowser /home/xyz/lede/package/filebrowser
 svn co https://github.com/immortalwrt/immortalwrt/trunk/package/lienol/luci-app-fileassistant /home/xyz/lede/package/luci-app-fileassistant
-svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-gost /home/xyz/lede/package/luci-app-gost
-svn co https://github.com/immortalwrt/packages/trunk/net/gost /home/xyz/lede/package/gost
+svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-gost /home/xyz/lede/package/luci-app-gost
+svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/net/gost /home/xyz/lede/package/gost
 svn co https://github.com/immortalwrt/immortalwrt/trunk/package/lienol/luci-app-socat /home/xyz/lede/package/luci-app-socat
-svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-unblockneteasemusic-mini /home/xyz/lede/package/luci-app-unblockneteasemusic-mini
-svn co https://github.com/immortalwrt/packages/trunk/net/subconverter /home/xyz/lede/package/subconverter
-svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-smartdns /home/xyz/lede/package/luci-app-smartdns
+svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-unblockneteasemusic-mini /home/xyz/lede/package/luci-app-unblockneteasemusic-mini
+svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/net/subconverter /home/xyz/lede/package/subconverter
+svn co https://github.com/immortalwrt/immortalwrt/trunk/package/ntlf9t/luci-app-smartdns /home/xyz/lede/package/luci-app-smartdns
 
 svn co https://github.com/garypang13/openwrt-packages/trunk/smartdns-le /home/xyz/lede/package/smartdns-le
 #svn co https://github.com/openwrt/luci/trunk/applications/luci-app-ksmbd /home/xyz/lede/package/luci-app-ksmbd
@@ -140,6 +140,7 @@ svn co https://github.com/linkease/ddnsto-openwrt/trunk/luci-app-ddnsto /home/xy
 #sed -i "s/\ \ URL:=.*/\ \ URL:=https:\/\/github\.com\/1715173329\/dnsforwarder/" /home/xyz/lede/package/lean/dnsforwarder/Makefile
 #修改makefile
 find /home/xyz/lede/package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/include\ \.\.\/\.\.\/luci\.mk/include \$(TOPDIR)\/feeds\/luci\/luci\.mk/g' {}
+find /home/xyz/lede/package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/include\ \.\.\/\.\.\/lang\/golang\/golang\-package\.mk/include \$(TOPDIR)\/feeds\/packages\/lang\/golang\/golang\-package\.mk/g' {}
 find /home/xyz/lede/package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/PKG_SOURCE_URL:=\@GHREPO/PKG_SOURCE_URL:=https:\/\/github\.com/g' {}
 find /home/xyz/lede/package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/PKG_SOURCE_URL:=\@GHCODELOAD/PKG_SOURCE_URL:=https:\/\/codeload\.github\.com/g' {}
 /home/xyz/lede/scripts/feeds update -a
