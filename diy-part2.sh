@@ -47,8 +47,8 @@ svn co https://github.com/xiaorouji/openwrt-passwall/trunk/chinadns-ng package/c
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/tcping package/tcping
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-go package/trojan-go
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-plus package/trojan-plus
-svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-filebrowser package/luci-app-filebrowser
-svn co https://github.com/immortalwrt/packages/trunk/utils/filebrowser package/filebrowser
+svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-filebrowser package/luci-app-filebrowser
+svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/utils/filebrowser package/filebrowser
 svn co https://github.com/immortalwrt/immortalwrt/trunk/package/lienol/luci-app-fileassistant package/luci-app-fileassistant
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/luci-app-passwall package/luci-app-passwall
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/ssocks package/ssocks
@@ -58,8 +58,8 @@ svn co https://github.com/fw876/helloworld/trunk/shadowsocks-rust package/shadow
 #svn co https://github.com/xiaorouji/openwrt-passwall/trunk/xray-core package/xray-core
 #svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-gost package/luci-app-gost
 #svn co https://github.com/kenzok8/openwrt-packages/trunk/gost package/gost
-svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-gost package/luci-app-gost
-svn co https://github.com/immortalwrt/packages/trunk/net/gost package/gost
+svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-gost package/luci-app-gost
+svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/net/gost package/gost
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-eqos package/luci-app-eqos
 git clone https://github.com/tty228/luci-app-serverchan.git package/luci-app-serverchan
 # cd package/luci-app-serverchan && git reset --hard 6387b3b47b03d95d3f3bcd42ff98db5bb84fd056 && git pull && cd ../..
@@ -90,18 +90,18 @@ svn co https://github.com/fw876/helloworld/trunk/naiveproxy package/naiveproxy
 chmod 0755 package/luci-app-koolddns/root/etc/init.d/koolddns
 chmod 0755 package/luci-app-koolddns/root/usr/share/koolddns/aliddns
 
-svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-unblockneteasemusic-mini package/luci-app-unblockneteasemusic-mini
+svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-unblockneteasemusic-mini package/luci-app-unblockneteasemusic-mini
 #添加subweb&subconverter
-svn co https://github.com/immortalwrt/packages/trunk/libs/quickjspp package/quickjspp
-svn co https://github.com/immortalwrt/packages/trunk/libs/jpcre2 package/jpcre2
-svn co https://github.com/immortalwrt/packages/trunk/libs/libcron/ package/libcron
-svn co https://github.com/immortalwrt/packages/trunk/libs/rapidjson package/rapidjson
+svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/libs/quickjspp package/quickjspp
+svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/libs/jpcre2 package/jpcre2
+svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/libs/libcron/ package/libcron
+svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/libs/rapidjson package/rapidjson
 #svn co https://github.com/immortalwrt/immortalwrt/trunk/package/ctcgfw/subweb package/subweb
-svn co https://github.com/immortalwrt/packages/trunk/net/subconverter package/subconverter
+svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/net/subconverter package/subconverter
 #添加smartdns
-#svn co https://github.com/immortalwrt/packages/trunk/net/smartdns package/smartdns
+#svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/net/smartdns package/smartdns
 svn co https://github.com/garypang13/openwrt-packages/trunk/smartdns-le package/smartdns-le
-svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-smartdns package/luci-app-smartdns
+svn co https://github.com/immortalwrt/immortalwrt/trunk/package/ntlf9t/luci-app-smartdns package/luci-app-smartdns
 #git clone https://github.com/pymumu/openwrt-smartdns package/smartdns
 #git clone -b lede https://github.com/pymumu/luci-app-smartdns.git package/luci-app-smartdns
 svn co https://github.com/linkease/ddnsto-openwrt/trunk/ddnsto package/ddnsto
@@ -116,6 +116,7 @@ sed -i "s/PKG_VERSION:=.*/PKG_VERSION:=20200920\.0/" package/openwrt-udp2raw/Mak
 
 #修改makefile
 find package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/include\ \.\.\/\.\.\/luci\.mk/include \$(TOPDIR)\/feeds\/luci\/luci\.mk/g' {}
+find /home/xyz/lede/package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/include\ \.\.\/\.\.\/lang\/golang\/golang\-package\.mk/include \$(TOPDIR)\/feeds\/packages\/lang\/golang\/golang\-package\.mk/g' {}
 find package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/PKG_SOURCE_URL:=\@GHREPO/PKG_SOURCE_URL:=https:\/\/github\.com/g' {}
 find package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/PKG_SOURCE_URL:=\@GHCODELOAD/PKG_SOURCE_URL:=https:\/\/codeload\.github\.com/g' {}
 #svn co https://github.com/immortalwrt/immortalwrt/trunk/include/download.mk include/download.mk
