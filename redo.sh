@@ -127,7 +127,7 @@ svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/net/gost /
 svn co https://github.com/immortalwrt/immortalwrt/trunk/package/lienol/luci-app-socat /home/xyz/lede/package/luci-app-socat
 svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-unblockneteasemusic-mini /home/xyz/lede/package/luci-app-unblockneteasemusic-mini
 svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/net/subconverter /home/xyz/lede/package/subconverter
-svn co https://github.com/immortalwrt/immortalwrt/trunk/package/ntlf9t/luci-app-smartdns /home/xyz/lede/package/luci-app-smartdns
+svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-smartdns /home/xyz/lede/package/luci-app-smartdns
 
 svn co https://github.com/garypang13/openwrt-packages/trunk/smartdns-le /home/xyz/lede/package/smartdns-le
 #svn co https://github.com/openwrt/luci/trunk/applications/luci-app-ksmbd /home/xyz/lede/package/luci-app-ksmbd
