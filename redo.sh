@@ -121,10 +121,10 @@ svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/libs/libcr
 svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/libs/rapidjson /home/xyz/lede/package/rapidjson
 svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-filebrowser /home/xyz/lede/package/luci-app-filebrowser
 svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/utils/filebrowser /home/xyz/lede/package/filebrowser
-svn co https://github.com/immortalwrt/immortalwrt/trunk/package/lienol/luci-app-fileassistant /home/xyz/lede/package/luci-app-fileassistant
+svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-fileassistant /home/xyz/lede/package/luci-app-fileassistant
+svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-socat /home/xyz/lede/package/luci-app-socat
 svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-gost /home/xyz/lede/package/luci-app-gost
 svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/net/gost /home/xyz/lede/package/gost
-svn co https://github.com/immortalwrt/immortalwrt/trunk/package/lienol/luci-app-socat /home/xyz/lede/package/luci-app-socat
 svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-unblockneteasemusic-mini /home/xyz/lede/package/luci-app-unblockneteasemusic-mini
 svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/net/subconverter /home/xyz/lede/package/subconverter
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-smartdns /home/xyz/lede/package/luci-app-smartdns
