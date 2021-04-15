@@ -1,5 +1,5 @@
 #!/bin/bash
- 
+
 TAG=latest
 if [ ! -z "$1" ];then
 	TAG=$1
