@@ -57,12 +57,12 @@ jobs:
       run: |
         echo "docker buildx version"
         docker buildx version
-        echo "ll /proc/sys/fs/binfmt_misc"
-        ll /proc/sys/fs/binfmt_misc
+        echo "ls -l /proc/sys/fs/binfmt_misc"
+        ls -l /proc/sys/fs/binfmt_misc
         echo "docker run --privileged --rm tonistiigi/binfmt --install all"
         docker run --privileged --rm tonistiigi/binfmt --install all
-        echo "ll /proc/sys/fs/binfmt_misc"
-        ll /proc/sys/fs/binfmt_misc
+        echo "ls -l /proc/sys/fs/binfmt_misc"
+        ls -l /proc/sys/fs/binfmt_misc
         echo "docker buildx ls"
         docker buildx ls
 
