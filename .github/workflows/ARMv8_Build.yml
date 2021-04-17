@@ -71,20 +71,12 @@ jobs:
     - name: Build firmware
       id: build
       run: |
-        cd /opt
+        sudo mkdir /opt/kernel
+        cd /opt/kernel
         chmod +x $GITHUB_WORKSPACE/$Get_Imgs_SH
         sudo $GITHUB_WORKSPACE/$Get_Imgs_SH
-        sudo tar xvzf *.tar.gz
-        sudo mkdir imgs
-        sudo xz -d Armbian*Aml*\+\.img\.xz
-        sudo xz -d Armbian*Aml*\+o*
-        sudo xz -d Armbian*Beike*\+\.img\.xz
-        sudo xz -d Armbian*Beike*\+o*
-        sudo xz -d Armbian*L1*\+\.img\.xz
-        sudo xz -d Armbian*L1*\+o*
-        sudo xz -d Armbian*VPlus*\+\.img\.xz
-        sudo xz -d Armbian*VPlus*\+o*
-        sudo mv *.img imgs
+        sudo cp mk_*.tar.gz ../ && cd ..
+        sudo tar xvzf mk_*.tar.gz
         cd /opt/openwrt
         sudo wget $(curl -s https://api.github.com/repos/HoldOnBro/Actions-OpenWrt/releases/34554768 | grep browser_download_url | cut -d '"' -f 4)
         chmod +x $GITHUB_WORKSPACE/$Update_Ver_SH
