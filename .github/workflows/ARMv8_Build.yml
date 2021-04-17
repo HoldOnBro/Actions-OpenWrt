@@ -114,7 +114,6 @@ jobs:
       run: |
         cd /opt/openwrt/tmp/
         pigz -6 -p $(nproc) *.img
-        sudo rm btld-rk3328.bin
         rename 's/openwrt/S-openwrt/' openwrt*gz
 
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
