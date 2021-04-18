@@ -28,7 +28,7 @@ cd /home/xyz/lede/package/luci-app-autoipsetadder && git pull
 cd /home/xyz/lede/package/luci-app-dnsfilter && git pull
 cd /home/xyz/lede/package/luci-app-godproxy && git pull
 cd /home/xyz/sub-web && git pull
-sed -i "s/\ \ publicPath:.*/\ \ publicPath:\ \ \'\.\/\'\,/" /home/xyz/sub-web/vue.config.js
+sed -i "/module\.exports\ =\ {/a\ \ publicPath:\ \ \'\.\/\'\," /home/xyz/sub-web/vue.config.js
 sed -i "s/\ \ \ \ path:.*/\ \ \ \ path:\ \"\*\"\,/" /home/xyz/sub-web/src/router/index.js
 yarn build
 cd /home/xyz/aclsub && git pull && yarn build
