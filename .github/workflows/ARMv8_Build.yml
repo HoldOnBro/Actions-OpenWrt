@@ -72,10 +72,9 @@ jobs:
       id: build
       run: |
         sudo mkdir /opt/kernel
-        cd /opt/kernel
-        chmod +x $GITHUB_WORKSPACE/$Get_Imgs_SH
-        sudo $GITHUB_WORKSPACE/$Get_Imgs_SH
-        sudo cp mk_*.tar.gz ../ && cd ..
+        sudo cp $GITHUB_WORKSPACE/BuildARMv8/* /opt/kernel/
+        sudo cp $GITHUB_WORKSPACE/BuildARMv8/mk_*.tar.gz /opt/
+        cd /opt
         sudo tar xvzf mk_*.tar.gz
         cd /opt/openwrt
         sudo wget $(curl -s https://api.github.com/repos/HoldOnBro/Actions-OpenWrt/releases/34554768 | grep browser_download_url | cut -d '"' -f 4)
