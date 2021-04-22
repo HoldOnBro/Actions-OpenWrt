@@ -27,7 +27,11 @@ cd /home/xyz/lede/package/luci-app-koolddns && git pull
 cd /home/xyz/lede/package/luci-app-autoipsetadder && git pull
 cd /home/xyz/lede/package/luci-app-dnsfilter && git pull
 cd /home/xyz/lede/package/luci-app-godproxy && git pull
+cd /home/xyz/lede/package/luci-app-advanced && git pull
+cd /home/xyz/lede/package/luci-app-argon-config && git pull
+cd /home/xyz/lede/package/luci-theme-argon && git pull
 cd /home/xyz/sub-web && git pull
+
 sed -i "/module\.exports\ =\ {/a\ \ publicPath:\ \ \'\.\/\'\," /home/xyz/sub-web/vue.config.js
 sed -i "s/\ \ \ \ path:.*/\ \ \ \ path:\ \"\*\"\,/" /home/xyz/sub-web/src/router/index.js
 yarn build
@@ -43,7 +47,7 @@ rm -rf /home/xyz/lede/package/luci-theme-purple
 rm -rf /home/xyz/lede/package/luci-theme-darkmatter
 rm -rf /home/xyz/lede/package/luci-theme-opentomato
 rm -rf /home/xyz/lede/package/luci-theme-edge
-rm -rf /home/xyz/lede/package/luci-theme-argon_new
+#rm -rf /home/xyz/lede/package/luci-theme-argon_new
 rm -rf /home/xyz/lede/package/luci-app-openclash
 rm -rf /home/xyz/lede/package/brook
 rm -rf /home/xyz/lede/package/chinadns-ng
@@ -51,8 +55,8 @@ rm -rf /home/xyz/lede/package/tcping
 rm -rf /home/xyz/lede/package/trojan-go
 rm -rf /home/xyz/lede/package/trojan-plus
 rm -rf /home/xyz/lede/package/v2ray
-rm -rf /home/xyz/lede/package/luci-app-filebrowser
-rm -rf /home/xyz/lede/package/filebrowser
+#rm -rf /home/xyz/lede/package/luci-app-filebrowser
+#rm -rf /home/xyz/lede/package/filebrowser
 rm -rf /home/xyz/lede/package/luci-app-fileassistant
 rm -rf /home/xyz/lede/package/luci-app-passwall
 rm -rf /home/xyz/lede/package/luci-app-eqos
@@ -92,7 +96,7 @@ svn co https://github.com/rosywrt/luci-theme-purple/trunk/luci-theme-purple /hom
 svn co https://github.com/apollo-ng/luci-theme-darkmatter/trunk/luci/themes/luci-theme-darkmatter /home/xyz/lede/package/luci-theme-darkmatter
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-opentomato /home/xyz/lede/package/luci-theme-opentomato
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-edge /home/xyz/lede/package/luci-theme-edge
-svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-argon_new /home/xyz/lede/package/luci-theme-argon_new
+#svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-argon_new /home/xyz/lede/package/luci-theme-argon_new
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash /home/xyz/lede/package/luci-app-openclash
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/brook /home/xyz/lede/package/brook
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/chinadns-ng /home/xyz/lede/package/chinadns-ng
@@ -123,8 +127,8 @@ svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/libs/quick
 svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/libs/jpcre2 /home/xyz/lede/package/jpcre2
 svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/libs/libcron/ /home/xyz/lede/package/libcron
 svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/libs/rapidjson /home/xyz/lede/package/rapidjson
-svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-filebrowser /home/xyz/lede/package/luci-app-filebrowser
-svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/utils/filebrowser /home/xyz/lede/package/filebrowser
+#svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-filebrowser /home/xyz/lede/package/luci-app-filebrowser
+#svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/utils/filebrowser /home/xyz/lede/package/filebrowser
 svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-fileassistant /home/xyz/lede/package/luci-app-fileassistant
 svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-socat /home/xyz/lede/package/luci-app-socat
 svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-gost /home/xyz/lede/package/luci-app-gost
