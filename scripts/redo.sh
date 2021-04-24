@@ -39,7 +39,7 @@ rm -rf /home/xyz/lede/package/wrtbwmon
 rm -rf /home/xyz/lede/package/luci-app-bypass
 rm -rf /home/xyz/lede/package/lean/luci-app-wrtbwmon
 rm -rf /home/xyz/lede/package/luci-theme-rosy
-rm -rf /home/xyz/lede/package/luci-theme-purple
+#rm -rf /home/xyz/lede/package/luci-theme-purple
 rm -rf /home/xyz/lede/package/luci-theme-darkmatter
 rm -rf /home/xyz/lede/package/luci-theme-opentomato
 rm -rf /home/xyz/lede/package/luci-theme-edge
@@ -90,7 +90,7 @@ find /home/xyz/lede/package/*/ /home/xyz/lede/feeds/*/ -maxdepth 2 -path "*luci-
 find /home/xyz/lede/package/*/ /home/xyz/lede/feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-server/shadowsocksr-libev-server/g' {}
 find /home/xyz/lede/package/luci-app-bypass/* -maxdepth 8 -path "*" | xargs -i sed -i 's/smartdns-le/smartdns/g' {}
 svn co https://github.com/rosywrt/luci-theme-rosy/trunk/luci-theme-rosy /home/xyz/lede/package/luci-theme-rosy
-svn co https://github.com/rosywrt/luci-theme-purple/trunk/luci-theme-purple /home/xyz/lede/package/luci-theme-purple
+#svn co https://github.com/rosywrt/luci-theme-purple/trunk/luci-theme-purple /home/xyz/lede/package/luci-theme-purple
 svn co https://github.com/apollo-ng/luci-theme-darkmatter/trunk/luci/themes/luci-theme-darkmatter /home/xyz/lede/package/luci-theme-darkmatter
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-opentomato /home/xyz/lede/package/luci-theme-opentomato
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-edge /home/xyz/lede/package/luci-theme-edge
