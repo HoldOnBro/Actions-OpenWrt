@@ -1,0 +1,14 @@
+--- openwrt/files/update-vplus-openwrt.sh	2021-04-01 21:13:05.000000000 +0800
++++ mk_openwrt_src_20210401/openwrt/files/update-vplus-openwrt.sh	2021-04-18 08:51:57.592974300 +0800
+@@ -211,6 +211,11 @@
+ 	dd if=${BOOTLOADER} of=/dev/mmcblk0 bs=1024 seek=8 conv=fsync
+ 	echo "done"
+ fi
++cp /etc/crontabs/root /mnt/${NEW_ROOT_NAME}/etc/crontabs/
++cp -rf /root/* /mnt/${NEW_ROOT_NAME}/root/
++cp -rf /www/ACLWeb /mnt/${NEW_ROOT_NAME}/www/
++cp -rf /www/Sub-Web /mnt/${NEW_ROOT_NAME}/www/
++cp -rf /www/luci-static/argon/background /mnt/${NEW_ROOT_NAME}/www/luci-static/argon/
+ sync
+ echo "copy done"
+ echo
