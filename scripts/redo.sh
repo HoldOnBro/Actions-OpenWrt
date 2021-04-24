@@ -7,10 +7,6 @@ cd /home/xyz/lede/package/lua-maxminddb && git pull
 rm -rf /home/xyz/lede/package/lean/luci-app-dockerman
 cp /home/xyz/Actions-OpenWrt/*/*.config /home/xyz/lede/
 rm -rf /home/xyz/lede/package/r8125-mod
-cd /home/xyz/lede/package/openwrt-udp2raw && git pull
-cd /home/xyz/lede/package/luci-app-udp2raw && git pull
-sed -i "s/PKG_SOURCE_VERSION:=.*/PKG_SOURCE_VERSION:=f2f90a9a150be94d50af555b53657a2a4309f287/" /home/xyz/lede/package/openwrt-udp2raw/Makefile
-sed -i "s/PKG_VERSION:=.*/PKG_VERSION:=20200920\.0/" /home/xyz/lede/package/openwrt-udp2raw/Makefile
 cd /home/xyz/lede/package/luci-theme-opentopd && git pull
 cd /home/xyz/lede/package/luci-theme-infinityfreedom && git pull
 cd /home/xyz/lede/package/luci-theme-Butterfly-dark && git pull
@@ -57,7 +53,7 @@ rm -rf /home/xyz/lede/package/trojan-plus
 rm -rf /home/xyz/lede/package/v2ray
 #rm -rf /home/xyz/lede/package/luci-app-filebrowser
 #rm -rf /home/xyz/lede/package/filebrowser
-rm -rf /home/xyz/lede/package/luci-app-fileassistant
+#rm -rf /home/xyz/lede/package/luci-app-fileassistant
 rm -rf /home/xyz/lede/package/luci-app-passwall
 rm -rf /home/xyz/lede/package/luci-app-eqos
 rm -rf /home/xyz/lede/package/luci-app-gost
@@ -84,6 +80,8 @@ rm -rf /home/xyz/lede/package/libcron
 rm -rf /home/xyz/lede/package/luci-app-advancedsetting
 rm -rf /home/xyz/lede/package/smartdns
 rm -rf /home/xyz/lede/feeds/packages/net/smartdns
+rm -rf /home/xyz/lede/package/udp2raw-tunnel
+rm -rf /home/xyz/lede/package/luci-app-udp2raw
 
 svn co https://github.com/brvphoenix/wrtbwmon/trunk/wrtbwmon /home/xyz/lede/package/wrtbwmon
 #rm -rf /home/xyz/lede/package/luci-app-ksmbd
@@ -129,12 +127,14 @@ svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/libs/libcr
 svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/libs/rapidjson /home/xyz/lede/package/rapidjson
 #svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-filebrowser /home/xyz/lede/package/luci-app-filebrowser
 #svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/utils/filebrowser /home/xyz/lede/package/filebrowser
-svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-fileassistant /home/xyz/lede/package/luci-app-fileassistant
+#svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-fileassistant /home/xyz/lede/package/luci-app-fileassistant
 svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-socat /home/xyz/lede/package/luci-app-socat
 svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-gost /home/xyz/lede/package/luci-app-gost
 svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/net/gost /home/xyz/lede/package/gost
 svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-unblockneteasemusic-mini /home/xyz/lede/package/luci-app-unblockneteasemusic-mini
 svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/net/subconverter /home/xyz/lede/package/subconverter
+svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/net/udp2raw-tunnel /home/xyz/lede/package/udp2raw-tunnel
+svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-udp2raw /home/xyz/lede/package/luci-app-udp2raw
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-smartdns /home/xyz/lede/package/luci-app-smartdns
 svn co https://github.com/kenzok8/openwrt-packages/trunk/smartdns /home/xyz/lede/package/smartdns
 svn co https://github.com/garypang13/openwrt-packages/trunk/smartdns-le /home/xyz/lede/package/smartdns-le

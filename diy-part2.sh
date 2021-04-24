@@ -50,7 +50,7 @@ svn co https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-go package/tro
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-plus package/trojan-plus
 #svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-filebrowser package/luci-app-filebrowser
 #svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/utils/filebrowser package/filebrowser
-svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-fileassistant package/luci-app-fileassistant
+#svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-fileassistant package/luci-app-fileassistant
 svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-socat package/luci-app-socat
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/luci-app-passwall package/luci-app-passwall
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/ssocks package/ssocks
@@ -113,10 +113,12 @@ svn co https://github.com/linkease/ddnsto-openwrt/trunk/luci-app-ddnsto package/
 #添加ksmbd
 #svn co https://github.com/openwrt/luci/trunk/applications/luci-app-ksmbd package/luci-app-ksmbd
 #添加udp2raw
-git clone https://github.com/sensec/openwrt-udp2raw package/openwrt-udp2raw
-git clone https://github.com/sensec/luci-app-udp2raw package/luci-app-udp2raw
-sed -i "s/PKG_SOURCE_VERSION:=.*/PKG_SOURCE_VERSION:=f2f90a9a150be94d50af555b53657a2a4309f287/" package/openwrt-udp2raw/Makefile
-sed -i "s/PKG_VERSION:=.*/PKG_VERSION:=20200920\.0/" package/openwrt-udp2raw/Makefile
+#git clone https://github.com/sensec/openwrt-udp2raw package/openwrt-udp2raw
+#git clone https://github.com/sensec/luci-app-udp2raw package/luci-app-udp2raw
+#sed -i "s/PKG_SOURCE_VERSION:=.*/PKG_SOURCE_VERSION:=f2f90a9a150be94d50af555b53657a2a4309f287/" package/openwrt-udp2raw/Makefile
+#sed -i "s/PKG_VERSION:=.*/PKG_VERSION:=20200920\.0/" package/openwrt-udp2raw/Makefile
+svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/net/udp2raw-tunnel package/udp2raw-tunnel
+svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-udp2raw package/luci-app-udp2raw
 #添加luci-app-advanced
 git clone https://github.com/sirpdboy/luci-app-advanced package/luci-app-advanced
 #添加argon-config 使用 最新argon
