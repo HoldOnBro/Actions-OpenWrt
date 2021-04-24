@@ -73,9 +73,14 @@ jobs:
       run: |
         sudo mkdir /opt/kernel
         sudo cp $GITHUB_WORKSPACE/BuildARMv8/* /opt/kernel/
-        sudo cp $GITHUB_WORKSPACE/BuildARMv8/mk_*.tar.gz /opt/
+        #sudo cp $GITHUB_WORKSPACE/BuildARMv8/mk_*.tar.gz /opt/
+        #sudo tar xvzf mk_*.tar.gz
         cd /opt
-        sudo tar xvzf mk_*.tar.gz
+        sudo cp $GITHUB_WORKSPACE/scripts/patches/*.patch ./
+        sudo cp $GITHUB_WORKSPACE/scripts/respawn_mks.sh ./
+        sudo git clone https://github.com/unifreq/openwrt_packit openwrt
+        sudo chmod +x ./respawn_mks.sh
+        sudo ./respawn_mks.sh
         cd /opt/openwrt
         sudo wget $(curl -s https://api.github.com/repos/HoldOnBro/Actions-OpenWrt/releases/34554768 | grep browser_download_url | cut -d '"' -f 4)
         chmod +x $GITHUB_WORKSPACE/$Update_Ver_SH
@@ -105,6 +110,7 @@ jobs:
         sudo ./mk_h6_vplus_fol.sh
         sudo ./mk_h6_vplus_plus.sh
         sudo cp ./*AllPackages.tar.gz ./tmp/
+        sudo cp ./files/update*.sh ./tmp/
         echo "::set-output name=status::success"
 
     - name: Organize files

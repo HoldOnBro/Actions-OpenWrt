@@ -1,0 +1,14 @@
+--- openwrt/files/update-amlogic-openwrt-old.sh	2021-04-01 21:12:03.000000000 +0800
++++ mk_openwrt_src_20210401/openwrt/files/update-amlogic-openwrt-old.sh	2021-04-17 09:36:48.380000000 +0800
+@@ -541,6 +541,11 @@
+ fi
+ 
+ rm -f /mnt/${NEW_ROOT_NAME}/root/install-to-emmc.sh
++cp /etc/crontabs/root /mnt/${NEW_ROOT_NAME}/etc/crontabs/
++cp -rf /root/* /mnt/${NEW_ROOT_NAME}/root/
++cp -rf /www/ACLWeb /mnt/${NEW_ROOT_NAME}/www/
++cp -rf /www/Sub-Web /mnt/${NEW_ROOT_NAME}/www/
++cp -rf /www/luci-static/argon/background /mnt/${NEW_ROOT_NAME}/www/luci-static/argon/
+ sync
+ echo "复制完成"
+ echo
