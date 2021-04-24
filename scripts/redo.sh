@@ -156,4 +156,6 @@ find /home/xyz/lede/package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 
 /home/xyz/lede/scripts/feeds update -a
 /home/xyz/lede/scripts/feeds install -a
 
-cd /home/xyz/lede/ && make menuconfig
+cd /home/xyz/lede/
+
+make menuconfig
