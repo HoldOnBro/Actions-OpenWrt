@@ -79,6 +79,7 @@ jobs:
         sudo cp $GITHUB_WORKSPACE/scripts/patches/*.patch ./
         sudo cp $GITHUB_WORKSPACE/scripts/respawn_mks.sh ./
         sudo git clone https://github.com/unifreq/openwrt_packit openwrt
+        sudo cp $GITHUB_WORKSPACE/scripts/whoami ./openwrt/
         sudo chmod +x ./respawn_mks.sh
         sudo ./respawn_mks.sh
         cd /opt/openwrt
