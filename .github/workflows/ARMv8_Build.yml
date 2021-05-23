@@ -148,7 +148,7 @@ jobs:
       with:
         name: R${{ env.DATE }} for ${{ env.FILE_NAME }}
         tag_name: ${{ env.FILE_NAME }}
-        body_path: $GITHUB_WORKSPACE/$RELEASE_TXT
+        body_path: ${{ env.RELEASE_TXT }}
         files: ${{ env.FIRMWARE }}/*
     
     - name: WeChat notification
