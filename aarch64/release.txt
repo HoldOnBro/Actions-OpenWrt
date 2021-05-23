@@ -1,0 +1,18 @@
+默认IP：192.168.123.1 默认密码： password
+当前使用版本:【编译前的最后一次[➦主源码](https://github.com/coolsnowwolf/lede)更新记录】
+参见 Files4Build 内记录
+
+54版更新说明：具体请参阅F大发的[帖子](https://www.right.com.cn/forum/thread-4076037-1-1.html)
+    1.  54版本对于微加云、贝壳云、我家云等非 Amlogic的盒子来说，并没有什么特别的变化，一切照旧
+    2.  Amlogic盒子的安装脚本、升级脚本都做了大量变更，简介如下：
+        a. N1盒子： 53版本由于调整成激进的分区策略，占用了EMMC的68MB-700MB范围，但是U-boot启动过程中可能会读写该区域，导致启动失败，因此54版本重新调回从700MB起始，这样一来，刷过53的用户建议先刷回安卓固件再重新刷54，刷回安卓的目的是还原68-700MB这个范围的原始数据，要是实在不想还原的话，出了问题不要怪固件就行。
+        b. 章鱼星球盒子： 与N1情况类似
+        c. S905x3盒子：主线u-boot已经可以刷入EMMC（这是可选的）,彻底解决绿屏问题、千兆网问题，并且+版也可以从EMMC启动了(即使不刷入主线u-boot也可以)，不再需要一直插着U盘或sd卡
+        d. S905X2、S922X盒子：由于用户稀少，并且还没有解决主线u-boot的问题，所以暂时停更，复更时间未定。
+        e. 升级脚本一分为二：update-amlogic-openwrt.sh 用于(目标版本)54及以后版本的升降级，update-amlogic-openwrt-old.sh 用于(目标版本)53及以前版本的升降级
+        f. x96max+ PCB版本4.1不能启动的原因已查明，见置顶的提示，其实 V3.1和V4.0也都有同样问题，只是程度比V4.1轻，如果出现类似问题也可参考4.1的办法处理。
+升级降级方法统一为：
+        1. 把 update-amlogic-openwrt.sh 及 img镜像上传至  /mnt/mmcblk2p4
+        2. cd    /mnt/mmcblk2p4
+        3. chmod   755  update-amlogic-openwrt.sh
+        4. ./update-amlogic-openwrt.sh    xxxxx.img
