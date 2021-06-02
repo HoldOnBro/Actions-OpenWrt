@@ -79,6 +79,7 @@ jobs:
         echo "DATE1=$(date "+%Y-%m-%d")" >> $GITHUB_ENV
 
     - name: Build and push docker image
+      id: push
       run: |
         sudo wget https://github.com/HoldOnBro/Actions-OpenWrt/releases/download/Files4Build/Docker-openwrt-armvirt-64-default-rootfs.tar.gz
         cp ./Docker-openwrt-armvirt-64-default-rootfs.tar.gz $GITHUB_WORKSPACE/docker/openwrt-armvirt-64-default-rootfs.tar.gz
@@ -90,3 +91,12 @@ jobs:
         docker tag minirailgun/openwrt-aarch64 minirailgun/openwrt-aarch64:R${{ env.DATE_YMD }}
         docker push minirailgun/openwrt-aarch64
         echo "::set-output name=status::success"
+
+    - name: Telegram notification
+      uses: appleboy/telegram-action@master
+      if: steps.push.outputs.status == 'success' && !cancelled()
+      with:
+        to: ${{ secrets.TELEGRAM_TO }}
+        token: ${{ secrets.TELEGRAM_TOKEN }}
+        message: |
+          ${{ env.FILE_NAME }}编译及推送成功
