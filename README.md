@@ -10,7 +10,7 @@ Feel free to [fork](https://github.com/HoldOnBro/Actions-OpenWrt/generate) or ju
 
 ## How to Use
 
-You need to add 4(at least the first one) secrets to make Actions work.
+You need to add 5(at least the first one) secrets to make Actions work properly.
 
 1. **RELEASES_TOKEN**, which should be your Github **Personal Access Token** with at least the *public_repo* checked.
 2. **DOCKER_USERNAME**(Optional, if you don't need an aarch64 docker img) is your dockerhub username.
