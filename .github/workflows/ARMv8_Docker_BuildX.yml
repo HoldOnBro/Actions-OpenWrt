@@ -99,4 +99,6 @@ jobs:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
         message: |
+          编译时间：${{ env.DATE }}
+          lede更新信息：${{ env.useVersionInfo }}
           ${{ env.FILE_NAME }}编译及推送成功
