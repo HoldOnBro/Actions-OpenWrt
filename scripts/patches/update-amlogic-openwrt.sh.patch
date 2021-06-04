@@ -1,6 +1,6 @@
 --- openwrt/files/update-amlogic-openwrt.sh	2021-04-01 21:12:14.000000000 +0800
 +++ mk_openwrt_src_20210401/openwrt/files/update-amlogic-openwrt.sh	2021-04-17 09:34:28.270000000 +0800
-@@ -445,6 +445,11 @@
+@@ -525,6 +525,11 @@
  fi
  
  rm -f /mnt/${NEW_ROOT_NAME}/root/install-to-emmc.sh
