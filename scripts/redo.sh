@@ -82,6 +82,7 @@ rm -rf /home/xyz/lede/package/smartdns
 rm -rf /home/xyz/lede/feeds/packages/net/smartdns
 rm -rf /home/xyz/lede/package/udp2raw-tunnel
 rm -rf /home/xyz/lede/package/luci-app-udp2raw
+rm -rf /home/xyz/lede/package/luci-app-amlogic
 
 svn co https://github.com/brvphoenix/wrtbwmon/trunk/wrtbwmon /home/xyz/lede/package/wrtbwmon
 #rm -rf /home/xyz/lede/package/luci-app-ksmbd
@@ -117,6 +118,9 @@ svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-eqos /home/xyz
 #svn co https://github.com/kenzok8/openwrt-packages/trunk/gost /home/xyz/lede/package/gost
 svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus /home/xyz/lede/package/luci-app-ssr-plus
 svn co https://github.com/fw876/helloworld/trunk/naiveproxy /home/xyz/lede/package/naiveproxy
+
+#添加luci-app-amlogic
+svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic /home/xyz/lede/package/luci-app-amlogic
 
 #svn co https://github.com/HoldOnBro/Actions-OpenWrt/trunk/x86_64/r8125-mod /home/xyz/lede/package/r8125-mod
 

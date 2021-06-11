@@ -121,6 +121,8 @@ svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/net/udp2ra
 svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-udp2raw package/luci-app-udp2raw
 #添加luci-app-advanced
 git clone https://github.com/sirpdboy/luci-app-advanced package/luci-app-advanced
+#添加luci-app-amlogic
+svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic package/luci-app-amlogic
 #添加argon-config 使用 最新argon
 git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
 rm -rf package/lean/luci-theme-argon/
