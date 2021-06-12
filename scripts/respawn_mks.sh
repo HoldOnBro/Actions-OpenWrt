@@ -3,8 +3,8 @@
 cd openwrt
 sed -i '10,15 s/\(#\)\(.*\)/\2/' make.env
 OLD=$(grep \+o\" make.env)
-NEWP=$(grep 5\.10*\+\" make.env)
-NEWPP=$(grep 5\.12*\+\" make.env)
+NEWP=$(grep 5\.10.*\+\" make.env)
+NEWPP=$(grep 5\.12.*\+\" make.env)
 #echo $OLD
 #echo $NEW
 cp make.env makeplus.env
