@@ -21,7 +21,7 @@ cd /home/xyz/lede/package/luci-theme-opentomcat && git pull
 cd /home/xyz/lede/package/luci-theme-atmaterial && git pull
 cd /home/xyz/lede/package/luci-app-koolddns && git pull
 cd /home/xyz/lede/package/luci-app-autoipsetadder && git pull
-cd /home/xyz/lede/package/luci-app-dnsfilter && git pull
+#cd /home/xyz/lede/package/luci-app-dnsfilter && git pull
 cd /home/xyz/lede/package/luci-app-godproxy && git pull
 cd /home/xyz/lede/package/luci-app-advanced && git pull
 cd /home/xyz/lede/package/luci-app-argon-config && git pull
