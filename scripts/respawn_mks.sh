@@ -24,11 +24,15 @@ sed -i "s/^KERNEL_VERSION.*/KERNEL_VERSION=\"$KV\"/" make.env
 sed -i "s/^KERNEL_VERSION.*/KERNEL_VERSION=\"$KPV\"/" makeplus.env
 sed -i "s/^KERNEL_VERSION.*/KERNEL_VERSION=\"$KPPV\"/" makeplusplus.env
 
-for F in *.sh ; do cp $F ${F%.sh}_fol.sh && cp $F ${F%.sh}_plus.sh && cp $F ${F%.sh}_plusplus.sh;done
+for F in *.sh ; do cp $F ${F%.sh}_sf.sh && cp $F ${F%.sh}_plus.sh && cp $F ${F%.sh}_plusplus.sh;done
 find ./* -maxdepth 1 -path "*_plus.sh" | xargs -i sed -i 's/make\.env/makeplus\.env/g' {}
 find ./* -maxdepth 1 -path "*_plusplus.sh" | xargs -i sed -i 's/make\.env/makeplusplus\.env/g' {}
-find ./*_fol.sh ./*_plus.sh ./*_plusplus.sh -maxdepth 1 -path "*" | xargs -i sed -i 's/OP_ROOT_TGZ=\"openwrt/OP_ROOT_TGZ=\"F-openwrt/g' {}
-find ./*_fol.sh ./*_plus.sh ./*_plusplus.sh -maxdepth 1 -path "*" | xargs -i sed -i 's/TGT_IMG=\"\${WORK_DIR}\/openwrt/TGT_IMG=\"\${WORK_DIR}\/F-openwrt/g' {}
+#12以后内核无法使用SFE，使用仅含FOL的固件进行打包
+find ./*_plusplus.sh -maxdepth 1 -path "*" | xargs -i sed -i 's/OP_ROOT_TGZ=\"openwrt/OP_ROOT_TGZ=\"F-openwrt/g' {}
+find ./*_plusplus.sh -maxdepth 1 -path "*" | xargs -i sed -i 's/TGT_IMG=\"\${WORK_DIR}\/openwrt/TGT_IMG=\"\${WORK_DIR}\/F-openwrt/g' {}
+#旧内核支持SFE，使用含SFE和FOL的固件进行打包
+find ./*_sf.sh ./*_plus.sh -maxdepth 1 -path "*" | xargs -i sed -i 's/OP_ROOT_TGZ=\"openwrt/OP_ROOT_TGZ=\"S-openwrt/g' {}
+find ./*_sf.sh ./*_plus.sh -maxdepth 1 -path "*" | xargs -i sed -i 's/TGT_IMG=\"\${WORK_DIR}\/openwrt/TGT_IMG=\"\${WORK_DIR}\/S-openwrt/g' {}
 
 echo "mk_files respawned."
 
