@@ -26,7 +26,7 @@ cd /home/xyz/lede/package/luci-app-godproxy && git pull
 cd /home/xyz/lede/package/luci-app-advanced && git pull
 cd /home/xyz/lede/package/luci-app-argon-config && git pull
 cd /home/xyz/lede/package/luci-theme-argon && git pull
-cd /home/xyz/lede/luci-app-wrtbwmon && git pull
+#cd /home/xyz/lede/luci-app-wrtbwmon && git pull
 cd /home/xyz/sub-web && git pull
 
 sed -i "/module\.exports\ =\ {/a\ \ publicPath:\ \ \'\.\/\'\," /home/xyz/sub-web/vue.config.js
@@ -39,7 +39,7 @@ rm -rf /home/xyz/lede/package/smartdns
 rm -rf /home/xyz/lede/package/wrtbwmon
 rm -rf /home/xyz/lede/package/luci-app-bypass
 rm -rf /home/xyz/lede/package/lean/luci-app-wrtbwmon
-rm -rf /home/xyz/lede/package/luci-app-wrtbwmon
+#rm -rf /home/xyz/lede/package/luci-app-wrtbwmon
 rm -rf /home/xyz/lede/package/luci-theme-rosy
 #rm -rf /home/xyz/lede/package/luci-theme-purple
 rm -rf /home/xyz/lede/package/luci-theme-darkmatter
@@ -87,7 +87,7 @@ rm -rf /home/xyz/lede/package/udp2raw-tunnel
 rm -rf /home/xyz/lede/package/luci-app-udp2raw
 rm -rf /home/xyz/lede/package/luci-app-amlogic
 
-cp -r /home/xyz/lede/luci-app-wrtbwmon/luci-app-wrtbwmon /home/xyz/lede/package/
+#cp -r /home/xyz/lede/luci-app-wrtbwmon/luci-app-wrtbwmon /home/xyz/lede/package/
 svn co https://github.com/brvphoenix/wrtbwmon/trunk/wrtbwmon /home/xyz/lede/package/wrtbwmon
 #rm -rf /home/xyz/lede/package/luci-app-ksmbd
 git clone https://github.com/garypang13/luci-app-bypass /home/xyz/lede/package/luci-app-bypass
@@ -131,20 +131,20 @@ svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic /home/xy
 
 #svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/subweb /home/xyz/lede/package/subweb
 
-svn co https://github.com/immortalwrt/packages/branches/openwrt-21.02/libs/quickjspp /home/xyz/lede/package/quickjspp
-svn co https://github.com/immortalwrt/packages/branches/openwrt-21.02/libs/jpcre2 /home/xyz/lede/package/jpcre2
-svn co https://github.com/immortalwrt/packages/branches/openwrt-21.02/libs/libcron/ /home/xyz/lede/package/libcron
-svn co https://github.com/immortalwrt/packages/branches/openwrt-21.02/libs/rapidjson /home/xyz/lede/package/rapidjson
-#svn co https://github.com/immortalwrt/luci/branches/openwrt-21.02/applications/luci-app-filebrowser /home/xyz/lede/package/luci-app-filebrowser
-#svn co https://github.com/immortalwrt/packages/branches/openwrt-21.02/utils/filebrowser /home/xyz/lede/package/filebrowser
-#svn co https://github.com/immortalwrt/luci/branches/openwrt-21.02/applications/luci-app-fileassistant /home/xyz/lede/package/luci-app-fileassistant
-svn co https://github.com/immortalwrt/luci/branches/openwrt-21.02/applications/luci-app-socat /home/xyz/lede/package/luci-app-socat
-svn co https://github.com/immortalwrt/luci/branches/openwrt-21.02/applications/luci-app-gost /home/xyz/lede/package/luci-app-gost
-svn co https://github.com/immortalwrt/packages/branches/openwrt-21.02/net/gost /home/xyz/lede/package/gost
-svn co https://github.com/immortalwrt/luci/branches/openwrt-21.02/applications/luci-app-unblockneteasemusic-mini /home/xyz/lede/package/luci-app-unblockneteasemusic-mini
-svn co https://github.com/immortalwrt/packages/branches/openwrt-21.02/net/subconverter /home/xyz/lede/package/subconverter
-svn co https://github.com/immortalwrt/packages/branches/openwrt-21.02/net/udp2raw-tunnel /home/xyz/lede/package/udp2raw-tunnel
-svn co https://github.com/immortalwrt/luci/branches/openwrt-21.02/applications/luci-app-udp2raw /home/xyz/lede/package/luci-app-udp2raw
+svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/libs/quickjspp /home/xyz/lede/package/quickjspp
+svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/libs/jpcre2 /home/xyz/lede/package/jpcre2
+svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/libs/libcron/ /home/xyz/lede/package/libcron
+svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/libs/rapidjson /home/xyz/lede/package/rapidjson
+#svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-filebrowser /home/xyz/lede/package/luci-app-filebrowser
+#svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/utils/filebrowser /home/xyz/lede/package/filebrowser
+#svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-fileassistant /home/xyz/lede/package/luci-app-fileassistant
+svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-socat /home/xyz/lede/package/luci-app-socat
+svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-gost /home/xyz/lede/package/luci-app-gost
+svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/net/gost /home/xyz/lede/package/gost
+svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-unblockneteasemusic-mini /home/xyz/lede/package/luci-app-unblockneteasemusic-mini
+svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/net/subconverter /home/xyz/lede/package/subconverter
+svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/net/udp2raw-tunnel /home/xyz/lede/package/udp2raw-tunnel
+svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-udp2raw /home/xyz/lede/package/luci-app-udp2raw
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-smartdns /home/xyz/lede/package/luci-app-smartdns
 svn co https://github.com/kenzok8/openwrt-packages/trunk/smartdns /home/xyz/lede/package/smartdns
 svn co https://github.com/garypang13/openwrt-packages/trunk/smartdns-le /home/xyz/lede/package/smartdns-le
