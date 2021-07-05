@@ -154,7 +154,9 @@ jobs:
         commit: master
         token: ${{ secrets.RELEASES_TOKEN }}
         body: |
-          自61版之后就是最新的openwrt-21.02了，由于缺乏必要的测试，不保证可用性，出现任何问题请自行排查，或等待上游稳定后重新刷入。
+          
+          经过两天的测试，61版已经稳定可用，60版固件预计将于一周内从release移除。
+          因变动较大，从60或以下版本升级到61或更高版本建议全新刷入或者不保留配置进行升级。
 
           默认IP：192.168.123.1 默认密码： password
           当前使用版本:【编译前的最后一次[➦主源码](https://github.com/coolsnowwolf/lede)更新记录】
