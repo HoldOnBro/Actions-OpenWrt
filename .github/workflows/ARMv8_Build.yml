@@ -79,6 +79,9 @@ jobs:
         sudo cp $GITHUB_WORKSPACE/scripts/patches/*.patch ./
         sudo cp $GITHUB_WORKSPACE/scripts/respawn_mks.sh ./
         sudo git clone https://github.com/unifreq/openwrt_packit openwrt
+        #temp fix reboot
+        sudo rm ./openwrt/files/rk3328/reboot
+        sudo rm ./openwrt/files/vplus/reboot
         sudo cp $GITHUB_WORKSPACE/scripts/whoami ./openwrt/
         sudo chmod +x ./respawn_mks.sh
         sudo ./respawn_mks.sh
