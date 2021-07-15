@@ -15,7 +15,6 @@ cd /home/xyz/lede/package/OpenAppFilter && git pull
 cd /home/xyz/lede/package/luci-app-jd-dailybonus && git pull
 cd /home/xyz/lede/package/luci-app-ttnode && git pull
 cd /home/xyz/lede/package/luci-app-adguardhome && git pull
-cd /home/xyz/lede/package/luci-app-dockerman && git pull
 cd /home/xyz/lede/package/luci-app-serverchan && git pull
 cd /home/xyz/lede/package/luci-theme-opentomcat && git pull
 cd /home/xyz/lede/package/luci-theme-atmaterial && git pull
@@ -86,7 +85,9 @@ rm -rf /home/xyz/lede/feeds/packages/net/smartdns
 rm -rf /home/xyz/lede/package/udp2raw-tunnel
 rm -rf /home/xyz/lede/package/luci-app-udp2raw
 rm -rf /home/xyz/lede/package/luci-app-amlogic
+rm -rf /home/xyz/lede/package/luci-app-dockerman
 
+svn co https://github.com/lisaac/luci-app-dockerman/trunk/applications/luci-app-dockerman package/luci-app-dockerman
 #cp -r /home/xyz/lede/luci-app-wrtbwmon/luci-app-wrtbwmon /home/xyz/lede/package/
 svn co https://github.com/brvphoenix/wrtbwmon/trunk/wrtbwmon /home/xyz/lede/package/wrtbwmon
 #rm -rf /home/xyz/lede/package/luci-app-ksmbd
