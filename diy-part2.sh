@@ -32,7 +32,7 @@ svn co https://github.com/lisaac/luci-app-dockerman/trunk/applications/luci-app-
 git clone https://github.com/rufengsuixing/luci-app-autoipsetadder.git package/luci-app-autoipsetadder
 git clone https://github.com/mchome/openwrt-dogcom.git package/openwrt-dogcom
 git clone https://github.com/garypang13/luci-app-bypass package/luci-app-bypass
-#git clone https://github.com/garypang13/luci-app-dnsfilter package/luci-app-dnsfilter
+git clone https://github.com/garypang13/luci-app-dnsfilter package/luci-app-dnsfilter
 git clone https://github.com/project-lede/luci-app-godproxy package/luci-app-godproxy
 
 #git clone https://github.com/vernesong/OpenClash.git package/OpenClash
