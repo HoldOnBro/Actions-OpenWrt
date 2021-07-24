@@ -17,9 +17,9 @@ jobs:
       uses: c-hive/gha-remove-artifacts@v1
       with:
          age: '1 month'
-         Optional inputs
-         skip-tags: true
-         skip-recent: 5
+         #Optional inputs
+         #skip-tags: true
+         #skip-recent: 5
     - name: Delete workflow runs
       uses: GitRML/delete-workflow-runs@main
       with:
