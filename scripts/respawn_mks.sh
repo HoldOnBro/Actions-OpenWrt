@@ -37,7 +37,7 @@ find ./*_plusplus.sh -maxdepth 1 -path "*" | xargs -i sed -i 's/OP_ROOT_TGZ=\"op
 find ./*_plusplus.sh -maxdepth 1 -path "*" | xargs -i sed -i '/^TGT_IMG.*gz$/s/\.img\.gz/\_FOL\.img\.gz/g' {}
 #旧内核支持SFE，使用含SFE和FOL的固件进行打包
 find ./*_basic.sh ./*_plus.sh -maxdepth 1 -path "*" | xargs -i sed -i 's/OP_ROOT_TGZ=\"openwrt/OP_ROOT_TGZ=\"SF-openwrt/g' {}
-find ./*_plusplus.sh -maxdepth 1 -path "*" | xargs -i sed -i '/^TGT_IMG.*gz$/s/\.img\.gz/\_SFE\_FOL\.img\.gz/g' {}
+find ./*_plusplus.sh -maxdepth 1 -path "*" | xargs -i sed -i '/^TGT_IMG.*gz$/s/\.img\.gz/\_FOL\_SFE\.img\.gz/g' {}
 
 echo "mk_files respawned."
 
