@@ -26,6 +26,8 @@ cd /home/xyz/lede/package/luci-app-advanced && git pull
 cd /home/xyz/lede/package/luci-app-argon-config && git pull
 cd /home/xyz/lede/package/luci-theme-argon && git pull
 cd /home/xyz/lede/package/luci-app-adblock-plus && git pull
+cd /home/xyz/lede/package/luci-app-dogcom && git pull
+cd /home/xyz/lede/package/openwrt-dogcom && git pull
 
 #cd /home/xyz/lede/luci-app-wrtbwmon && git pull
 cd /home/xyz/sub-web && git pull
