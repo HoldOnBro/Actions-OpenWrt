@@ -1,4 +1,4 @@
-name: AX6-IPQ8074
+name: AX6-IPQ8071A
 
 on:
   repository_dispatch:
@@ -26,7 +26,7 @@ env:
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: false
   TZ: Asia/Shanghai
-  FILE_NAME: AX6-IPQ8074
+  FILE_NAME: AX6-IPQ8071A
   PRODUCT_NAME: AX6
 
 jobs:
