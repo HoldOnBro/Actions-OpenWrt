@@ -10,18 +10,18 @@ on:
 jobs:
   remove-old-artifacts:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 3600
 
     steps:
-    - name: Remove old artifacts
-      uses: c-hive/gha-remove-artifacts@v1
-      with:
-         age: '1 month'
+    #- name: Remove old artifacts
+    #  uses: c-hive/gha-remove-artifacts@v1
+    #  with:
+    #     age: '1 month'
          #Optional inputs
          #skip-tags: true
          #skip-recent: 5
     - name: Delete workflow runs
       uses: GitRML/delete-workflow-runs@main
       with:
-        retain_days: 30
+        retain_days: 14
         keep_minimum_runs: 10
