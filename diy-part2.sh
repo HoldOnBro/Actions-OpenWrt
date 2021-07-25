@@ -136,7 +136,7 @@ sed -i "s|amlogic-s9xxx/amlogic-kernel|BuildARMv8|g" package/luci-app-amlogic/ro
 sed -i "s|s9xxx_lede|ARMv8|g" package/luci-app-amlogic/root/etc/config/amlogic
 
 # 4.Modify the suffix of the OPENWRT files in your github.com Releases （Releases 里 OpenWrt 文件的后缀）
-sed -i "s|.img.gz|P_FOL_SFE.img.gz|g" package/luci-app-amlogic/root/etc/config/amlogic
+sed -i "s|.img.gz|+_FOL+SFE.img.gz|g" package/luci-app-amlogic/root/etc/config/amlogic
 
 #添加argon-config 使用 最新argon
 git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config

@@ -142,7 +142,7 @@ sed -i "s|amlogic-s9xxx/amlogic-kernel|BuildARMv8|g" /home/xyz/lede/package/luci
 sed -i "s|s9xxx_lede|ARMv8|g" /home/xyz/lede/package/luci-app-amlogic/root/etc/config/amlogic
 
 # 4.Modify the suffix of the OPENWRT files in your github.com Releases （Releases 里 OpenWrt 文件的后缀）
-sed -i "s|.img.gz|P_FOL_SFE.img.gz|g" /home/xyz/lede/package/luci-app-amlogic/root/etc/config/amlogic
+sed -i "s|.img.gz|+_FOL+SFE.img.gz|g" /home/xyz/lede/package/luci-app-amlogic/root/etc/config/amlogic
 
 #svn co https://github.com/HoldOnBro/Actions-OpenWrt/trunk/x86_64/r8125-mod /home/xyz/lede/package/r8125-mod
 
