@@ -2,6 +2,7 @@
 
 cp -f /home/xyz/lede/ARMv8*.config /home/xyz/Actions-OpenWrt/aarch64/
 cp -f /home/xyz/lede/GDock.config /home/xyz/Actions-OpenWrt/GDock/
+cp -f /home/xyz/lede/AX6.config /home/xyz/Actions-OpenWrt/AX6/
 cp -f /home/xyz/lede/J4125.config /home/xyz/Actions-OpenWrt/x86_64/
 cp -f /home/xyz/lede/x86_64.config /home/xyz/Actions-OpenWrt/x86_64/
 cp -f /home/xyz/lede/NewifiD2*.config /home/xyz/Actions-OpenWrt/NewifiD2/
@@ -14,3 +15,4 @@ read COMMIT
 git commit -m "$COMMIT"
 git commit -a
 git push origin master
+

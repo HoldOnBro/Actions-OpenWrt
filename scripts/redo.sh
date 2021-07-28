@@ -20,11 +20,15 @@ cd /home/xyz/lede/package/luci-theme-opentomcat && git pull
 cd /home/xyz/lede/package/luci-theme-atmaterial && git pull
 cd /home/xyz/lede/package/luci-app-koolddns && git pull
 cd /home/xyz/lede/package/luci-app-autoipsetadder && git pull
-cd /home/xyz/lede/package/luci-app-dnsfilter && git pull
+#cd /home/xyz/lede/package/luci-app-dnsfilter && git pull
 cd /home/xyz/lede/package/luci-app-godproxy && git pull
 cd /home/xyz/lede/package/luci-app-advanced && git pull
 cd /home/xyz/lede/package/luci-app-argon-config && git pull
 cd /home/xyz/lede/package/luci-theme-argon && git pull
+cd /home/xyz/lede/package/luci-app-adblock-plus && git pull
+cd /home/xyz/lede/package/luci-app-dogcom && git pull
+cd /home/xyz/lede/package/openwrt-dogcom && git pull
+
 #cd /home/xyz/lede/luci-app-wrtbwmon && git pull
 cd /home/xyz/sub-web && git pull
 
@@ -91,7 +95,7 @@ svn co https://github.com/lisaac/luci-app-dockerman/trunk/applications/luci-app-
 #cp -r /home/xyz/lede/luci-app-wrtbwmon/luci-app-wrtbwmon /home/xyz/lede/package/
 svn co https://github.com/brvphoenix/wrtbwmon/trunk/wrtbwmon /home/xyz/lede/package/wrtbwmon
 #rm -rf /home/xyz/lede/package/luci-app-ksmbd
-git clone https://github.com/garypang13/luci-app-bypass /home/xyz/lede/package/luci-app-bypass
+svn co https://github.com/kiddin9/openwrt-bypass/trunk/luci-app-bypass /home/xyz/lede/package/luci-app-bypass
 find /home/xyz/lede/package/*/ /home/xyz/lede/feeds/*/ -maxdepth 2 -path "*luci-app-vssr/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-alt/shadowsocksr-libev-ssr-redir/g' {}
 find /home/xyz/lede/package/*/ /home/xyz/lede/feeds/*/ -maxdepth 2 -path "*luci-app-vssr/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-server/shadowsocksr-libev-ssr-server/g' {}
 #find /home/xyz/lede/package/*/ /home/xyz/lede/feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-redir/shadowsocksr-libev-alt/g' {}
@@ -126,6 +130,19 @@ svn co https://github.com/fw876/helloworld/trunk/naiveproxy /home/xyz/lede/packa
 
 #添加luci-app-amlogic
 svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic /home/xyz/lede/package/luci-app-amlogic
+
+#修改晶晨宝盒默认配置
+# 1.Set the download repository of the OpenWrt files to your github.com （OpenWrt 文件的下载仓库）
+sed -i "s|ophub/amlogic-s9xxx-openwrt|HoldOnBro/Actions-OpenWrt|g" /home/xyz/lede/package/luci-app-amlogic/root/etc/config/amlogic
+
+# 2.Set the download path of the kernel in your github.com repository （OpenWrt 内核的下载路径）
+sed -i "s|amlogic-s9xxx/amlogic-kernel|BuildARMv8|g" /home/xyz/lede/package/luci-app-amlogic/root/etc/config/amlogic
+
+# 3.Modify the keywords of Tags in your github.com Releases （Releases 里 Tags 的关键字）
+sed -i "s|s9xxx_lede|ARMv8|g" /home/xyz/lede/package/luci-app-amlogic/root/etc/config/amlogic
+
+# 4.Modify the suffix of the OPENWRT files in your github.com Releases （Releases 里 OpenWrt 文件的后缀）
+sed -i "s|.img.gz|+_FOL+SFE.img.gz|g" /home/xyz/lede/package/luci-app-amlogic/root/etc/config/amlogic
 
 #svn co https://github.com/HoldOnBro/Actions-OpenWrt/trunk/x86_64/r8125-mod /home/xyz/lede/package/r8125-mod
 
