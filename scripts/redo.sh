@@ -133,16 +133,16 @@ svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic /home/xy
 
 #修改晶晨宝盒默认配置
 # 1.Set the download repository of the OpenWrt files to your github.com （OpenWrt 文件的下载仓库）
-sed -i "s|ophub/amlogic-s9xxx-openwrt|HoldOnBro/Actions-OpenWrt|g" /home/xyz/lede/package/luci-app-amlogic/root/etc/config/amlogic
+sed -i "s|https.*/amlogic-s9xxx-openwrt|https://github.com/HoldOnBro/Actions-OpenWrt|g" /home/xyz/lede/package/luci-app-amlogic/root/etc/config/amlogic
 
-# 2.Set the download path of the kernel in your github.com repository （OpenWrt 内核的下载路径）
-sed -i "s|amlogic-s9xxx/amlogic-kernel|BuildARMv8|g" /home/xyz/lede/package/luci-app-amlogic/root/etc/config/amlogic
-
-# 3.Modify the keywords of Tags in your github.com Releases （Releases 里 Tags 的关键字）
+# 2.Modify the keywords of Tags in your github.com Releases （Releases 里 Tags 的关键字）
 sed -i "s|s9xxx_lede|ARMv8|g" /home/xyz/lede/package/luci-app-amlogic/root/etc/config/amlogic
 
-# 4.Modify the suffix of the OPENWRT files in your github.com Releases （Releases 里 OpenWrt 文件的后缀）
+# 3.Modify the suffix of the OPENWRT files in your github.com Releases （Releases 里 OpenWrt 文件的后缀）
 sed -i "s|.img.gz|+_FOL+SFE.img.gz|g" /home/xyz/lede/package/luci-app-amlogic/root/etc/config/amlogic
+
+# 4.Set the download path of the kernel in your github.com repository （OpenWrt 内核的下载路径）
+sed -i "s|http.*/library|https://github.com/HoldOnBro/Actions-OpenWrt/tree/master/BuildARMv8|g" /home/xyz/lede/package/luci-app-amlogic/root/etc/config/amlogic
 
 #svn co https://github.com/HoldOnBro/Actions-OpenWrt/trunk/x86_64/r8125-mod /home/xyz/lede/package/r8125-mod
 
