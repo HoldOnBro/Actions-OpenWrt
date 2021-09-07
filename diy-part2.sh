@@ -128,17 +128,18 @@ git clone https://github.com/sirpdboy/luci-app-advanced package/luci-app-advance
 #添加luci-app-amlogic
 svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic package/luci-app-amlogic
 #修改晶晨宝盒默认配置
-# 1.Set the download repository of the OpenWrt files to your github.com （OpenWrt 文件的下载仓库）
-sed -i "s|https.*/amlogic-s9xxx-openwrt|https://github.com/HoldOnBro/Actions-OpenWrt|g" package/luci-app-amlogic/root/etc/config/amlogic
 
-# 2.Modify the keywords of Tags in your github.com Releases （Releases 里 Tags 的关键字）
-sed -i "s|s9xxx_lede|ARMv8|g" package/luci-app-amlogic/root/etc/config/amlogic
+# 1.Set the download repository of the OpenWrt files to your github.com
+sed -i "s|https.*/OpenWrt|https://github.com/HoldOnBro/Actions-OpenWrt|g" package/luci-app-amlogic/root/etc/config/amlogic
 
-# 3.Modify the suffix of the OPENWRT files in your github.com Releases （Releases 里 OpenWrt 文件的后缀）
+# 2.Set the keywords of Tags in your github.com Releases
+#sed -i "s|ARMv8|ARMv8|g" package/luci-app-amlogic/root/etc/config/amlogic
+
+# 3.Set the suffix of the OPENWRT files in your github.com Releases
 sed -i "s|.img.gz|+_FOL+SFE.img.gz|g" package/luci-app-amlogic/root/etc/config/amlogic
 
-# 4.Set the download path of the kernel in your github.com repository （OpenWrt 内核的下载路径）
-sed -i "s|http.*/library|https://github.com/HoldOnBro/Actions-OpenWrt/tree/master/BuildARMv8|g" package/luci-app-amlogic/root/etc/config/amlogic
+# 4.Set the download path of the kernel in your github.com repository
+#sed -i "s|opt/kernel|https://github.com/HoldOnBro/Actions-OpenWrt/tree/master/BuildARMv8|g" package/luci-app-amlogic/root/etc/config/amlogic
 
 #添加argon-config 使用 最新argon
 git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
