@@ -147,7 +147,7 @@ sed -i "s|https.*/OpenWrt|https://github.com/HoldOnBro/Actions-OpenWrt|g" /home/
 sed -i "s|.img.gz|+_FOL+SFE.img.gz|g" /home/xyz/lede/package/luci-app-amlogic/root/etc/config/amlogic
 
 # 4.Set the download path of the kernel in your github.com repository
-#sed -i "s|opt/kernel|https://github.com/HoldOnBro/Actions-OpenWrt/tree/master/BuildARMv8|g" /home/xyz/lede/package/luci-app-amlogic/root/etc/config/amlogic
+sed -i "s|opt/kernel|BuildARMv8|g" /home/xyz/lede/package/luci-app-amlogic/root/etc/config/amlogic
 
 #svn co https://github.com/HoldOnBro/Actions-OpenWrt/trunk/x86_64/r8125-mod /home/xyz/lede/package/r8125-mod
 

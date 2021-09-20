@@ -139,7 +139,7 @@ sed -i "s|https.*/OpenWrt|https://github.com/HoldOnBro/Actions-OpenWrt|g" packag
 sed -i "s|.img.gz|+_FOL+SFE.img.gz|g" package/luci-app-amlogic/root/etc/config/amlogic
 
 # 4.Set the download path of the kernel in your github.com repository
-#sed -i "s|opt/kernel|https://github.com/HoldOnBro/Actions-OpenWrt/tree/master/BuildARMv8|g" package/luci-app-amlogic/root/etc/config/amlogic
+sed -i "s|opt/kernel|BuildARMv8|g" package/luci-app-amlogic/root/etc/config/amlogic
 
 #添加argon-config 使用 最新argon
 git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
