@@ -73,6 +73,7 @@ rm -rf /home/xyz/lede/package/r8125-mod
 rm -rf /home/xyz/lede/package/xray-plugin
 #rm -rf /home/xyz/lede/package/subweb
 rm -rf /home/xyz/lede/package/subconverter
+rm -rf /home/xyz/lede/package/toml11
 rm -rf /home/xyz/lede/package/jpcre2
 rm -rf /home/xyz/lede/package/rapidjson
 rm -rf /home/xyz/lede/package/luci-app-unblockneteasemusic-mini
@@ -166,6 +167,7 @@ svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/l
 svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/net/gost /home/xyz/lede/package/gost
 svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-unblockneteasemusic-mini /home/xyz/lede/package/luci-app-unblockneteasemusic-mini
 svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/net/subconverter /home/xyz/lede/package/subconverter
+svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/libs/toml11 /home/xyz/lede/package/toml11
 svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/net/udp2raw-tunnel /home/xyz/lede/package/udp2raw-tunnel
 svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-udp2raw /home/xyz/lede/package/luci-app-udp2raw
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-smartdns /home/xyz/lede/package/luci-app-smartdns
