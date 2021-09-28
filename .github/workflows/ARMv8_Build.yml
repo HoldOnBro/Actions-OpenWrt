@@ -71,6 +71,7 @@ jobs:
     - name: Build firmware
       id: build
       run: |
+        echo $PWD
         sudo mkdir /opt/kernel
         sudo cp $GITHUB_WORKSPACE/BuildARMv8/* /opt/kernel/
         #sudo cp $GITHUB_WORKSPACE/BuildARMv8/mk_*.tar.gz /opt/
