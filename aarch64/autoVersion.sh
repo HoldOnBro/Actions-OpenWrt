@@ -4,7 +4,8 @@ OpVersion=$(echo "$(cat /workdir/openwrt/package/lean/default-settings/files/zzz
 
 echo $OpVersion
 
-sed -i "s/OPENWRT_VER=.*/OPENWRT_VER=\"$OpVersion\"/" `grep OPENWRT_VER=.* -rl /opt/openwrt/`
+sed -i "s/OPENWRT_VER=.*/OPENWRT_VER=\"$OpVersion\"/" $GITHUB_WORKSPACE/scripts/whoami
+#sed -i "s/OPENWRT_VER=.*/OPENWRT_VER=\"$OpVersion\"/" `grep OPENWRT_VER=.* -rl /opt/openwrt/`
 #sed -i "s/OPENWRT_VER=.*/OPENWRT_VER=\"$OpVersion\"/" /opt/openwrt/mk_rk3328_beikeyun.sh
 #sed -i "s/OPENWRT_VER=.*/OPENWRT_VER=\"$OpVersion\"/" /opt/openwrt/mk_rk3328_beikeyun_tf.sh
 #sed -i "s/OPENWRT_VER=.*/OPENWRT_VER=\"$OpVersion\"/" /opt/openwrt/mk_rk3328_beikeyun_fol.sh
