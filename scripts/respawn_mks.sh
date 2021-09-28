@@ -1,28 +1,16 @@
 #!/bin/bash
 
 cd openwrt
-sed -i '10,15 s/\(#\)\(.*\)/\2/' make.env
-OLD=$(grep \+o\" make.env)
-NEWP=$(grep 5\.10.*\+\" make.env)
-NEWPP=$(grep 5\.13.*\+\" make.env)
-#echo $OLD
-#echo $NEW
 cp make.env makeplus.env
 cp make.env makeplusplus.env
-sed -i "s/$NEWP/#$NEWP/" make.env
-sed -i "s/$NEWPP/#$NEWPP/" make.env
-sed -i "s/$OLD/#$OLD/" makeplus.env
-sed -i "s/$NEWPP/#$NEWPP/" makeplus.env
-sed -i "s/$OLD/#$OLD/" makeplusplus.env
-sed -i "s/$NEWP/#$NEWP/" makeplusplus.env
 
 #sync the kernel version
 KV=$(find /opt/kernel/ -name "boot*+o.tar.gz" | awk -F '[-.]' '{print $2"."$3"."$4"-"$5"-"$6}')
 KPV=$(find /opt/kernel/ -name "boot*5\.10*+.tar.gz" | awk -F '[-.]' '{print $2"."$3"."$4"-"$5"-"$6}')
 KPPV=$(find /opt/kernel/ -name "boot*5\.14*+.tar.gz" | awk -F '[-.]' '{print $2"."$3"."$4"-"$5"-"$6}')
-sed -i "s/^KERNEL_VERSION.*/KERNEL_VERSION=\"$KV\"/" make.env
-sed -i "s/^KERNEL_VERSION.*/KERNEL_VERSION=\"$KPV\"/" makeplus.env
-sed -i "s/^KERNEL_VERSION.*/KERNEL_VERSION=\"$KPPV\"/" makeplusplus.env
+sed -i "s/^    KERNEL_VERSION.*/KERNEL_VERSION=\"$KV\"/" make.env
+sed -i "s/^    KERNEL_VERSION.*/KERNEL_VERSION=\"$KPV\"/" makeplus.env
+sed -i "s/^    KERNEL_VERSION.*/KERNEL_VERSION=\"$KPPV\"/" makeplusplus.env
 
 for F in *.sh ; do cp $F ${F%.sh}_basic.sh && cp $F ${F%.sh}_plus.sh && cp $F ${F%.sh}_plusplus.sh;done
 find ./* -maxdepth 1 -path "*_plus.sh" | xargs -i sed -i 's/make\.env/makeplus\.env/g' {}
