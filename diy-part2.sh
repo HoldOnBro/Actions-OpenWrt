@@ -61,6 +61,8 @@ svn co https://github.com/fw876/helloworld/trunk/xray-plugin package/xray-plugin
 svn co https://github.com/fw876/helloworld/trunk/shadowsocks-rust package/shadowsocks-rust
 svn co https://github.com/fw876/helloworld/trunk/shadowsocksr-libev package/shadowsocksr-libev
 svn co https://github.com/fw876/helloworld/trunk/v2ray-plugin package/v2ray-plugin
+svn co https://github.com/fw876/helloworld/trunk/simple-obfs package/simple-obfs
+svn co https://github.com/fw876/helloworld/trunk/trojan package/trojan
 svn co https://github.com/fw876/helloworld/trunk/v2ray-core package/v2ray-core
 #svn co https://github.com/xiaorouji/openwrt-passwall/trunk/xray-core package/xray-core
 #svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-gost package/luci-app-gost

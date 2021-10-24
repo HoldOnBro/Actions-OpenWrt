@@ -84,6 +84,8 @@ rm -rf /home/xyz/lede/package/shadowsocks-rust
 rm -rf /home/xyz/lede/package/shadowsocksr-libev
 rm -rf /home/xyz/lede/package/v2ray-plugin
 rm -rf /home/xyz/lede/package/v2ray-core
+rm -rf /home/xyz/lede/package/simple-obfs
+rm -rf /home/xyz/lede/package/trojan
 rm -rf /home/xyz/lede/package/smartdns-le
 rm -rf /home/xyz/lede/package/quickjspp
 rm -rf /home/xyz/lede/package/libcron
@@ -125,6 +127,8 @@ svn co https://github.com/fw876/helloworld/trunk/shadowsocks-rust /home/xyz/lede
 svn co https://github.com/fw876/helloworld/trunk/shadowsocksr-libev /home/xyz/lede/package/shadowsocksr-libev
 svn co https://github.com/fw876/helloworld/trunk/v2ray-plugin /home/xyz/lede/package/v2ray-plugin
 svn co https://github.com/fw876/helloworld/trunk/v2ray-core /home/xyz/lede/package/v2ray-core
+svn co https://github.com/fw876/helloworld/trunk/simple-obfs /home/xyz/lede/package/simple-obfs
+svn co https://github.com/fw876/helloworld/trunk/trojan /home/xyz/lede/package/trojan
 #svn co https://github.com/xiaorouji/openwrt-passwall/trunk/xray-core /home/xyz/lede/package/xray-core
 
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-eqos /home/xyz/lede/package/luci-app-eqos
