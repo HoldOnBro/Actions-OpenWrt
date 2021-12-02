@@ -1,0 +1,88 @@
+AML 系列盒子专用Armbian, 支持S905x、S905D、S912、S905X2、S905X3等一系列盒子
+Armbian_20.09_Aml-s9xxx_buster_5.4.67-flippy-45+o.img
+
+写入U盘可直接启动，默认是N1的dtb，如果是其它盒子，需要修改 /boot/uEnv.txt，找到适合自己盒子的dtb。
+所有dtb在/boot/dtb/amlogic下可以查阅，简单说明：
+axg:  A113D、A113X平台
+g12a:  S905X2平台
+g12b:  S922X、A311D平台
+gxbb:  S905平台
+gxl:  S805X、S905W、S905X、S905D平台
+gxm: S912平台
+sm1: S905X3平台
+
+dtb清单:
+meson-axg-s400.dtb
+meson-g12a-gt1-mini-a.dtb 
+meson-g12a-sei510.dtb
+meson-g12a-tanix-tx5max.dtb
+meson-g12a-u200.dtb
+meson-g12a-x96-max.dtb
+meson-g12a-x96-max-no-cvbs.dtb
+meson-g12a-x96-max-rmii.dtb
+meson-g12b-a311d-khadas-vim3.dtb
+meson-g12b-gtking.dtb
+meson-g12b-odroid-n2.dtb
+meson-g12b-s922x-khadas-vim3.dtb
+meson-g12b-ugoos-am6.dtb
+meson-gxbb-nanopi-k2.dtb
+meson-gxbb-nexbox-a95x.dtb
+meson-gxbb-odroidc2.dtb
+meson-gxbb-p200.dtb
+meson-gxbb-p201.dtb
+meson-gxbb-vega-s95-meta.dtb
+meson-gxbb-vega-s95-pro.dtb
+meson-gxbb-vega-s95-telos.dtb
+meson-gxbb-wetek-hub.dtb
+meson-gxbb-wetek-play2.dtb
+meson-gxl-s805x-libretech-ac.dtb
+meson-gxl-s805x-p241.dtb
+meson-gxl-s905d-mecool-kii-pro.dtb
+meson-gxl-s905d-mecool-ki-plus.dtb
+meson-gxl-s905d-mecool-ki-pro.dtb
+meson-gxl-s905d-mecool-m8s-plus.dtb
+meson-gxl-s905d-p230.dtb
+meson-gxl-s905d-p231.dtb
+meson-gxl-s905d-phicomm-n1.dtb      ->  斐讯N1默认
+meson-gxl-s905d-phicomm-n1-thresh.dtb  -> 斐讯N1流控版本，适用于交换机不能开启流控时
+meson-gxl-s905w-p281.dtb
+meson-gxl-s905w-tx3-mini.dtb
+meson-gxl-s905x-hwacom-amazetv.dtb
+meson-gxl-s905x-khadas-vim.dtb
+meson-gxl-s905x-libretech-cc.dtb
+meson-gxl-s905x-nexbox-a95x.dtb
+meson-gxl-s905x-p212.dtb
+meson-gxm-khadas-vim2.dtb
+meson-gxm-mecool-kiii-pro.dtb
+meson-gxm-nexbox-a1.dtb
+meson-gxm-q200.dtb    ->  可能适用于章鱼星球
+meson-gxm-q201.dtb
+meson-gxm-rbox-pro.dtb
+meson-gxm-vega-s96.dtb
+meson-sm1-khadas-vim3l.dtb
+meson-sm1-sei610.dtb
+meson-sm1-x96-max-plus-100m.dtb    ->  100m网卡
+meson-sm1-x96-max-plus.dtb  -> 1000m网卡，但只有HK1 Box可用
+meson-sm1-x96-max-plus-ne.dtb  -> 无网卡,需外置USB网卡
+
+特殊说明：
+有一些s905x3盒子启动后，hdmi颜色变绿，可以打上绿屏补丁，负作用是mac地址会变化
+如果是U盘启动，把/boot下的 u-boot.usb 复制成 u-boot.ext
+如果是tf卡启动，把/boot下的 u-boot.sd 复制成u-boot.ext
+
+第一次登录，密码是1234, 需要修改成自己的密码， 固件已预设东八区时间及中文语言，初始化时会提示修改语言，选n跳过
+
+1.写入emmc:
+cd  /root
+./install-to-emmc.sh  [ext4|xfs|btrfs|f2fs]   
+注： [ext4|xfs|btrfs|f2fs]是可选参数，4种选1种，不加参数时采用ext4文件系统
+例如： 
+./install-to-emmc.sh   btrfs  # 采用btrfs文件系统（自带透明压缩，可以节省emmc的空间）
+
+2. 安装docker
+cd /root
+./install-docker.sh
+
+3.安装zerotier
+cd /root
+./install-zerotier.sh
