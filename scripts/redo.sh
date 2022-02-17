@@ -41,14 +41,14 @@ rm -rf /home/xyz/lede/package/luci-app-smartdns
 rm -rf /home/xyz/lede/package/smartdns
 rm -rf /home/xyz/lede/package/wrtbwmon
 rm -rf /home/xyz/lede/package/luci-app-bypass
-rm -rf /home/xyz/lede/package/lean/luci-app-wrtbwmon
+rm -rf /home/xyz/lede/feeds/luci/applications/luci-app-wrtbwmon
 #rm -rf /home/xyz/lede/package/luci-app-wrtbwmon
 rm -rf /home/xyz/lede/package/luci-theme-rosy
 #rm -rf /home/xyz/lede/package/luci-theme-purple
 rm -rf /home/xyz/lede/package/luci-theme-darkmatter
 rm -rf /home/xyz/lede/package/luci-theme-opentomato
 rm -rf /home/xyz/lede/package/luci-theme-edge
-rm -rf /home/xyz/lede/package/lean/luci-theme-argon
+rm -rf /home/xyz/lede/feeds/luci/themes/luci-theme-argon
 #rm -rf /home/xyz/lede/package/luci-theme-argon_new
 rm -rf /home/xyz/lede/package/luci-app-openclash
 rm -rf /home/xyz/lede/package/brook
@@ -94,7 +94,7 @@ rm -rf /home/xyz/lede/feeds/packages/net/smartdns
 rm -rf /home/xyz/lede/package/udp2raw
 rm -rf /home/xyz/lede/package/luci-app-udp2raw
 rm -rf /home/xyz/lede/package/luci-app-amlogic
-rm -rf /home/xyz/lede/package/luci-app-dockerman
+rm -rf /home/xyz/lede/feeds/luci/applications/luci-app-dockerman
 
 svn co https://github.com/lisaac/luci-app-dockerman/trunk/applications/luci-app-dockerman /home/xyz/lede/package/luci-app-dockerman
 #cp -r /home/xyz/lede/luci-app-wrtbwmon/luci-app-wrtbwmon /home/xyz/lede/package/
