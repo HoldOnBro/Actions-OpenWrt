@@ -14,6 +14,11 @@
 rm -rf feeds/luci/applications/luci-app-dockerman
 rm -rf feeds/luci/applications/luci-app-wrtbwmon
 rm -rf feeds/packages/net/smartdns
+
+#临时解决 amule 2.3.2 在 5.15 内核下编译失败的问题
+rm -rf feeds/packages/net/amule
+svn co https://github.com/WYC-2020/packages/trunk/net/amule feeds/packages/net/amule
+
 #添加额外软件包
 git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 
