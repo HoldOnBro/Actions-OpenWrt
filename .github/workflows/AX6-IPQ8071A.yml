@@ -75,6 +75,9 @@ jobs:
     #    cd openwrt
     #    ../$DIY_P1_SH
 
+    - name: Revert some drop sh*t
+      run: cp -rf $GITHUB_WORKSPACE/AX6/revert/* openwrt/
+
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
 
