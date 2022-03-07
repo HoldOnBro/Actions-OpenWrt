@@ -11,11 +11,11 @@ on:
       - 'AX6/AX6.config'
   schedule:
     - cron: 0 16 * * *
-  # watch:
-  #   types: started
+  watch:
+    types: started
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_URL: https://github.com/Boos4721/openwrt
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: AX6/AX6.config
@@ -75,9 +75,6 @@ jobs:
     #    cd openwrt
     #    ../$DIY_P1_SH
 
-    - name: Revert some drop sh*t
-      run: cp -rf $GITHUB_WORKSPACE/AX6/revert/* openwrt/
-
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
 
@@ -107,6 +104,7 @@ jobs:
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
+
     - name: Compile the firmware
       id: compile
       run: |

@@ -6,8 +6,8 @@ on:
 #    types: published
   schedule:
     - cron: 30 23 * * *
-  watch:
-    types: started
+  # watch:
+  #   types: started
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
