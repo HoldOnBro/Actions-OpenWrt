@@ -75,6 +75,9 @@ jobs:
     #    cd openwrt
     #    ../$DIY_P1_SH
 
+    - name: Revert some drop sh*t
+      run: cp -rf $GITHUB_WORKSPACE/AX6/revert/* openwrt/
+
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
 
@@ -104,10 +107,6 @@ jobs:
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
-
-    - name: Revert some drop sh*t
-      run: cp -rf $GITHUB_WORKSPACE/AX6/revert/* openwrt/
-
     - name: Compile the firmware
       id: compile
       run: |
