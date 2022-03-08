@@ -143,6 +143,7 @@ svn co https://github.com/fw876/helloworld/trunk/naiveproxy /home/xyz/lede/packa
 #添加istore
 svn co https://github.com/linkease/istore-ui/trunk/app-store-ui /home/xyz/lede/package/app-store-ui
 svn co https://github.com/linkease/istore/trunk/luci/luci-app-store /home/xyz/lede/package/luci-app-store
+sed -i 's/luci-lib-ipkg/luci-base/g' /home/xyz/lede/package/luci-app-store/Makefile
 
 #添加luci-app-amlogic
 svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic /home/xyz/lede/package/luci-app-amlogic
