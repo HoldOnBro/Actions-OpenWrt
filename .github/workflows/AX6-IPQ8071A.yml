@@ -15,7 +15,7 @@ on:
     types: started
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_URL: https://github.com/Boos4721/openwrt
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: AX6/AX6.config
@@ -65,6 +65,7 @@ jobs:
         echo "useVersionInfo=$useVersionInfo" >> $GITHUB_ENV
         echo "DATE=$(date "+%Y-%m-%d %H:%M:%S")" >> $GITHUB_ENV
         echo "DATE1=$(date "+%Y-%m-%d")" >> $GITHUB_ENV
+        svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-passwall package/luci-app-passwall
 #        echo "::set-env name=useVersionInfo::$useVersionInfo"
 #        echo "::set-env name=DATE::$(date "+%Y-%m-%d %H:%M:%S")"
 
@@ -75,14 +76,14 @@ jobs:
     #    cd openwrt
     #    ../$DIY_P1_SH
 
-    - name: Revert some drop sh*t
-      run: cp -rf $GITHUB_WORKSPACE/AX6/revert/* openwrt/
+    # - name: Revert some drop sh*t
+    #   run: cp -rf $GITHUB_WORKSPACE/AX6/revert/* openwrt/
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
 
     - name: Install feeds
-      run: cd openwrt && ./scripts/feeds install -a
+      run: cd openwrt && ./scripts/feeds install -a -f
 
     - name: Load custom configuration
       run: |
@@ -91,7 +92,6 @@ jobs:
         chmod +x $DIY_P2_SH
         chmod +x $MRG_ADD_SH
         cd openwrt
-        $GITHUB_WORKSPACE/$DIY_P2_SH
         $GITHUB_WORKSPACE/$MRG_ADD_SH
         sed -i 's/OpenWrt/MRG AutoBuild ${{ env.DATE1 }} @ OpenWrt/g' package/lean/default-settings/files/zzz-default-settings
         
