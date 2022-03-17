@@ -188,7 +188,7 @@ svn co https://github.com/kenzok8/openwrt-packages/trunk/smartdns /home/xyz/lede
 #svn co https://github.com/openwrt/luci/trunk/applications/luci-app-ksmbd /home/xyz/lede/package/luci-app-ksmbd
 chmod 0755 /home/xyz/lede/package/luci-app-koolddns/root/etc/init.d/koolddns
 chmod 0755 /home/xyz/lede/package/luci-app-koolddns/root/usr/share/koolddns/aliddns
-sed -i 's/LUCI_DEPENDS.*/LUCI_DEPENDS:=\@\(arm\|\|aarch64\)/g' /home/xyz/lede/feeds/luci/applications/luci-app-cpufreq/Makefile
+#sed -i 's/LUCI_DEPENDS.*/LUCI_DEPENDS:=\@\(aarch64\|\|arm\)/g' /home/xyz/lede/feeds/luci/applications/luci-app-cpufreq/Makefile
 
 svn co https://github.com/linkease/ddnsto-openwrt/trunk/ddnsto /home/xyz/lede/package/ddnsto
 svn co https://github.com/linkease/ddnsto-openwrt/trunk/luci-app-ddnsto /home/xyz/lede/package/luci-app-ddnsto
