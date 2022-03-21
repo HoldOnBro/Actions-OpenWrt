@@ -97,6 +97,8 @@ rm -rf /home/xyz/lede/package/luci-app-amlogic
 rm -rf /home/xyz/lede/feeds/luci/applications/luci-app-dockerman
 rm -rf /home/xyz/lede/package/app-store-ui
 rm -rf /home/xyz/lede/package/luci-app-store
+rm -rf /home/xyz/lede/package/v2ray-geodata
+rm -rf /home/xyz/lede/package/luci-app-passwall2
 
 svn co https://github.com/lisaac/luci-app-dockerman/trunk/applications/luci-app-dockerman /home/xyz/lede/package/luci-app-dockerman
 #cp -r /home/xyz/lede/luci-app-wrtbwmon/luci-app-wrtbwmon /home/xyz/lede/package/
@@ -122,6 +124,7 @@ svn co https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-go /home/xyz/l
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-plus /home/xyz/lede/package/trojan-plus
 #svn co https://github.com/xiaorouji/openwrt-passwall/trunk/luci-app-passwall /home/xyz/lede/package/luci-app-passwall
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-passwall /home/xyz/lede/package/luci-app-passwall
+svn co https://github.com/xiaorouji/openwrt-passwall2/trunk/luci-app-passwall2 /home/xyz/lede/package/luci-app-passwall2
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/ssocks /home/xyz/lede/package/ssocks
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/hysteria /home/xyz/lede/package/hysteria
 svn co https://github.com/fw876/helloworld/trunk/xray-core /home/xyz/lede/package/xray-core
@@ -132,6 +135,7 @@ svn co https://github.com/fw876/helloworld/trunk/v2ray-plugin /home/xyz/lede/pac
 svn co https://github.com/fw876/helloworld/trunk/v2ray-core /home/xyz/lede/package/v2ray-core
 svn co https://github.com/fw876/helloworld/trunk/simple-obfs /home/xyz/lede/package/simple-obfs
 svn co https://github.com/fw876/helloworld/trunk/trojan /home/xyz/lede/package/trojan
+svn co https://github.com/fw876/helloworld/trunk/v2ray-geodata /home/xyz/lede/package/v2ray-geodata
 #svn co https://github.com/xiaorouji/openwrt-passwall/trunk/xray-core /home/xyz/lede/package/xray-core
 
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-eqos /home/xyz/lede/package/luci-app-eqos
