@@ -25,7 +25,6 @@ cd /home/xyz/lede/package/luci-app-ikoolproxy && git pull
 cd /home/xyz/lede/package/luci-app-advanced && git pull
 cd /home/xyz/lede/package/luci-app-argon-config && git pull
 cd /home/xyz/lede/package/luci-theme-argon && git pull
-cd /home/xyz/lede/package/luci-app-adblock-plus && git pull
 cd /home/xyz/lede/package/luci-app-dogcom && git pull
 cd /home/xyz/lede/package/openwrt-dogcom && git pull
 
@@ -99,7 +98,9 @@ rm -rf /home/xyz/lede/package/app-store-ui
 rm -rf /home/xyz/lede/package/luci-app-store
 rm -rf /home/xyz/lede/package/v2ray-geodata
 rm -rf /home/xyz/lede/package/luci-app-passwall2
+rm -rf /home/xyz/lede/package/luci-app-adblock-plus
 
+svn co https://github.com/HoldOnBro/packages/trunk/luci-app-adblock-plus /home/xyz/lede/package/luci-app-adblock-plus
 svn co https://github.com/lisaac/luci-app-dockerman/trunk/applications/luci-app-dockerman /home/xyz/lede/package/luci-app-dockerman
 #cp -r /home/xyz/lede/luci-app-wrtbwmon/luci-app-wrtbwmon /home/xyz/lede/package/
 svn co https://github.com/brvphoenix/wrtbwmon/trunk/wrtbwmon /home/xyz/lede/package/wrtbwmon

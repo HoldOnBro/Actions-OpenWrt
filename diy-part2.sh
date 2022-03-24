@@ -34,7 +34,8 @@ git clone https://github.com/rufengsuixing/luci-app-autoipsetadder.git package/l
 git clone https://github.com/mchome/openwrt-dogcom.git package/openwrt-dogcom
 git clone https://github.com/mchome/luci-app-dogcom.git package/luci-app-dogcom
 #git clone https://github.com/garypang13/luci-app-dnsfilter package/luci-app-dnsfilter
-git clone https://github.com/small-5/luci-app-adblock-plus package/luci-app-adblock-plus
+#git clone https://github.com/small-5/luci-app-adblock-plus package/luci-app-adblock-plus
+svn co https://github.com/HoldOnBro/packages/trunk/luci-app-adblock-plus package/luci-app-adblock-plus
 git clone https://github.com/iwrt/luci-app-ikoolproxy package/luci-app-ikoolproxy
 
 #git clone https://github.com/vernesong/OpenClash.git package/OpenClash
