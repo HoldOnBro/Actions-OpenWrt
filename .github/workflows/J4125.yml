@@ -109,7 +109,7 @@ jobs:
 
     - name: patch
       run: |
-        cp -rf $GITHUB_WORKSPACE/x86_64/5_15_patches/* openwrt/
+#       cp -rf $GITHUB_WORKSPACE/x86_64/5_15_patches/* openwrt/
         cp -rf $GITHUB_WORKSPACE/x86_64/kernel_config/* openwrt/target/linux/x86/
 
     - name: Compile the firmware

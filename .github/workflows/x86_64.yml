@@ -106,8 +106,8 @@ jobs:
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
 
-    - name: patch
-      run: cp -rf $GITHUB_WORKSPACE/x86_64/5_15_patches/* openwrt/
+#   - name: patch
+#     run: cp -rf $GITHUB_WORKSPACE/x86_64/5_15_patches/* openwrt/
 
     - name: Compile the firmware
       id: compile
