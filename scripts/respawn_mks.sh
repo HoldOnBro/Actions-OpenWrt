@@ -6,8 +6,8 @@ cp make.env makeplusplus.env
 
 #sync the kernel version
 KV=$(find /opt/kernel/ -name "boot*+o.tar.gz" | awk -F '[-.]' '{print $2"."$3"."$4"-"$5"-"$6}')
-KPV=$(find /opt/kernel/ -name "boot-5\.10*+.tar.gz" | awk -F '[-.]' '{print $2"."$3"."$4"-"$5"-"$6}')
-KPPV=$(find /opt/kernel/ -name "boot-5\.15*+.tar.gz" | awk -F '[-.]' '{print $2"."$3"."$4"-"$5"-"$6}')
+KPV=$(find /opt/kernel/ -name "boot-5\.16*+.tar.gz" | awk -F '[-.]' '{print $2"."$3"."$4"-"$5"-"$6}')
+KPPV=$(find /opt/kernel/ -name "boot-5\.17*+.tar.gz" | awk -F '[-.]' '{print $2"."$3"."$4"-"$5"-"$6}')
 sed -i "s/^    KERNEL_VERSION.*/    KERNEL_VERSION=\"$KV\"/" make.env
 sed -i "s/^    KERNEL_VERSION.*/    KERNEL_VERSION=\"$KPV\"/" makeplus.env
 sed -i "s/^    KERNEL_VERSION.*/    KERNEL_VERSION=\"$KPPV\"/" makeplusplus.env
