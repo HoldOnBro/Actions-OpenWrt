@@ -107,33 +107,34 @@ jobs:
         sudo cp $GITHUB_WORKSPACE/scripts/whoami ./
         #sudo ./mk_rk3328_beikeyun.sh
         sudo ./mk_rk3328_beikeyun_basic.sh
-        sudo ./mk_rk3328_beikeyun_plus.sh
+        #sudo ./mk_rk3328_beikeyun_plus.sh
         sudo ./mk_rk3328_beikeyun_plusplus.sh
         #sudo ./mk_rk3328_l1pro.sh
         sudo ./mk_rk3328_l1pro_basic.sh
-        sudo ./mk_rk3328_l1pro_plus.sh
+        #sudo ./mk_rk3328_l1pro_plus.sh
         sudo ./mk_rk3328_l1pro_plusplus.sh
         #sudo ./mk_s905d_n1.sh
         sudo ./mk_s905d_n1_basic.sh
-        sudo ./mk_s905d_n1_plus.sh
+        #sudo ./mk_s905d_n1_plus.sh
         sudo ./mk_s905d_n1_plusplus.sh
         #sudo ./mk_s905x2_x96max.sh
         #sudo ./mk_s905x2_x96max_basic.sh
         #sudo ./mk_s905x2_x96max_plus.sh
         #sudo ./mk_s905x3_multi.sh
         sudo ./mk_s905x3_multi_basic.sh
-        sudo ./mk_s905x3_multi_plus.sh
+        #sudo ./mk_s905x3_multi_plus.sh
         sudo ./mk_s905x3_multi_plusplus.sh
         #sudo ./mk_s912_zyxq.sh
         sudo ./mk_s912_zyxq_basic.sh
-        sudo ./mk_s912_zyxq_plus.sh
+        #sudo ./mk_s912_zyxq_plus.sh
         sudo ./mk_s912_zyxq_plusplus.sh
         #sudo ./mk_s922x_gtking.sh
-        #sudo ./mk_s922x_gtking_basic.sh
+        sudo ./mk_s922x_gtking_basic.sh
         #sudo ./mk_s922x_gtking_plus.sh
+        sudo ./mk_s922x_gtking_plusplus.sh
         #sudo ./mk_h6_vplus.sh
         sudo ./mk_h6_vplus_basic.sh
-        sudo ./mk_h6_vplus_plus.sh
+        #sudo ./mk_h6_vplus_plus.sh
         sudo ./mk_h6_vplus_plusplus.sh
         sudo cp ./*AllPackages.tar.gz ./output/
         sudo cp ./files/update*.sh ./output/
