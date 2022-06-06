@@ -76,6 +76,8 @@ svn co https://github.com/fw876/helloworld/trunk/v2ray-geodata package/v2ray-geo
 svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-gost package/luci-app-gost
 svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/net/gost package/gost
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-eqos package/luci-app-eqos
+svn co https://github.com/kenzok8/openwrt-packages/trunk/mosdns package/mosdns
+svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-mosdns package/luci-app-mosdns
 git clone https://github.com/tty228/luci-app-serverchan.git package/luci-app-serverchan
 # cd package/luci-app-serverchan && git reset --hard 6387b3b47b03d95d3f3bcd42ff98db5bb84fd056 && git pull && cd ../..
 svn co https://github.com/brvphoenix/wrtbwmon/trunk/wrtbwmon package/wrtbwmon
