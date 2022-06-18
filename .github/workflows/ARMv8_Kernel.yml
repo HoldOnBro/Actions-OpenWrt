@@ -2,8 +2,8 @@ name: ARMv8_Kernel
 
 on:
   repository_dispatch:
-#  release:
-#    types: published
+  release:
+    types: [edited]
   schedule:
     - cron: 30 23 * * *
   watch:
