@@ -14,6 +14,7 @@
 rm -rf feeds/luci/applications/luci-app-dockerman
 rm -rf feeds/luci/applications/luci-app-wrtbwmon
 rm -rf feeds/packages/net/smartdns
+rm -rf feeds/packages/net/mosdns
 
 #添加额外软件包
 git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
@@ -190,4 +191,4 @@ svn co https://github.com/kiddin9/openwrt-bypass/trunk/luci-app-bypass package/l
 #sed -i "s/\ \ URL:=.*/\ \ URL:=https:\/\/github\.com\/1715173329\/dnsforwarder/" package/lean/dnsforwarder/Makefile
 
 ./scripts/feeds update -a
-./scripts/feeds install -a
+./scripts/feeds install -a -f
