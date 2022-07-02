@@ -114,6 +114,9 @@ jobs:
         chmod +x $DIY_P2_SH
         chmod +x $MRG_ADD_SH
         cd openwrt
+        rm -rf feeds/packages/net/mosdns
+        ./scripts/feeds update -a
+        ./scripts/feeds install -a -f
         $GITHUB_WORKSPACE/$MRG_ADD_SH
         sed -i 's/OpenWrt/MRG AutoBuild ${{ env.DATE1 }} @ OpenWrt/g' package/lean/default-settings/files/zzz-default-settings
         
