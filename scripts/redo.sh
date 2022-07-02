@@ -100,6 +100,7 @@ rm -rf /home/xyz/lede/package/v2ray-geodata
 rm -rf /home/xyz/lede/package/luci-app-passwall2
 rm -rf /home/xyz/lede/package/luci-app-adblock-plus
 rm -rf /home/xyz/lede/package/dns2tcp
+rm -rf /home/xyz/lede/feeds/packages/net/mosdns
 rm -rf /home/xyz/lede/package/mosdns
 rm -rf /home/xyz/lede/package/luci-app-mosdns
 rm -rf /home/xyz/lede/package/sagernet-core
