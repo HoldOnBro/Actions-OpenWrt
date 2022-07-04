@@ -128,6 +128,8 @@ jobs:
       id: package
       run: |
         cd openwrt
+        svn export --force https://github.com/coolsnowwolf/lede/trunk/tools/upx tools/upx
+        svn export --force https://github.com/coolsnowwolf/lede/trunk/tools/ucl tools/ucl
         make defconfig
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
