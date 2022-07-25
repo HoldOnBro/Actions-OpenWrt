@@ -96,6 +96,7 @@ rm -rf /home/xyz/lede/package/luci-app-amlogic
 rm -rf /home/xyz/lede/feeds/luci/applications/luci-app-dockerman
 rm -rf /home/xyz/lede/package/app-store-ui
 rm -rf /home/xyz/lede/package/luci-app-store
+rm -rf /home/xyz/lede/package/luci-lib-taskd
 rm -rf /home/xyz/lede/package/v2ray-geodata
 rm -rf /home/xyz/lede/package/luci-app-passwall2
 rm -rf /home/xyz/lede/package/luci-app-adblock-plus
@@ -157,6 +158,7 @@ svn co https://github.com/fw876/helloworld/trunk/naiveproxy /home/xyz/lede/packa
 #添加istore
 svn co https://github.com/linkease/istore-ui/trunk/app-store-ui /home/xyz/lede/package/app-store-ui
 svn co https://github.com/linkease/istore/trunk/luci/luci-app-store /home/xyz/lede/package/luci-app-store
+svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-lib-taskd /home/xyz/lede/package/luci-lib-taskd
 sed -i 's/luci-lib-ipkg/luci-base/g' /home/xyz/lede/package/luci-app-store/Makefile
 
 #添加luci-app-amlogic
