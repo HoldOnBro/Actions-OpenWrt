@@ -107,6 +107,7 @@ rm -rf /home/xyz/lede/feeds/packages/net/mosdns
 rm -rf /home/xyz/lede/package/mosdns
 rm -rf /home/xyz/lede/package/luci-app-mosdns
 rm -rf /home/xyz/lede/package/sagernet-core
+rm -rf /home/xyz/lede/package/lua-neturl
 
 svn co https://github.com/HoldOnBro/packages/trunk/luci-app-adblock-plus /home/xyz/lede/package/luci-app-adblock-plus
 svn co https://github.com/lisaac/luci-app-dockerman/trunk/applications/luci-app-dockerman /home/xyz/lede/package/luci-app-dockerman
@@ -156,6 +157,7 @@ svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-mosdns /home/x
 #svn co https://github.com/kenzok8/openwrt-packages/trunk/gost /home/xyz/lede/package/gost
 svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus /home/xyz/lede/package/luci-app-ssr-plus
 svn co https://github.com/fw876/helloworld/trunk/naiveproxy /home/xyz/lede/package/naiveproxy
+svn co https://github.com/fw876/helloworld/trunk/lua-neturl /home/xyz/lede/package/lua-neturl
 
 #添加istore
 svn co https://github.com/linkease/istore-ui/trunk/app-store-ui /home/xyz/lede/package/app-store-ui
