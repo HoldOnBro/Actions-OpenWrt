@@ -137,6 +137,8 @@ jobs:
         sudo ./mk_h6_vplus_basic.sh
         #sudo ./mk_h6_vplus_plus.sh
         sudo ./mk_h6_vplus_plusplus.sh
+        sudo ./mk_rk3568_r68s_basic.sh
+        sudo ./mk_rk3568_r68s_plusplus.sh
         sudo cp ./*AllPackages.tar.gz ./output/
         sudo cp ./files/update*.sh ./output/
         echo "::set-output name=status::success"
