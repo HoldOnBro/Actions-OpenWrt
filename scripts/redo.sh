@@ -166,6 +166,7 @@ svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-lib-taskd /home/xy
 svn co https://github.com/kenzok8/openwrt-packages/trunk/taskd /home/xyz/lede/package/taskd
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-lib-xterm /home/xyz/lede/package/luci-lib-xterm
 sed -i 's/luci-lib-ipkg/luci-base/g' /home/xyz/lede/package/luci-app-store/Makefile
+sed -i 's/luci-lib-ipkg/luci-base/g' /home/xyz/lede/package/luci-app-bypass/Makefile
 
 #添加luci-app-amlogic
 svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic /home/xyz/lede/package/luci-app-amlogic
