@@ -131,7 +131,7 @@ svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-lib-taskd package/
 svn co https://github.com/kenzok8/openwrt-packages/trunk/taskd package/taskd
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-lib-xterm package/luci-lib-xterm
 sed -i 's/luci-lib-ipkg/luci-base/g' package/luci-app-store/Makefile
-sed -i 's/luci-lib-ipkg/luci-base/g' package/luci-app-bypass/Makefile
+
 #git clone https://github.com/pymumu/openwrt-smartdns package/smartdns
 #git clone -b lede https://github.com/pymumu/luci-app-smartdns.git package/luci-app-smartdns
 svn co https://github.com/linkease/ddnsto-openwrt/trunk/ddnsto package/ddnsto
@@ -189,6 +189,7 @@ find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-vssr/Makefile" | xargs -i 
 #find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-server/shadowsocksr-libev-server/g' {}
 
 svn co https://github.com/kiddin9/openwrt-bypass/trunk/luci-app-bypass package/luci-app-bypass
+sed -i 's/luci-lib-ipkg/luci-base/g' package/luci-app-bypass/Makefile
 #find package/luci-app-bypass/* -maxdepth 8 -path "*" | xargs -i sed -i 's/smartdns-le/smartdns/g' {}
 
 #temp fix for dnsforwarder

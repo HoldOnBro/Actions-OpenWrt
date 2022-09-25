@@ -117,6 +117,7 @@ svn co https://github.com/brvphoenix/wrtbwmon/trunk/wrtbwmon /home/xyz/lede/pack
 svn co https://github.com/kiddin9/openwrt-bypass/trunk/luci-app-bypass /home/xyz/lede/package/luci-app-bypass
 find /home/xyz/lede/package/*/ /home/xyz/lede/feeds/*/ -maxdepth 2 -path "*luci-app-vssr/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-alt/shadowsocksr-libev-ssr-redir/g' {}
 find /home/xyz/lede/package/*/ /home/xyz/lede/feeds/*/ -maxdepth 2 -path "*luci-app-vssr/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-server/shadowsocksr-libev-ssr-server/g' {}
+sed -i 's/luci-lib-ipkg/luci-base/g' /home/xyz/lede/package/luci-app-bypass/Makefile
 #find /home/xyz/lede/package/*/ /home/xyz/lede/feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-redir/shadowsocksr-libev-alt/g' {}
 #find /home/xyz/lede/package/*/ /home/xyz/lede/feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-server/shadowsocksr-libev-server/g' {}
 #find /home/xyz/lede/package/luci-app-bypass/* -maxdepth 8 -path "*" | xargs -i sed -i 's/smartdns-le/smartdns/g' {}
@@ -166,7 +167,6 @@ svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-lib-taskd /home/xy
 svn co https://github.com/kenzok8/openwrt-packages/trunk/taskd /home/xyz/lede/package/taskd
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-lib-xterm /home/xyz/lede/package/luci-lib-xterm
 sed -i 's/luci-lib-ipkg/luci-base/g' /home/xyz/lede/package/luci-app-store/Makefile
-sed -i 's/luci-lib-ipkg/luci-base/g' /home/xyz/lede/package/luci-app-bypass/Makefile
 
 #添加luci-app-amlogic
 svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic /home/xyz/lede/package/luci-app-amlogic
