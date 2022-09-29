@@ -137,4 +137,4 @@ jobs:
         message: |
           编译时间：${{ env.DATE }}
           lede更新信息：${{ env.useVersionInfo }}
-          ${{ env.FILE_NAME }}推送成功
+          ${{ env.FILE_NAME }}推送成功~
