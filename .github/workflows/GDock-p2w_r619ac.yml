@@ -1,6 +1,7 @@
 name: GDock-p2w_r619ac
 
 on:
+  workflow_dispatch:
   repository_dispatch:
 #  release:
 #    types: published

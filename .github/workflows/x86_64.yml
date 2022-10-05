@@ -1,6 +1,7 @@
 name: x86_64
 
 on:
+  workflow_dispatch:
   repository_dispatch:
 #  release:
 #    types: published

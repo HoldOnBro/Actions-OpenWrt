@@ -1,6 +1,7 @@
 name: ARMv8_Docker_BuildX
 
 on:
+  workflow_dispatch:
   repository_dispatch:
 #  release:
 #    types: published

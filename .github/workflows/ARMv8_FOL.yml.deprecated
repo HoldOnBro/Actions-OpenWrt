@@ -1,6 +1,7 @@
 name: ARMv8_FOL
 
 on:
+  workflow_dispatch:
   repository_dispatch:
 #  release:
 #    types: published

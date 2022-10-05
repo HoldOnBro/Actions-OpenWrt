@@ -1,6 +1,7 @@
 name: NewifiD2-MT7621
 
 on:
+  workflow_dispatch:
   repository_dispatch:
 #  release:
 #    types: published

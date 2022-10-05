@@ -1,6 +1,7 @@
 name: ARMv8_Docker
 
 on:
+  workflow_dispatch:
   repository_dispatch:
 #  release:
 #    types: published

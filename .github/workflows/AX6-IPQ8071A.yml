@@ -1,6 +1,7 @@
 name: AX6-IPQ8071A
 
 on:
+  workflow_dispatch:
   repository_dispatch:
 #  release:
 #    types: published
