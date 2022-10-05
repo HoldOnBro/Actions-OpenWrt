@@ -230,5 +230,5 @@ jobs:
         message: |
           编译时间：${{ env.DATE }}
           lede更新信息：${{ env.useVersionInfo }}
-          ${{ env.PRODUCT_NAME }}打包完成~
+          ${{ env.PRODUCT_NAME }}打包完成
 
