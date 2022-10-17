@@ -105,6 +105,8 @@ git clone https://github.com/xrouterservice/luci-app-koolddns.git package/luci-a
 svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus package/luci-app-ssr-plus
 svn co https://github.com/fw876/helloworld/trunk/naiveproxy package/naiveproxy
 svn co https://github.com/fw876/helloworld/trunk/lua-neturl package/lua-neturl
+svn co https://github.com/kenzok8/small-package/trunk/luci-app-alist package/luci-app-alist
+svn co https://github.com/kenzok8/small-package/trunk/alist package/alist
 
 #赋予koolddns权限
 chmod 0755 package/luci-app-koolddns/root/etc/init.d/koolddns
