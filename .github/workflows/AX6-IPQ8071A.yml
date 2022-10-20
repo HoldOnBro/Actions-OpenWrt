@@ -16,7 +16,7 @@ on:
     types: started
 
 env:
-  REPO_URL: https://github.com/Boos4721/openwrt
+  REPO_URL: https://github.com/yaya131/lede-for-XaioMi
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: AX6/AX6.config
@@ -88,7 +88,6 @@ jobs:
         echo "useVersionInfo=$useVersionInfo" >> $GITHUB_ENV
         echo "DATE=$(date "+%Y-%m-%d %H:%M:%S")" >> $GITHUB_ENV
         echo "DATE1=$(date "+%Y-%m-%d")" >> $GITHUB_ENV
-        svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-passwall package/luci-app-passwall
 #        echo "::set-env name=useVersionInfo::$useVersionInfo"
 #        echo "::set-env name=DATE::$(date "+%Y-%m-%d %H:%M:%S")"
 
@@ -115,9 +114,7 @@ jobs:
         chmod +x $DIY_P2_SH
         chmod +x $MRG_ADD_SH
         cd openwrt
-        rm -rf feeds/packages/net/mosdns
-        ./scripts/feeds update -a
-        ./scripts/feeds install -a -f
+        $GITHUB_WORKSPACE/$DIY_P2_SH
         $GITHUB_WORKSPACE/$MRG_ADD_SH
         sed -i 's/OpenWrt/MRG AutoBuild ${{ env.DATE1 }} @ OpenWrt/g' package/lean/default-settings/files/zzz-default-settings
         
@@ -129,8 +126,6 @@ jobs:
       id: package
       run: |
         cd openwrt
-        svn export --force https://github.com/coolsnowwolf/lede/trunk/tools/upx tools/upx
-        svn export --force https://github.com/coolsnowwolf/lede/trunk/tools/ucl tools/ucl
         make defconfig
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
@@ -205,7 +200,7 @@ jobs:
         token: ${{ secrets.RELEASES_TOKEN }}
         body: |
           默认IP： 192.168.31.1 默认密码： password
-          当前使用版本:【编译前的最后一次[➦主源码](https://github.com/coolsnowwolf/lede)更新记录】
+          当前使用版本:【编译前的最后一次[➦主源码](https://github.com/yaya131/lede-for-XaioMi)更新记录】
           ${{ env.useVersionInfo }}
         artifacts: ${{ env.FIRMWARE }}/*
 
