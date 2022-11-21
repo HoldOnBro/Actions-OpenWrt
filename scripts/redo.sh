@@ -110,6 +110,10 @@ rm -rf /home/xyz/lede/package/sagernet-core
 rm -rf /home/xyz/lede/package/lua-neturl
 rm -rf /home/xyz/lede/package/luci-app-alist
 rm -rf /home/xyz/lede/package/alist
+rm -rf /home/xyz/lede/package/microsocks
+rm -rf /home/xyz/lede/package/redsocks2
+rm -rf /home/xyz/lede/package/ipt2socks
+rm -rf /home/xyz/lede/package/dns2socks
 
 svn co https://github.com/HoldOnBro/packages/trunk/luci-app-adblock-plus /home/xyz/lede/package/luci-app-adblock-plus
 svn co https://github.com/lisaac/luci-app-dockerman/trunk/applications/luci-app-dockerman /home/xyz/lede/package/luci-app-dockerman
@@ -151,6 +155,10 @@ svn co https://github.com/fw876/helloworld/trunk/simple-obfs /home/xyz/lede/pack
 svn co https://github.com/fw876/helloworld/trunk/trojan /home/xyz/lede/package/trojan
 svn co https://github.com/fw876/helloworld/trunk/v2ray-geodata /home/xyz/lede/package/v2ray-geodata
 svn co https://github.com/fw876/helloworld/trunk/sagernet-core /home/xyz/lede/package/sagernet-core
+svn co https://github.com/fw876/helloworld/trunk/microsocks /home/xyz/lede/package/microsocks
+svn co https://github.com/fw876/helloworld/trunk/redsocks2 /home/xyz/lede/package/redsocks2
+svn co https://github.com/fw876/helloworld/trunk/ipt2socks /home/xyz/lede/package/ipt2socks
+svn co https://github.com/fw876/helloworld/trunk/dns2socks /home/xyz/lede/package/dns2socks
 #svn co https://github.com/xiaorouji/openwrt-passwall/trunk/xray-core /home/xyz/lede/package/xray-core
 
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-eqos /home/xyz/lede/package/luci-app-eqos
