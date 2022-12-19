@@ -39,7 +39,7 @@ cd /home/xyz/aclsub && git pull && yarn build
 rm -rf /home/xyz/lede/package/luci-app-smartdns
 rm -rf /home/xyz/lede/package/smartdns
 rm -rf /home/xyz/lede/package/wrtbwmon
-rm -rf /home/xyz/lede/package/luci-app-bypass
+#rm -rf /home/xyz/lede/package/luci-app-bypass
 rm -rf /home/xyz/lede/feeds/luci/applications/luci-app-wrtbwmon
 #rm -rf /home/xyz/lede/package/luci-app-wrtbwmon
 rm -rf /home/xyz/lede/package/luci-theme-rosy
@@ -120,10 +120,10 @@ svn co https://github.com/lisaac/luci-app-dockerman/trunk/applications/luci-app-
 #cp -r /home/xyz/lede/luci-app-wrtbwmon/luci-app-wrtbwmon /home/xyz/lede/package/
 svn co https://github.com/brvphoenix/wrtbwmon/trunk/wrtbwmon /home/xyz/lede/package/wrtbwmon
 #rm -rf /home/xyz/lede/package/luci-app-ksmbd
-svn co https://github.com/kiddin9/openwrt-bypass/trunk/luci-app-bypass /home/xyz/lede/package/luci-app-bypass
+#svn co https://github.com/kiddin9/openwrt-bypass/trunk/luci-app-bypass /home/xyz/lede/package/luci-app-bypass
 find /home/xyz/lede/package/*/ /home/xyz/lede/feeds/*/ -maxdepth 2 -path "*luci-app-vssr/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-alt/shadowsocksr-libev-ssr-redir/g' {}
 find /home/xyz/lede/package/*/ /home/xyz/lede/feeds/*/ -maxdepth 2 -path "*luci-app-vssr/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-server/shadowsocksr-libev-ssr-server/g' {}
-sed -i 's/luci-lib-ipkg/luci-base/g' /home/xyz/lede/package/luci-app-bypass/Makefile
+#sed -i 's/luci-lib-ipkg/luci-base/g' /home/xyz/lede/package/luci-app-bypass/Makefile
 #find /home/xyz/lede/package/*/ /home/xyz/lede/feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-redir/shadowsocksr-libev-alt/g' {}
 #find /home/xyz/lede/package/*/ /home/xyz/lede/feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-server/shadowsocksr-libev-server/g' {}
 #find /home/xyz/lede/package/luci-app-bypass/* -maxdepth 8 -path "*" | xargs -i sed -i 's/smartdns-le/smartdns/g' {}
