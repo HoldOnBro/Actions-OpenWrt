@@ -16,7 +16,7 @@ on:
     types: started
 
 env:
-  REPO_URL: https://github.com/yaya131/lede-for-XaioMi
+  REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: AX6/AX6.config
@@ -98,8 +98,8 @@ jobs:
     #    cd openwrt
     #    ../$DIY_P1_SH
 
-    # - name: Revert some drop sh*t
-    #   run: cp -rf $GITHUB_WORKSPACE/AX6/revert/* openwrt/
+    - name: Revert some drop sh*t
+      run: cp -rf $GITHUB_WORKSPACE/AX6/revert/* openwrt/
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
