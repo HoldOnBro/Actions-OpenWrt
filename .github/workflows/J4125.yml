@@ -65,6 +65,7 @@ jobs:
         DEBIAN_FRONTEND: noninteractive
       run: |
         docker rmi `docker images -q`
+        [[ -n "${AGENT_TOOLSDIRECTORY}" ]] && sudo rm -rf "${AGENT_TOOLSDIRECTORY}"
         sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /etc/mysql /etc/php /usr/local/lib/android /opt/ghc
         sudo -E apt-get -y purge azure-cli ghc* zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* adoptopenjdk* mysql* php* mongodb* dotnet* moby* snapd* || true
         sudo -E apt-get -qq update
@@ -108,6 +109,7 @@ jobs:
       run: |
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
+        cp -rf $GITHUB_WORKSPACE/x86_64/kernel_config/* openwrt/target/linux/x86/
         chmod +x $DIY_P2_SH
         chmod +x $MRG_ADD_SH
         mv x86_64/r8125-mod openwrt/package
@@ -128,10 +130,6 @@ jobs:
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
-
-    - name: patch
-      run: |
-        cp -rf $GITHUB_WORKSPACE/x86_64/kernel_config/* openwrt/target/linux/x86/
 
     - name: Compile the firmware
       id: compile
