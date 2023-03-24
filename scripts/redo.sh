@@ -114,6 +114,7 @@ rm -rf /home/xyz/lede/package/microsocks
 rm -rf /home/xyz/lede/package/redsocks2
 rm -rf /home/xyz/lede/package/ipt2socks
 rm -rf /home/xyz/lede/package/dns2socks
+rm -rf /home/xyz/lede/package/gn
 
 svn co https://github.com/HoldOnBro/packages/trunk/luci-app-adblock-plus /home/xyz/lede/package/luci-app-adblock-plus
 svn co https://github.com/lisaac/luci-app-dockerman/trunk/applications/luci-app-dockerman /home/xyz/lede/package/luci-app-dockerman
@@ -145,6 +146,7 @@ svn co https://github.com/xiaorouji/openwrt-passwall2/trunk/luci-app-passwall2 /
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/ssocks /home/xyz/lede/package/ssocks
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/hysteria /home/xyz/lede/package/hysteria
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/dns2tcp /home/xyz/lede/package/dns2tcp
+svn co https://github.com/fw876/helloworld/trunk/gn /home/xyz/lede/package/gn
 svn co https://github.com/fw876/helloworld/trunk/xray-core /home/xyz/lede/package/xray-core
 svn co https://github.com/fw876/helloworld/trunk/xray-plugin /home/xyz/lede/package/xray-plugin
 svn co https://github.com/fw876/helloworld/trunk/shadowsocks-rust /home/xyz/lede/package/shadowsocks-rust
