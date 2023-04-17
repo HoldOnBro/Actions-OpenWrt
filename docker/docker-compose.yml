@@ -1,0 +1,247 @@
+version: '3.8'
+services:
+  WatchTower:
+    container_name: WatchTower
+    image: containrrr/watchtower
+    network_mode: host
+    restart: always
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock'
+    environment:
+      - TZ=Asia/Shanghai
+      - WATCHTOWER_POLL_INTERVAL=3600
+      - WATCHTOWER_CLEANUP=true
+      - WATCHTOWER_NOTIFICATIONS_LEVEL=info
+      - WATCHTOWER_NOTIFICATION_URL
+      - WATCHTOWER_NOTIFICATIONS_HOSTNAME
+
+  NPM:
+    container_name: NPM
+    image: jc21/nginx-proxy-manager:latest
+    restart: unless-stopped
+    networks:
+      MACVLAN:
+        ipv4_address: 192.168.3.10
+    ports:
+      # These ports are in format <host-port>:<container-port>
+      - '1824:80' # Public HTTP Port
+      - '4233:443' # Public HTTPS Port
+      - '1823:81' # Admin Web Port
+      # Add any other Stream port you want to expose
+      # - '21:21' # FTP
+    volumes:
+      - ./NPM/data:/data
+      - ./NPM/letsencrypt:/etc/letsencrypt
+
+  CloudNAS:
+    container_name: CloudDrive2
+    image: cloudnas/clouddrive2-unstable
+    network_mode: "host" #19798
+    restart: unless-stopped
+    volumes:
+      - '${CLOUDNAS_LOCAL_PATH}:/CloudNAS:shared'
+      - './CloudDrive2/Config:/Config'
+      #- ./CloudNAS/media:/media:shared #optional media path of host
+    devices:
+      - '/dev/fuse:/dev/fuse'
+    environment:
+      - TZ=Asia/Shanghai
+      - CLOUDDRIVE_HOME=/Config
+    pid: "host"
+    privileged: true
+
+  AList:
+    container_name: AList
+    image: xhofe/alist:main
+    network_mode: "host" #5244
+    restart: always
+    volumes:
+      - './AList:/opt/alist/data'
+    environment:
+      - PUID=0
+      - PGID=0
+      - UMASK=022
+
+  Plex:
+    container_name: Plex
+    image: linuxserver/plex:latest
+    network_mode: host #32400
+    volumes:
+      - './Plex/config:/config'
+      - './Plex/transcode:/transcode'
+      - '${PLEX_LOCAL_PATH2}:/data'
+      - '${PLEX_LOCAL_PATH1}:/media'
+    devices:
+      - '/dev/dri:/dev/dri'
+    environment:
+      - TZ=Asia/Shanghai
+      - PLEX_CLAIM
+      - PUID=0
+      - PGID=0
+    labels:
+      com.centurylinklabs.watchtower.depends-on: "CloudDrive2"
+
+  Portainer:
+    container_name: Portainer
+    image: portainer/portainer-ce:latest
+    network_mode: "host" #8000,9000
+    restart: always
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock'
+      - './Portainer:/data'
+
+  Redis:
+    container_name: Redis
+    image: "redis:alpine"
+    command: redis-server --save "" --appendonly "no"
+    networks:
+      - searxng
+    tmpfs:
+      - /var/lib/redis
+    cap_drop:
+      - ALL
+    cap_add:
+      - SETGID
+      - SETUID
+      - DAC_OVERRIDE
+
+  SearXNG:
+    container_name: SearXNG
+    image: searxng/searxng:latest
+    networks:
+      - searxng
+    ports:
+      - "8080:8080"
+    volumes:
+      - './SearXNG:/etc/searxng:rw'
+    environment:
+      - SEARXNG_BASE_URL=https://${SEARXNG_HOSTNAME:-localhost}/
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - SETGID
+      - SETUID
+      - DAC_OVERRIDE
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1m"
+        max-file: "1"
+
+  QBittorrent:
+    container_name: QBittorrent
+    image: linuxserver/qbittorrent:latest
+    restart: unless-stopped
+    networks:
+      MACVLAN:
+        ipv4_address: 192.168.3.2
+    ports:
+      - 8180:8180
+      - 6881:6881
+      - 6881:6881/udp
+    volumes:
+      - './QBittorrent/config:/config'
+      - '${QB_DOWNLOAD_PATH}:/downloads'
+    environment:
+      - PUID=0
+      - PGID=0
+      - TZ=Asia/Shanghai
+      - WEBUI_PORT=8180
+
+  Scheduler:
+    container_name: Scheduler
+    image: mcuadros/ofelia:latest
+    networks:
+      MACVLAN:
+        ipv4_address: 192.168.3.3
+    depends_on:
+      - PlexTraktSync
+    command: daemon --docker
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock:ro'
+    labels:
+      ofelia.job-run.PlexTraktSync.schedule: "@every 6h"
+      ofelia.job-run.PlexTraktSync.container: "PlexTraktSync"
+
+  PlexTraktSync:
+    container_name: PlexTraktSync
+    image: ghcr.io/taxel/plextraktsync:latest
+    networks:
+      MACVLAN:
+        ipv4_address: 192.168.3.4
+    volumes:
+      - './PlexTraktSync/config:/app/config'
+    command: sync
+
+  Firefox:
+    container_name: Firefox
+    image: jlesage/firefox
+    network_mode: "host" #5800
+    restart: unless-stopped
+    volumes:
+      - './Firefox/config:/config:rw'
+    environment:
+      - TZ=Asia/Shanghai
+      - USER_ID=0
+      - GROUP_ID=0
+      - LANG=zh_CN.UTF-8
+      - ENABLE_CJK_FONT=1
+
+  tsMuxer:
+    image: jlesage/tsmuxer
+    container_name: tsMuxer
+    restart: unless-stopped
+    networks:
+      MACVLAN:
+        ipv4_address: 192.168.3.5
+    ports:
+      - '5800:5800'
+    volumes:
+      - './tsMuxer/config:/config:rw'
+      - '${TSMUXER_PATH}:/storage:rw'
+    devices:
+      - '/dev/dri:/dev/dri'
+    environment:
+      - TZ=Asia/Shanghai
+      - USER_ID=0
+      - GROUP_ID=0
+      - LANG=zh_CN.UTF-8
+      - ENABLE_CJK_FONT=1
+
+  MakeMKV:
+    image: jlesage/makemkv
+    container_name: MakeMKV
+    restart: unless-stopped
+    networks:
+      MACVLAN:
+        ipv4_address: 192.168.3.6
+    ports:
+      - '5800:5800'
+    volumes:
+      - './MakeMKV/config:/config:rw'
+      - '${MAKEMKV_IN_PATH}:/storage:ro'
+      - '${MAKEMKV_OUT_PATH}:/output:rw'
+    devices:
+      - '/dev/dri:/dev/dri'
+      - /dev/sda
+      - /dev/sdb1
+    environment:
+      - TZ=Asia/Shanghai
+      - USER_ID=0
+      - GROUP_ID=0
+      - LANG=zh_CN.UTF-8
+      - ENABLE_CJK_FONT=1
+
+networks:
+  searxng:
+    ipam:
+      driver: default
+
+#需要先在 OpenWRT 网页端的 Docker - 网络栏内
+#新建一个名为 MACVLAN，驱动为 macvlan，父接口为 br-lan
+#子网为 192.168.3.0/24，网关为 192.168.3.1 的 Docker 网络
+
+  MACVLAN:
+    name: MACVLAN
+
