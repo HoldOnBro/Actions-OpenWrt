@@ -13,7 +13,7 @@ IMG_NAME=minirailgun/openwrt-aarch64
 
 mkdir -p "$TMPDIR"  && \
 mkdir -p "$OUTDIR"  && \
-gzip -dc openwrt-armvirt-64-default-rootfs.tar.gz | ( cd "$TMPDIR" && tar xf - ) && \
+gzip -dc openwrt-armvirt-64-generic-rootfs.tar.gz | ( cd "$TMPDIR" && tar xf - ) && \
 cp -f patches/rc.local "$TMPDIR/etc/" && \
 cp -f patches/cpustat "$TMPDIR/usr/bin/" && chmod 755 "$TMPDIR/usr/bin/cpustat" && \
 cp -f patches/getcpu "$TMPDIR/bin/" && chmod 755 "$TMPDIR/bin/getcpu" && \
