@@ -47,7 +47,7 @@ svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/l
 pushd package/luci-app-openclash/tools/po2lmo
 make && sudo make install
 popd
-svn co https://github.com/xiaorouji/openwrt-passwall/trunk/brook package/brook
+svn co https://github.com/immortalwrt/packages/trunk/net/brook package/brook
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/chinadns-ng package/chinadns-ng
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/tcping package/tcping
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-go package/trojan-go

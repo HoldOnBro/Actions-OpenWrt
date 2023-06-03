@@ -135,7 +135,7 @@ svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-opentomato /
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-edge /home/xyz/lede/package/luci-theme-edge
 #svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-argon_new /home/xyz/lede/package/luci-theme-argon_new
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash /home/xyz/lede/package/luci-app-openclash
-svn co https://github.com/xiaorouji/openwrt-passwall/trunk/brook /home/xyz/lede/package/brook
+svn co https://github.com/immortalwrt/packages/trunk/net/brook /home/xyz/lede/package/brook
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/chinadns-ng /home/xyz/lede/package/chinadns-ng
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/tcping /home/xyz/lede/package/tcping
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-go /home/xyz/lede/package/trojan-go
