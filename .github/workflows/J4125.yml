@@ -118,7 +118,6 @@ jobs:
         cp -rf $GITHUB_WORKSPACE/x86_64/kernel_config/* openwrt/target/linux/x86/
         chmod +x $DIY_P2_SH
         chmod +x $MRG_ADD_SH
-        mv x86_64/r8125-mod openwrt/package
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
         $GITHUB_WORKSPACE/$MRG_ADD_SH
