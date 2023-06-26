@@ -109,7 +109,7 @@ jobs:
         docker login --username=${{ secrets.DOCKER_USERNAME }} --password=${{ secrets.DOCKER_PASSWORD }}
         docker tag minirailgun/openwrt-aarch64 minirailgun/openwrt-aarch64:R${{ env.DATE_YMD }}
         docker push minirailgun/openwrt-aarch64
-        echo "::set-output name=status::success"
+        echo "status=success" >> "$GITHUB_OUTPUT"
 
     - name: Check performance again
       run: |

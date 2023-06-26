@@ -142,8 +142,7 @@ jobs:
         sudo ./mk_rk3568_r68s_plusplus.sh
         sudo cp ./*AllPackages.tar.gz ./output/
         sudo cp ./files/update*.sh ./output/
-        echo "::set-output name=status::success"
-
+        echo "status=success" >> "$GITHUB_OUTPUT"
     - name: Organize files
       id: organize
       if: steps.build.outputs.status == 'success' && !cancelled()
@@ -152,7 +151,7 @@ jobs:
         pigz -6 -p $(nproc) *.img
 
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
-        echo "::set-output name=status::success"
+        echo "status=success" >> "$GITHUB_OUTPUT"
 
     - name: Check performance again
       run: |
