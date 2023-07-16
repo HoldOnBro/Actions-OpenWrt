@@ -67,6 +67,7 @@ rm -rf /home/xyz/lede/package/luci-theme-rosy
 rm -rf /home/xyz/lede/package/app-store-ui
 rm -rf /home/xyz/lede/package/luci-app-store
 rm -rf /home/xyz/lede/package/luci-app-amlogic
+rm -rf /home/xyz/lede/package/tuic-client
 
 #更新仓库
 cd /home/xyz/Actions-OpenWrt && git pull
@@ -159,6 +160,7 @@ cp -rf /home/xyz/lede/helloworld/redsocks2 /home/xyz/lede/package/redsocks2
 cp -rf /home/xyz/lede/helloworld/ipt2socks /home/xyz/lede/package/ipt2socks
 cp -rf /home/xyz/lede/helloworld/dns2socks /home/xyz/lede/package/dns2socks
 cp -rf /home/xyz/lede/helloworld/luci-app-ssr-plus /home/xyz/lede/package/luci-app-ssr-plus
+cp -rf /home/xyz/lede/helloworld/tuic-client /home/xyz/lede/package/tuic-client
 
 cp -rf /home/xyz/lede/kenzok8-packages/smartdns /home/xyz/lede/package/smartdns
 cp -rf /home/xyz/lede/kenzok8-packages/luci-app-passwall /home/xyz/lede/package/luci-app-passwall

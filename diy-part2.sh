@@ -96,6 +96,7 @@ cp -rf helloworld/microsocks package/microsocks
 cp -rf helloworld/redsocks2 package/redsocks2
 cp -rf helloworld/ipt2socks package/ipt2socks
 cp -rf helloworld/dns2socks package/dns2socks
+cp -rf helloworld/tuic-client package/tuic-client
 cp -rf helloworld/luci-app-ssr-plus package/luci-app-ssr-plus
 
 # 克隆 kenzok8-packages 仓库
