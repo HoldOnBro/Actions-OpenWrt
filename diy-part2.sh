@@ -63,14 +63,14 @@ cp -rf immortalwrt-luci/applications/luci-app-smartdns package/luci-app-smartdns
 cp -rf immortalwrt-luci/applications/luci-app-udp2raw package/luci-app-udp2raw
 
 # 克隆openwrt-passwall仓库
-git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall.git
-cp -rf openwrt-passwall/chinadns-ng package/chinadns-ng
-cp -rf openwrt-passwall/tcping package/tcping
-cp -rf openwrt-passwall/trojan-go package/trojan-go
-cp -rf openwrt-passwall/trojan-plus package/trojan-plus
-cp -rf openwrt-passwall/ssocks package/ssocks
-cp -rf openwrt-passwall/hysteria package/hysteria
-cp -rf openwrt-passwall/dns2tcp package/dns2tcp
+git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages.git
+cp -rf openwrt-passwall-packages/chinadns-ng package/chinadns-ng
+cp -rf openwrt-passwall-packages/tcping package/tcping
+cp -rf openwrt-passwall-packages/trojan-go package/trojan-go
+cp -rf openwrt-passwall-packages/trojan-plus package/trojan-plus
+cp -rf openwrt-passwall-packages/ssocks package/ssocks
+cp -rf openwrt-passwall-packages/hysteria package/hysteria
+cp -rf openwrt-passwall-packages/dns2tcp package/dns2tcp
 
 # 克隆openwrt-passwall2仓库
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2.git

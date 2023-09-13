@@ -95,7 +95,7 @@ cd /home/xyz/lede/luci-app-dockerman && git pull
 cd /home/xyz/lede/OpenClash && git pull
 cd /home/xyz/lede/immortalwrt-packages && git pull
 cd /home/xyz/lede/immortalwrt-luci && git pull
-cd /home/xyz/lede/openwrt-passwall && git pull
+cd /home/xyz/lede/openwrt-passwall-packages && git pull
 cd /home/xyz/lede/openwrt-passwall2 && git pull
 cd /home/xyz/lede/helloworld && git pull
 cd /home/xyz/lede/kenzok8-packages && git pull
