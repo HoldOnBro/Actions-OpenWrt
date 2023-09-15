@@ -71,6 +71,7 @@ cp -rf openwrt-passwall-packages/trojan-plus package/trojan-plus
 cp -rf openwrt-passwall-packages/ssocks package/ssocks
 cp -rf openwrt-passwall-packages/hysteria package/hysteria
 cp -rf openwrt-passwall-packages/dns2tcp package/dns2tcp
+cp -rf openwrt-passwall-packages/sing-box package/sing-box
 
 # 克隆openwrt-passwall2仓库
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2.git

@@ -27,6 +27,7 @@ rm -rf /home/xyz/lede/package/trojan-plus
 rm -rf /home/xyz/lede/package/ssocks
 rm -rf /home/xyz/lede/package/hysteria
 rm -rf /home/xyz/lede/package/dns2tcp
+rm -rf /home/xyz/lede/package/sing-box
 rm -rf /home/xyz/lede/package/luci-app-passwall2
 rm -rf /home/xyz/lede/package/naiveproxy
 rm -rf /home/xyz/lede/package/lua-neturl
@@ -132,13 +133,14 @@ cp -rf /home/xyz/lede/immortalwrt-luci/applications/luci-app-gost /home/xyz/lede
 cp -rf /home/xyz/lede/immortalwrt-luci/applications/luci-app-smartdns /home/xyz/lede/package/luci-app-smartdns
 cp -rf /home/xyz/lede/immortalwrt-luci/applications/luci-app-udp2raw /home/xyz/lede/package/luci-app-udp2raw
 
-cp -rf /home/xyz/lede/openwrt-passwall/chinadns-ng /home/xyz/lede/package/chinadns-ng
-cp -rf /home/xyz/lede/openwrt-passwall/tcping /home/xyz/lede/package/tcping
-cp -rf /home/xyz/lede/openwrt-passwall/trojan-go /home/xyz/lede/package/trojan-go
-cp -rf /home/xyz/lede/openwrt-passwall/trojan-plus /home/xyz/lede/package/trojan-plus
-cp -rf /home/xyz/lede/openwrt-passwall/ssocks /home/xyz/lede/package/ssocks
-cp -rf /home/xyz/lede/openwrt-passwall/hysteria /home/xyz/lede/package/hysteria
-cp -rf /home/xyz/lede/openwrt-passwall/dns2tcp /home/xyz/lede/package/dns2tcp
+cp -rf /home/xyz/lede/openwrt-passwall-packages/chinadns-ng /home/xyz/lede/package/chinadns-ng
+cp -rf /home/xyz/lede/openwrt-passwall-packages/tcping /home/xyz/lede/package/tcping
+cp -rf /home/xyz/lede/openwrt-passwall-packages/trojan-go /home/xyz/lede/package/trojan-go
+cp -rf /home/xyz/lede/openwrt-passwall-packages/trojan-plus /home/xyz/lede/package/trojan-plus
+cp -rf /home/xyz/lede/openwrt-passwall-packages/ssocks /home/xyz/lede/package/ssocks
+cp -rf /home/xyz/lede/openwrt-passwall-packages/hysteria /home/xyz/lede/package/hysteria
+cp -rf /home/xyz/lede/openwrt-passwall-packages/dns2tcp /home/xyz/lede/package/dns2tcp
+cp -rf /home/xyz/lede/openwrt-passwall-packages/sing-box /home/xyz/lede/package/sing-box
 
 cp -rf /home/xyz/lede/openwrt-passwall2/luci-app-passwall2 /home/xyz/lede/package/luci-app-passwall2
 
