@@ -129,6 +129,9 @@ jobs:
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
+        rm -rf $GITHUB_WORKSPACE/.git
+        rm -rf $GITHUB_WORKSPACE/opt
+        df -Th
 
 #   - name: patch
 #     run: cp -rf $GITHUB_WORKSPACE/x86_64/5_15_patches/* openwrt/
