@@ -32,7 +32,7 @@ git clone --depth=1 https://github.com/jerrykuku/luci-app-vssr.git package/luci-
 git clone --depth=1 https://github.com/kongfl888/luci-app-adguardhome.git package/luci-app-adguardhome
 git clone --depth=1 https://github.com/lisaac/luci-app-dockerman.git
 cp -rf luci-app-dockerman/applications/luci-app-dockerman package/luci-app-dockerman
-rm -rf luci-app-dockerman
+#rm -rf luci-app-dockerman
 
 git clone --depth=1 https://github.com/rufengsuixing/luci-app-autoipsetadder.git package/luci-app-autoipsetadder
 git clone --depth=1 https://github.com/mchome/openwrt-dogcom.git package/openwrt-dogcom
@@ -43,7 +43,7 @@ cp -rf OpenClash/luci-app-openclash package/luci-app-openclash
 pushd package/luci-app-openclash/tools/po2lmo
 make && sudo make install
 popd
-rm -rf OpenClash
+#rm -rf OpenClash
 
 # 克隆immortalwrt-packages仓库
 git clone --depth=1 -b openwrt-18.06 https://github.com/immortalwrt/packages.git immortalwrt-packages
@@ -56,7 +56,7 @@ cp -rf immortalwrt-packages/libs/rapidjson package/rapidjson
 cp -rf immortalwrt-packages/net/subconverter package/subconverter
 cp -rf immortalwrt-packages/libs/toml11 package/toml11
 cp -rf immortalwrt-packages/net/udp2raw package/udp2raw
-rm -rf immortalwrt-packages
+#rm -rf immortalwrt-packages
 
 # 克隆immortalwrt-luci仓库
 git clone --depth=1 -b openwrt-18.06 https://github.com/immortalwrt/luci.git immortalwrt-luci
@@ -64,7 +64,7 @@ cp -rf immortalwrt-luci/applications/luci-app-socat package/luci-app-socat
 cp -rf immortalwrt-luci/applications/luci-app-gost package/luci-app-gost
 cp -rf immortalwrt-luci/applications/luci-app-smartdns package/luci-app-smartdns
 cp -rf immortalwrt-luci/applications/luci-app-udp2raw package/luci-app-udp2raw
-rm -rf immortalwrt-luci
+#rm -rf immortalwrt-luci
 
 # 克隆openwrt-passwall仓库
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages.git
@@ -76,12 +76,12 @@ cp -rf openwrt-passwall-packages/ssocks package/ssocks
 cp -rf openwrt-passwall-packages/hysteria package/hysteria
 cp -rf openwrt-passwall-packages/dns2tcp package/dns2tcp
 cp -rf openwrt-passwall-packages/sing-box package/sing-box
-rm -rf openwrt-passwall-packages
+#rm -rf openwrt-passwall-packages
 
 # 克隆openwrt-passwall2仓库
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2.git
 cp -rf openwrt-passwall2/luci-app-passwall2 package/luci-app-passwall2
-rm -rf openwrt-passwall2
+#rm -rf openwrt-passwall2
 
 # 克隆 helloworld 仓库
 git clone --depth=1 https://github.com/fw876/helloworld.git
@@ -106,7 +106,7 @@ cp -rf helloworld/ipt2socks package/ipt2socks
 cp -rf helloworld/dns2socks package/dns2socks
 cp -rf helloworld/tuic-client package/tuic-client
 cp -rf helloworld/luci-app-ssr-plus package/luci-app-ssr-plus
-rm -rf helloworld
+#rm -rf helloworld
 
 # 克隆 kenzok8-packages 仓库
 git clone --depth=1 https://github.com/kenzok8/openwrt-packages.git kenzok8-packages
@@ -125,7 +125,7 @@ cp -rf kenzok8-packages/luci-app-advanced package/luci-app-advanced
 cp -rf kenzok8-packages/ddnsto package/ddnsto
 cp -rf kenzok8-packages/luci-app-ddnsto package/luci-app-ddnsto
 cp -rf kenzok8-packages/luci-app-ikoolproxy package/luci-app-ikoolproxy
-rm -rf kenzok8-packages
+#rm -rf kenzok8-packages
 
 git clone --depth=1 https://github.com/tty228/luci-app-serverchan.git package/luci-app-serverchan
 
@@ -155,12 +155,12 @@ cp -rf istore-ui/app-store-ui package/app-store-ui
 git clone --depth=1 https://github.com/linkease/istore.git
 cp -rf istore/luci/luci-app-store package/luci-app-store
 sed -i 's/luci-lib-ipkg/luci-base/g' package/luci-app-store/Makefile
-rm -rf istore-ui istore
+#rm -rf istore-ui istore
 
 #添加luci-app-amlogic
 git clone --depth=1 https://github.com/ophub/luci-app-amlogic.git
 cp -rf luci-app-amlogic/luci-app-amlogic package/luci-app-amlogic
-rm -rf luci-app-amlogic
+#rm -rf luci-app-amlogic
 
 #修改晶晨宝盒默认配置
 # 1.Set the download repository of the OpenWrt files to your github.com
