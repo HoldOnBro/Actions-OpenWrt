@@ -91,6 +91,7 @@ cp -rf helloworld/lua-neturl package/lua-neturl
 cp -rf helloworld/gn package/gn
 cp -rf helloworld/xray-core package/xray-core
 cp -rf helloworld/xray-plugin package/xray-plugin
+cp -rf helloworld/shadow-tls package/shadow-tls
 cp -rf helloworld/shadowsocks-rust package/shadowsocks-rust
 cp -rf helloworld/shadowsocksr-libev package/shadowsocksr-libev
 cp -rf helloworld/v2ray-plugin package/v2ray-plugin

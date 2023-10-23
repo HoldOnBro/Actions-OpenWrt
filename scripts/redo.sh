@@ -34,6 +34,7 @@ rm -rf /home/xyz/lede/package/lua-neturl
 rm -rf /home/xyz/lede/package/gn
 rm -rf /home/xyz/lede/package/xray-core
 rm -rf /home/xyz/lede/package/xray-plugin
+rm -rf /home/xyz/lede/package/shadow-tls
 rm -rf /home/xyz/lede/package/shadowsocks-rust
 rm -rf /home/xyz/lede/package/shadowsocksr-libev
 rm -rf /home/xyz/lede/package/v2ray-plugin
@@ -149,6 +150,7 @@ cp -rf /home/xyz/lede/helloworld/lua-neturl /home/xyz/lede/package/lua-neturl
 cp -rf /home/xyz/lede/helloworld/gn /home/xyz/lede/package/gn
 cp -rf /home/xyz/lede/helloworld/xray-core /home/xyz/lede/package/xray-core
 cp -rf /home/xyz/lede/helloworld/xray-plugin /home/xyz/lede/package/xray-plugin
+cp -rf /home/xyz/lede/helloworld/shadow-tls /home/xyz/lede/package/shadow-tls
 cp -rf /home/xyz/lede/helloworld/shadowsocks-rust /home/xyz/lede/package/shadowsocks-rust
 cp -rf /home/xyz/lede/helloworld/shadowsocksr-libev /home/xyz/lede/package/shadowsocksr-libev
 cp -rf /home/xyz/lede/helloworld/v2ray-plugin /home/xyz/lede/package/v2ray-plugin
