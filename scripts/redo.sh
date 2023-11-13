@@ -7,6 +7,8 @@ rm -rf /home/xyz/lede/feeds/packages/net/smartdns
 rm -rf /home/xyz/lede/feeds/packages/net/mosdns
 rm -rf /home/xyz/lede/package/luci-app-dockerman
 rm -rf /home/xyz/lede/package/luci-app-openclash
+rm -rf /home/xyz/lede/package/luci-app-lucky
+rm -rf /home/xyz/lede/package/lucky
 rm -rf /home/xyz/lede/package/brook
 rm -rf /home/xyz/lede/package/gost
 rm -rf /home/xyz/lede/package/quickjspp
@@ -95,6 +97,7 @@ cd /home/xyz/lede/package/luci-theme-argon && git pull
 
 cd /home/xyz/lede/luci-app-dockerman && git pull
 cd /home/xyz/lede/OpenClash && git pull
+cd /home/xyz/lede/lucky-repo && git pull
 cd /home/xyz/lede/immortalwrt-packages && git pull
 cd /home/xyz/lede/immortalwrt-luci && git pull
 cd /home/xyz/lede/openwrt-passwall-packages && git pull
@@ -118,6 +121,8 @@ cd /home/xyz/aclsub && git pull && yarn build
 
 cp -rf /home/xyz/lede/luci-app-dockerman/applications/luci-app-dockerman /home/xyz/lede/package/luci-app-dockerman
 cp -rf /home/xyz/lede/OpenClash/luci-app-openclash /home/xyz/lede/package/luci-app-openclash
+cp -rf /home/xyz/lede/lucky-repo/luci-app-lucky /home/xyz/lede/package/luci-app-lucky
+cp -rf /home/xyz/lede/lucky-repo/lucky /home/xyz/lede/package/lucky
 
 cp -rf /home/xyz/lede/immortalwrt-packages/net/brook /home/xyz/lede/package/brook
 cp -rf /home/xyz/lede/immortalwrt-packages/net/gost /home/xyz/lede/package/gost

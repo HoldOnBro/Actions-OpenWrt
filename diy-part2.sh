@@ -19,6 +19,9 @@ rm -rf feeds/packages/net/mosdns
 #添加额外软件包
 git clone --depth=1 https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 
+git clone --depth=1 https://github.com/gdy666/luci-app-lucky.git lucky-repo
+cp -rf lucky-repo/luci-app-lucky package/luci-app-lucky
+cp -rf lucky-repo/lucky package/lucky
 #replace mirrors
 #rm -rf ./include
 #rm -rf ./ scripts
