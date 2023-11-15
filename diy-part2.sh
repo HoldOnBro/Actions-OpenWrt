@@ -49,7 +49,8 @@ popd
 #rm -rf OpenClash
 
 # 克隆immortalwrt-packages仓库
-git clone --depth=1 -b openwrt-18.06 https://github.com/immortalwrt/packages.git immortalwrt-packages
+#git clone --depth=1 -b openwrt-18.06 https://github.com/immortalwrt/packages.git immortalwrt-packages
+git clone --depth=1 https://github.com/immortalwrt/packages.git immortalwrt-packages
 cp -rf immortalwrt-packages/net/brook package/brook
 cp -rf immortalwrt-packages/net/gost package/gost
 cp -rf immortalwrt-packages/libs/quickjspp package/quickjspp
