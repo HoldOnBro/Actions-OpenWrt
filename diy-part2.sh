@@ -113,7 +113,7 @@ cp -rf helloworld/luci-app-ssr-plus package/luci-app-ssr-plus
 #rm -rf helloworld
 
 # 克隆 kenzok8-packages 仓库
-git clone --depth=1 https://github.com/kenzok8/openwrt-packages.git kenzok8-packages
+git clone --depth=1 https://github.com/kenzok8/small-package.git kenzok8-packages
 cp -rf kenzok8-packages/smartdns package/smartdns
 cp -rf kenzok8-packages/luci-app-passwall package/luci-app-passwall
 cp -rf kenzok8-packages/luci-app-eqos package/luci-app-eqos
