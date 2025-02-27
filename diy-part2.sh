@@ -131,7 +131,7 @@ cp -rf kenzok8-packages/luci-app-ddnsto package/luci-app-ddnsto
 cp -rf kenzok8-packages/luci-app-ikoolproxy package/luci-app-ikoolproxy
 #rm -rf kenzok8-packages
 
-git clone --depth=1 https://github.com/tty228/luci-app-serverchan.git package/luci-app-serverchan
+git clone -b openwrt-18.06 --depth=1 https://github.com/tty228/luci-app-serverchan.git package/luci-app-serverchan
 
 # themes
 git clone --depth=1 https://github.com/Leo-Jo-My/luci-theme-Butterfly package/luci-theme-Butterfly
